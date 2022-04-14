@@ -17,7 +17,7 @@
         </tr>
         </tbody>
     </table>
-    <table class="Subsection-Table scroll-active" style="background-image: url('ContentImageHandler.ashx?imageId=133552');">
+    <table class="Subsection-Table scroll-active" style="background-image: url('https://www.prosperitybankusa.com/ContentImageHandler.ashx?imageId=133552');">
         <tbody>
         <tr>
             <td></td>
@@ -33,7 +33,6 @@
                     <li>Zero Liability Protection</li>
                     <li>Easily manage your transactions in real-time</li>
                 </ul>
-                <p><a class="Button1" href="Locations-and-ATMs">Find Us</a><a class="Button2" href="Travel-Message">Traveling? Read More Here</a></p>
             </td>
         </tr>
         </tbody>
@@ -68,7 +67,7 @@
     <table class="Subsection-Gray-Table scroll-active">
         <tbody>
         <tr>
-            <td><img alt="card-art" border="0" src="ContentImageHandler.ashx?ImageId=133549"></td>
+            <td><img alt="card-art" border="0" src="https://www.visa.com.bs/dam/VCOM/regional/lac/ENG/Default/Pay%20With%20Visa/Find%20a%20Card/Debit%20Cards/Debit%20Classic/visaclassicdebit-400x225.jpg"></td>
         </tr>
         <tr>
             <td>
@@ -81,8 +80,6 @@
                     <li>The card can be used at any ATM</li>
                     <li>24/7 Lost or Stolen Card Assistance</li>
                 </ul>
-                <p><a class="Button2" href="ContentDocumentHandler.ashx?documentId=62076" target="_blank">Review Debit Card Terms &amp; Conditions</a></p>
-                <p><a class="Button2" href="ContentDocumentHandler.ashx?documentId=62077" target="_blank">Review Unlawful Internet Gambling &amp; Your Debit Card transactions</a></p>
                 <h6><span class="Button2" style="font-size: 12pt;">DEBIT CARD SELF-SERVICE 1-844-373-1760</span></h6>
                 <ul>
                     <li style="padding-left: 60px;">Activate your Debit Card</li>
@@ -120,7 +117,6 @@
                 <p>If you believe there has been unauthorized use of your account and you meet the conditions above, rest easy knowing you have the protection of Mastercard’s Zero Liability promise. For additional protections with respect to unauthorized transactions, please contact your local banking center or our Customer Service at 800-531-1401. Note: Zero Liability does not apply to the following Mastercard payment cards: commercial cards, or unregistered prepaid cards, such as gift cards.</p>
                 <p><strong>What to do:</strong></p>
                 <p>If you have questions regarding Zero Liability coverage or you suspect unauthorized use of your card, contact your financial institution immediately.</p>
-                <p><a class="Button2" href="Mastercard-Debit-Card-FAQ">Read all FAQs</a></p>
             </td>
         </tr>
         </tbody>

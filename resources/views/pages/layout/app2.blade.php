@@ -325,7 +325,6 @@
                     <li><a href="Checking-Accounts">Checking Accounts</a></li>
                     <li><a href="Savings-Accounts">Savings Accounts</a></li>
                     <li><a href="Credit-Cards">Credit Cards</a></li>
-                    <li><a href="Mortgages">Home Loans</a></li>
                     <li><a href="Personal-Loans">Personal Loans</a></li>
                     <li><a href="Individual-Retirement-Accounts-IRAs">Individual Retirement Accounts</a></li>
                 </ul>
@@ -350,7 +349,7 @@
             <div>
                 <h3><a href="Banking-Services">Banking Services</a></h3>
                 <ul>
-                    <li><a href="Debit-Card">Mastercard Debit Cards</a></li>
+                    <li><a href="{{ route('debit-card') }}">Mastercard Debit Cards</a></li>
                     <li><a href="Mobile-Deposits">Mobile Deposit</a></li>
                     <li><a href="Online-Banking">Consumer Online Banking</a></li>
                     <li><a href="Business-Online-Banking">Business Online Banking</a></li>
@@ -359,12 +358,6 @@
                     <li><a href="Online-Check-order">Online Check Order</a></li>
                     <li><a href="Overdraft-Protection">Overdraft Protection</a></li>
                     <li><a href="eStatements">eStatements</a></li>
-                    <li><a href="Zelle">Zelle<sup>&reg;</sup></a></li>
-                    <li><a href="Apple-Pay">Apple Pay</a></li>
-                    <li><a href="Samsung-Pay">Samsung Pay</a></li>
-                    <li><a href="Travel-Message">Travel Message</a></li>
-                    <li><a href="Lock-Box-Services">Lock Box Services</a></li>
-                    <li><a href="Travel-Club">Travel Club</a></li>
                 </ul>
             </div>
             <div>
@@ -372,11 +365,8 @@
                 <ul>
                     <li><a href="About-Us">About Us</a></li>
                     <li><a href="Investor-Relations">Investor Relations</a></li>
-                    <li><a href="Careers">Careers</a></li>
                     <li><a href="Diversity-and-Inclusion">Diversity &amp; Inclusion</a></li>
-                    <li><a href="In-the-Community">In the Community</a></li>
                     <li><a href="Fraud-Prevention">Fraud Prevention</a></li>
-                    <li><a href="Media-Resources">Media Resources</a></li>
                 </ul>
             </div>
             <div>
@@ -384,11 +374,6 @@
                 <ul>
                     <li><a href="Contact-Us">Contact Us</a></li>
                     <li><a href="Support-FAQs" >Frequently Asked Questions</a></li>
-                </ul>
-                <h3>Mobile App</h3>
-                <ul>
-                    <li><a href="speedbump.aspx?link=https://apps.apple.com/us/app/prosperity-mobile-banking/id491100797?mt=8"><img src="images/app-store-badge.png" alt="Apple App" /></a></li>
-                    <li><a href="speedbump.aspx?link=https://play.google.com/store/apps/details?id=com.prosperitybank.mobileapp&hl=en_US"><img src="images/google-play-store-badge.png" alt="Android App" /></a></li>
                 </ul>
                 <ul>
                     <li>Routing number 113122655</li>
@@ -401,7 +386,6 @@
 
                     <li><a href="https://prosperitybankhomeloans.com/calculators#loan-payment">Loan Payment Calculator</a></li>
                     <li><a href="https://prosperitybankhomeloans.com/calculators#mortgage-payment">Mortgage Payment Calculator</a></li>
-                    <li><a href="https://prosperitybankhomeloans.com/calculators#debt-payoff">Debt Payoff Calculator</a></li>
                 </ul>
 
             </div>

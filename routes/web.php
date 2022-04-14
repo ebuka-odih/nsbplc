@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.index')->name('index');
 Route::view('/personal', 'pages.Personal')->name('personal');
+Route::view('/debit-card', 'pages.debit-card')->name('debit-card');
+Route::view('/personal-loan', 'pages.personal-loan')->name('personal-loan');
+Route::view('/personal-investing', 'pages.personal-investing')->name('personal-investing');
+Route::view('/online-banking', 'pages.online-banking')->name('online-banking');
 
 //Route::view('/','pages.index')->name('index');
 Route::view('/contact-us','pages.contact-us')->name('contact');
