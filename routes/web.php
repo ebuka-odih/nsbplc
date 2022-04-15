@@ -19,6 +19,12 @@ Route::view('/debit-card', 'pages.debit-card')->name('debit-card');
 Route::view('/personal-loan', 'pages.personal-loan')->name('personal-loan');
 Route::view('/personal-investing', 'pages.personal-investing')->name('personal-investing');
 Route::view('/online-banking', 'pages.online-banking')->name('online-banking');
+Route::view('/eStatements', 'pages.eStatement')->name('eStatements');
+Route::view('/checking-with-interest', 'pages.checking-with-interest')->name('checking-with-interest');
+Route::view('/Premier-Money-Market', 'pages.Premier-Money-Market')->name('Premier-Money-Market');
+Route::view('/nsb-Savings', 'pages.Prosperity-Savings')->name('nsb-Savings');
+Route::view('/Compare-Personal-Savings-Accounts', 'pages.Compare-Personal-Savings-Accounts')->name('Compare-Personal-Savings-Accounts');
+Route::view('/NSB-Money-Market', 'pages.Prosperity-Money-Market')->name('Prosperity-Money-Market');
 
 //Route::view('/','pages.index')->name('index');
 Route::view('/contact-us','pages.contact-us')->name('contact');

@@ -117,7 +117,7 @@
                                 <svg height="70" width="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M496 128v16a8 8 0 0 1-8 8h-24v12c0 6.627-5.373 12-12 12H60c-6.627 0-12-5.373-12-12v-12H24a8 8 0 0 1-8-8v-16a8 8 0 0 1 4.941-7.392l232-88a7.996 7.996 0 0 1 6.118 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.255 0-24 10.745-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.255-10.745-24-24-24zM96 192v192H60c-6.627 0-12 5.373-12 12v20h416v-20c0-6.627-5.373-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z"/></svg>
                                 <p><strong>CHECKING&nbsp;Account</strong></p>
                                 <p>The perfect combination of saving and checking</p>
-                                <p><a class="Button1" href="Checking-with-Interest">Learn more</a></p>
+                                <p><a class="Button1" href="{{ route('checking-with-interest') }}">Learn more</a></p>
                             </td>
                             <td>
                                 <h3 >Premier Money Market Account
@@ -126,14 +126,14 @@
 
                                 <p><strong>Savings Account</strong></p>
                                 <p>The higher your balance, the more you earn</p>
-                                <p><a class="Button1" href="https://www.prosperitybankusa.com/Premier-Money-Market">Learn more</a></p>
+                                <p><a class="Button1" href="{{ route('Premier-Money-Market') }}">Learn more</a></p>
                             </td>
                             <td>
-                                <h3 >Prosperity Savings Account</h3>
+                                <h3 >NSB PLC Savings Account</h3>
                                 <svg height="70" width="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/></svg>
                                 <p><strong>SAVINGS account</strong></p>
                                 <p>Earn interest and access your money at any time</p>
-                                <p><a class="Button1" href="Prosperity Savings">Learn more</a></p>
+                                <p><a class="Button1" href="{{ route('nsb-Savings') }}">Learn more</a></p>
                             </td>
                         </tr>
                         </tbody>
