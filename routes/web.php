@@ -30,6 +30,8 @@ Route::view('Personal-Checking','pages.checking')->name('checking');
 Route::view('Checking-with-Interest','pages.Checking-with-interest')->name('Checking-with-interest');
 Route::view('Simply-Free-Checking','pages.Simply-Free-Checking')->name('Simply-Free-Checking');
 
+//Personal Savings Route
+Route::view('Compare-Personal-Savings-Accounts', 'pages.Compare-Personal-Savings-Accounts')->name('Compare-Personal-Savings-Accounts');
 
 //Route::view('/','pages.index')->name('index');
 Route::view('/contact-us','pages.contact-us')->name('contact');
