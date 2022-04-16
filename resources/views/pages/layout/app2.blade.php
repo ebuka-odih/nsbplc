@@ -71,7 +71,7 @@
                 <input type="password" name="password" id="pbi-password" placeholder="Enter Password" autocapitalize="none" required>
             </label>
             <ul class="personal">
-                <li><a href="{{ route('new_account') }}" target="_blank">Enroll</a></li>
+                <li><a href="{{ route('reg_new_account') }}" target="_blank">Enroll</a></li>
                 <li><a href="https://consumer.prosperity.bank/ForgotPassword.aspx" target="_blank">Forgot Password</a></li>
             </ul>
             <button type="submit" class="Button1"><span>Sign In</span></button>
@@ -92,9 +92,13 @@
             {{--                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>--}}
 
             <li class="mobile"><a class="loginopen fa-lock" tabindex="-1"><span>Log In</span></a></li>
-            <li class="mobile"><a tabindex="-1" class="fa-bars menuopen">
-{{--                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>--}}
-                    <span class="visuallyhidden">Menu</span></a></li>
+            <li class="mobile">
+                <p tabindex="-1"  class=" menuopen">
+{{--                    class="fa-bars menuopen"--}}
+                  <svg style="background-color: white"  height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+
+                    <span class="visuallyhidden">Menu</span>
+                </p></li>
         </ul>
     </nav>
     <nav id="primary" aria-expanded="false">
@@ -102,7 +106,13 @@
         <div>
             <ul>
                 <li tabindex="0">
-                    <h2 class="icon-chevron"><a href="{{ route('personal') }}"><span>Personal</span></a></h2>
+                    <h2 >
+                        <svg  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+
+                        <a href="{{ route('personal') }}">
+                            <span>Personal</span>
+                        </a>
+                    </h2>
                     <div>
                         <div>
                             <h3><a href="Checking-Accounts">Checking Accounts</a></h3>
@@ -141,7 +151,10 @@
                     </div>
                 </li>
                 <li tabindex="0">
-                    <h2 class="icon-chevron"><a href="Business"><span>Business</span></a></h2>
+                    <h2>
+                        <svg  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+
+                        <a href="Business"><span>Business</span></a></h2>
                     <div>
                         <div>
                             <h3><a href="Business-Checking">Business Checking</a></h3>
@@ -217,7 +230,10 @@
                     </div>
                 </li>
                 <li tabindex="0">
-                    <h2 class="icon-chevron"><a href="Mortgages"><span>Mortgages</span></a></h2>
+                    <h2>
+                        <svg  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+
+                        <a href="Mortgages"><span>Mortgages</span></a></h2>
                     <div>
                         <div>
                             <h3><a href="http://prosperitybankhomeloans.com"><span>Mortgages</span></a></h3>
@@ -242,7 +258,9 @@
                     </div>
                 </li>
                 <li tabindex="0">
-                    <h2 class="icon-chevron"><a href="Banking-Services"><span>Banking Services</span></a></h2>
+                    <h2 >
+                        <svg  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+                        <a href="Banking-Services"><span>Banking Services</span></a></h2>
                     <div>
                         <div>
                             <ul>
@@ -252,9 +270,6 @@
                             <ul>
                                 <li><a href="Online-Banking">Consumer Online Banking</a></li>
                                 <li><a href="Business-Online-Banking">Business Online Banking</a></li>
-                                <li><a href="Zelle">Zelle<sup>&reg;</sup></a></li>
-                                <li><a href="Apple-Pay">Apple Pay</a></li>
-                                <li><a href="Samsung-Pay">Samsung Pay</a></li>
                             </ul>
                         </div>
                         <div>
