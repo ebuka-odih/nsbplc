@@ -19,13 +19,13 @@
                     <thead>
                     <tr>
                         <th>Features</th>
-                        <th>Prosperity  Savings
+                        <th>NSB PLC  Savings
                             <a class="Button1" href="Prosperity-Savings">Get This</a>
                         </th>
                         <th>Premier Money Market
                             <a class="Button1" href="Premier-Money-Market">Get This</a>
                         </th>
-                        <th>Prosperity Money Market
+                        <th>NSB PLC Money Market
                             <a class="Button1" href="Prosperity-Money-Market">Get This</a>
                         </th>
                     </tr>
@@ -33,7 +33,7 @@
                     <tbody>
                     <tr>
                         <td colspan="4">Features</td>
-                    </tr>
+                    </tr>Prosperity
                     <tr>
                         <td>Minimum to Open</td>
                         <td style="text-align: center;">$200</td>

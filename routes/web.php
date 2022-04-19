@@ -32,6 +32,8 @@ Route::view('Simply-Free-Checking','pages.Simply-Free-Checking')->name('Simply-F
 
 //Personal Savings Route
 Route::view('Compare-Personal-Savings-Accounts', 'pages.Compare-Personal-Savings-Accounts')->name('Compare-Personal-Savings-Accounts');
+Route::view('Prosperity-Savings', 'pages.Prosperity-Savings')->name('Prosperity-Savings');
+Route::view('Premier-Money-Market', 'pages.Premier-Money-Market')->name('Premier-Money-Market');
 
 //Route::view('/','pages.index')->name('index');
 Route::view('/contact-us','pages.contact-us')->name('contact');
