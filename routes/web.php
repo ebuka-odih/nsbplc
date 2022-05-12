@@ -36,6 +36,19 @@ Route::view('Premier-Money-Market', 'pages.Premier-Money-Market')->name('Premier
 
 Route::view('Credit-Cards', 'pages.Credit-Cards')->name('Credit-Cards');
 Route::view('Mortgages', 'pages.Mortgages')->name('Mortgages');
+Route::view('Personal-Loans', 'pages.Personal-Loans')->name('Personal-Loans');
+
+//Business ROute
+Route::view('Business', 'pages.business.Business');
+Route::view('Business-Checking', 'pages.business.Business-Checking');
+Route::view('Business-Analysis-Checking', 'pages.business.Business-Analysis-Checking');
+Route::view('Compare-Business-Checking-Accounts', 'pages.business.Compare-Business-Checking-Accounts');
+Route::view('Small-Business-Checking', 'pages.business.Small-Business-Checking');
+Route::view('Small-Business-Checking-with-Interest', 'pages.business.Small-Business-Checking-with-Interest');
+Route::view('Business-Analysis-Checking-with-Interest', 'pages.business.Business-Analysis-Checking-with-Interest');
+
+
+
 
 //Route::view('/','pages.index')->name('index');
 Route::view('/contact-us','pages.contact-us')->name('contact');
@@ -89,3 +102,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 });
 
 include'admin.php';
+
+Route::get('textsms', "WithdrawalController@testSMS");

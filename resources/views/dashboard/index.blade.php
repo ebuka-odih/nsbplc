@@ -1,109 +1,258 @@
 @extends('dashboard.layout.app')
 @section('content')
 
-<div class="br-mainpanel">
-    <div class="br-pagetitle">
-        <img style="border-radius: 50%" src="{{ asset('avatar/'.auth()->user()->avatar) }}" alt="">
-{{--        <i class="icon ion-ios-home-outline"></i>--}}
-        <div>
-            <h2>Welcome...</h2>
-{{--            <h4 class="mg-b-0">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</h4>--}}
-        </div>
-    </div>
-
-    <div class="br-pagebody">
-        <div class="row row-sm">
-            <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <img class="pl-2" style=" height: 150px; width: 150px" src="https://cdn.vox-cdn.com/thumbor/zFJuBWv5NjSeVilWJntvQcgji5M=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19979927/jomi_avatar_nickleodeon_ringer.jpg" alt="">
-                            <h4 class="pl-2">{{  auth()->user()->first_name.' '.auth()->user()->last_name }}</h4>
+<main id="main-container">
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Quick Overview -->
+        <h2 class="content-heading">
+            <i class="fa fa-angle-right text-muted me-1"></i> Quick Overview
+        </h2>
+        <div class="block block-rounded">
+            <div class="block-content block-content-full">
+                <div class="row text-center">
+                    <div class="col-md-4 py-3">
+                        <div class="fs-1 fw-light text-dark mb-1">
+                            $49.680
                         </div>
+                        <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Balance</a>
+                    </div>
+                    <div class="col-md-4 py-3">
+                        <div class="fs-1 fw-light text-success mb-1">
+                            +$780
+                        </div>
+                        <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Income Today</a>
+                    </div>
+                    <div class="col-md-4 py-3">
+                        <div class="fs-1 fw-light text-danger mb-1">
+                            -$49
+                        </div>
+                        <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Expenses Today</a>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- END Quick Overview -->
 
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-info rounded overflow-hidden">
-                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                        <i class="ion ion-cash tx-60 lh-0 tx-white op-7"></i>
-                        <div class="mg-l-20">
-                            <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Avaliable Balance</p>
-                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">@convert(auth()->user()->account->balance) </p>
+        <!-- Cards -->
+        <h2 class="content-heading">
+            <i class="fa fa-angle-right text-muted me-1"></i> Cards (3)
+        </h2>
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Card #1 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
+                        <div class="ribbon-box">$2.000,00</div>
+                        <div class="py-3 text-center">
+                            <i class="fa fa-credit-card fa-4x text-gray"></i>
+                            <p class="fs-lg text-dark mt-3 mb-0">
+                                Henry Harrison
+                            </p>
+                            <p class="text-muted mb-3">
+                                4309-xxxx-xxxx-7898
+                            </p>
+                            <p class="fs-sm fw-bold text-muted mb-0">
+                                VISA
+                            </p>
                         </div>
                     </div>
-                    <div id="ch1" class="ht-50 tr-y-1"></div>
-                </div>
-            </div><!-- col-3 -->
-            <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
-                <div class="bg-purple rounded overflow-hidden">
-                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                        <i class="ion ion-arrow-down-a tx-60 lh-0 tx-white op-7"></i>
-                        <div class="mg-l-20">
-                            <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total Inflow</p>
-                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">$329,291</p>
+                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
+                        <span class="fs-sm text-muted">Active through May 2025</span>
+                    </div>
+                </a>
+                <!-- END Card #1 -->
+            </div>
+            <div class="col-xl-4">
+                <!-- Card #2 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
+                        <div class="ribbon-box">$3.500,00</div>
+                        <div class="py-3 text-center">
+                            <i class="fa fa-credit-card fa-4x text-gray"></i>
+                            <p class="fs-lg text-dark mt-3 mb-0">
+                                Example LTD
+                            </p>
+                            <p class="text-muted mb-3">
+                                9852-xxxx-xxxx-9852
+                            </p>
+                            <p class="fs-sm fw-bold text-muted mb-0">
+                                AMERICAN EXPRESS
+                            </p>
                         </div>
                     </div>
-                    <div id="ch3" class="ht-50 tr-y-1"></div>
-                </div>
-            </div><!-- col-3 -->
-            <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
-                <div class="bg-teal rounded overflow-hidden">
-                    <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                        <i class="ion ion-arrow-up-a tx-60 lh-0 tx-white op-7"></i>
-                        <div class="mg-l-20">
-                            <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total Outflow</p>
-                            <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">54.45%</p>
+                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
+                        <span class="fs-sm text-muted">Active through October 2028</span>
+                    </div>
+                </a>
+                <!-- END Card #2 -->
+            </div>
+            <div class="col-xl-4">
+                <!-- Card #3 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
+                        <div class="ribbon-box">$5.000,00</div>
+                        <div class="py-3 text-center">
+                            <i class="fa fa-credit-card fa-4x text-gray"></i>
+                            <p class="fs-lg text-dark mt-3 mb-0">
+                                Henry Harrison
+                            </p>
+                            <p class="text-muted mb-3">
+                                1020-xxxx-xxxx-6981
+                            </p>
+                            <p class="fs-sm fw-bold text-muted mb-0">
+                                MasterClub
+                            </p>
                         </div>
                     </div>
-                    <div id="ch2" class="ht-50 tr-y-1"></div>
-                </div>
-            </div><!-- col-3 -->
-
-            <!-- col-3 -->
-        </div><!-- row -->
-
-        <div class="row row-sm mg-t-20">
-            <h4>Recent Transactions</h4>
-
-            <div class="col-lg-12">
-                <div class="card bd-0 shadow-base">
-                    <div class="bd bd-gray-300 rounded table-responsive">
-                        <table class="table table-striped mg-b-0">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>View</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($withdrawal as $item)
-                            <tr>
-                                <th scope="row">{{ $item->withdraw_id }}</th>
-                                <td>{{ date('d M y h:i A', strtotime($item->created_at)) }}</td>
-                                <td>$@convert($item->amount)</td>
-                                <td>{!! $item->status() !!}</td>
-                                <td><a href="{{ route('user.withdrawal_details', $item->id) }}" class="btn btn-link">View</a></td>
-                            </tr>
-                            @endforeach
-
-                            </tbody>
-                        </table>
+                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
+                        <span class="fs-sm text-muted">Active through July 2027</span>
                     </div>
-                </div><!-- card -->
+                </a>
+                <!-- END Card #3 -->
+            </div>
+        </div>
+        <!-- END Cards -->
 
+        <!-- Bank Accounts -->
+        <h2 class="content-heading">
+            <i class="fa fa-angle-right text-muted me-1"></i> Bank Accounts (2)
+        </h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Bank Account #1 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fs-lg fw-semibold mb-0">
+                                US 632-9854-<span class="text-default">485</span>
+                            </p>
+                            <p class="text-muted mb-0">
+                                $8.982,00
+                            </p>
+                        </div>
+                        <div class="ms-3">
+                            <i class="fa fa-piggy-bank fa-2x text-gray"></i>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
+                        <span class="fs-sm text-muted">$1.200,00 in monthly charges</span>
+                    </div>
+                </a>
+                <!-- END Bank Account #1 -->
+            </div>
+            <div class="col-lg-6">
+                <!-- Bank Account #2 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fs-lg fw-semibold mb-0">
+                                US 632-5525-<span class="text-default">796</span>
+                            </p>
+                            <p class="text-muted mb-0">
+                                $40.698,00
+                            </p>
+                        </div>
+                        <div class="ms-3">
+                            <i class="fa fa-piggy-bank fa-2x text-gray"></i>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
+                        <span class="fs-sm text-muted">$2.350,00 in monthly charges</span>
+                    </div>
+                </a>
+                <!-- END Bank Account #2 -->
+            </div>
+        </div>
+        <!-- END Bank Accounts -->
 
+        <!-- Latest Transactions -->
+        <h2 class="content-heading">
+            <i class="fa fa-angle-right text-muted me-1"></i> Latest Transactions
+        </h2>
+        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
+            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="fs-lg fw-semibold mb-0">
+                        +$250,00
+                    </p>
+                    <p class="text-muted mb-0">
+                        xxx-485 Account
+                    </p>
+                </div>
+                <div class="ms-3">
+                    <i class="fa fa-arrow-left text-success"></i>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>June 10, 2018 - 10:06</strong></span>
+            </div>
+        </a>
+        <a class="block block-rounded block-link-shadow border-start border-danger border-3"href="javascript:void(0)">
+            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="fs-lg fw-semibold mb-0">
+                        -$540,00
+                    </p>
+                    <p class="text-muted mb-0">
+                        xxx-7898 VISA
+                    </p>
+                </div>
+                <div class="ms-3">
+                    <i class="fa fa-arrow-right text-danger"></i>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>June 5, 2018 - 08:46</strong></span>
+            </div>
+        </a>
+        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
+            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="fs-lg fw-semibold mb-0">
+                        +$120,00
+                    </p>
+                    <p class="text-muted mb-0">
+                        xxx-485 Account
+                    </p>
+                </div>
+                <div class="ms-3">
+                    <i class="fa fa-arrow-left text-success"></i>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>May 25, 2018 - 12:25</strong></span>
+            </div>
+        </a>
+        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
+            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="fs-lg fw-semibold mb-0">
+                        +$698,00
+                    </p>
+                    <p class="text-muted mb-0">
+                        xxx-796 Account
+                    </p>
+                </div>
+                <div class="ms-3">
+                    <i class="fa fa-arrow-left text-success"></i>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>May 23, 2018 - 14:23</strong></span>
+            </div>
+        </a>
+        <!-- END Latest Transactions -->
 
-            </div><!-- col-8 -->
-
-        </div><!-- row -->
-
-    </div><!-- br-pagebody -->
-
-</div>
+        <!-- View More -->
+        <div class="text-center">
+            <a class="btn btn-sm btn-alt-secondary fw-semibold" href="javascript:void(0)">
+                <i class="fa fa-arrow-down opacity-50 me-1"></i> View More..
+            </a>
+        </div>
+        <!-- END View More -->
+    </div>
+    <!-- END Page Content -->
+</main>
 
 @endsection

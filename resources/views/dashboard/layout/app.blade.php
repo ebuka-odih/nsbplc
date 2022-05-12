@@ -1,262 +1,329 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <!-- Facebook -->
-    <meta property="og:url" content="http://themepixels.me/bracketplus">
-    <meta property="og:title" content="Bracket Plus">
-    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <title>Nations Star Bank PLC</title>
 
-    <meta property="og:image" content="http://themepixels.me/bracketplus/img/bracketplus-social.png">
-    <meta property="og:image:secure_url" content="http://themepixels.me/bracketplus/img/bracketplus-social.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="600">
+    <meta name="description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta property="og:site_name" content="Nations Star Bank PLC">
+    <meta property="og:description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-    <!-- Meta -->
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
 
-    <title>NationsStar Bank PLC</title>
+    <!-- Stylesheets -->
+    <!-- Fonts and Dashmix framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" id="css-main" href="{{ asset('dashboard/assets/css/dashmix.min.css') }}">
 
-    <!-- vendor css -->
-    <link href="{{ asset('../lib/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../lib/select2/css/select2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../lib/datatables.net-dt/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css') }}" rel="stylesheet">
-
-
-    <!-- Bracket CSS -->
-    <link rel="stylesheet" href="{{ asset('../css/bracket.css') }}">
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
+    <link rel="stylesheet" id="css-theme" href="{{ asset('dashboard/assets/css/themes/xdream.min.css') }}">
+    <!-- END Stylesheets -->
+    <style>
+        .nav-main-link {
+            color: #8492b1;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ########## START: LEFT PANEL ########## -->
-<div class="br-logo"><a href=""><span>[</span>NSB <i>PLC</i><span>]</span></a></div>
-<div class="br-sideleft sideleft-scrollbar">
-    <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
-    <ul class="br-sideleft-menu">
-        <li class="br-menu-item">
-            <a href="{{ route('user.dashboard') }}" class="br-menu-link active">
-                <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
-                <span class="menu-item-label">Dashboard</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
-        <li class="br-menu-item">
-            <a href="{{ route('user.deposit') }}" class="br-menu-link">
-                <i class="menu-item-icon icon ion-arrow-down-c tx-24"></i>
-                <span class="menu-item-label">Deposit</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
-        <li class="br-menu-item">
-            <a href="{{ route('user.withdraw') }}" class="br-menu-link">
-                <i class="menu-item-icon icon ion-arrow-up-b tx-24"></i>
-                <span class="menu-item-label">Withdraw</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+<div id="page-container" class="sidebar-o side-scroll page-header-fixed page-header-dark main-content-boxed">
 
-        <li class="br-menu-item">
-            <a href="#" class="br-menu-link with-sub">
-                <i class="menu-item-icon icon ion-ios-list tx-20"></i>
-                <span class="menu-item-label">Transactions</span>
-            </a><!-- br-menu-link -->
-            <ul class="br-menu-sub">
-                <li class="sub-item"><a href="{{ route('user.depositHistory') }}" class="sub-link">Deposits</a></li>
-                <li class="sub-item"><a href="{{ route('user.withdrawHistory') }}" class="sub-link">Withdrawal</a></li>
-                <li class="sub-item"><a href="{{ route('user.cardHistory') }}" class="sub-link">Cards</a></li>
-            </ul>
-        </li>
 
-        <li class="br-menu-item">
-            <a href="{{ route('user.card') }}" class="br-menu-link">
-                <i class="menu-item-icon icon ion-card tx-22"></i>
-                <span class="menu-item-label">Card</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
-
-        <li class="br-menu-item">
-            <a href="{{ route('user.profile') }}" class="br-menu-link">
-                <i class="menu-item-icon icon ion-person tx-22"></i>
-                <span class="menu-item-label">Profile</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
-        <li class="br-menu-item">
-            <a href="{{ route('user.password') }}" class="br-menu-link">
-                <i class="menu-item-icon icon ion-ios-gear tx-22"></i>
-                <span class="menu-item-label">Security</span>
-            </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
-
-    </ul><!-- br-sideleft-menu -->
-
-    <br>
-</div><!-- br-sideleft -->
-<!-- ########## END: LEFT PANEL ########## -->
-
-<!-- ########## START: HEAD PANEL ########## -->
-<div class="br-header">
-    <div class="br-header-left">
-        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
-        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
-
-    </div><!-- br-header-left -->
-    <div class="br-header-right">
-        <nav class="nav">
-
-            <div class="dropdown">
-                <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-                    <span class="logged-name hidden-md-down">{{ auth()->user()->first_name }}</span>
-                    <img src="https://via.placeholder.com/500" class="wd-32 rounded-circle" alt="">
-                    <span class="square-10 bg-success"></span>
+    <nav id="sidebar" aria-label="Main Navigation" style="background-color: #0a0c15;">
+        <!-- Side Header (mini Sidebar mode) -->
+        <div class="smini-visible-block">
+            <div class="content-header bg-header-dark">
+                <!-- Logo -->
+                <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
+                    D<span class="opacity-75">x</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-header wd-250">
-                    <div class="tx-center">
-                        <a href=""><img src="https://via.placeholder.com/500" class="wd-80 rounded-circle" alt=""></a>
-                        <h6 class="logged-fullname">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</h6>
-                        <p>{{ auth()->user()->email }}</p>
-                    </div>
-                    <hr>
-                    <div class="tx-center">
-                        <span class="profile-earning-label">Avaliable Balance</span>
-                        <h3 class="profile-earning-amount">$@convert(auth()->user()->account->balance)<i class="icon ion-ios-arrow-thin-up tx-success"></i></h3>
-                    </div>
-                    <hr>
-                    <ul class="list-unstyled user-profile-nav">
-                        <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
-                        <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
-                        <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                <!-- END Logo -->
+            </div>
+        </div>
+        <!-- END Side Header (mini Sidebar mode) -->
 
-                                <i class="icon ion-power"></i> {{ __('Sign Out') }}
+        <!-- Side Header (normal Sidebar mode) -->
+        <div class="smini-hidden">
+            <div class="content-header justify-content-lg-center bg-header-dark">
+                <!-- Logo -->
+                <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
+                    NationsStar<span class="opacity-75"> Bank</span>
+                    <span class="fw-normal">PLC</span>
+                </a>
+                <!-- END Logo -->
+
+                <!-- Options -->
+                <div class="d-lg-none">
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                    <!-- END Close Sidebar -->
+                </div>
+                <!-- END Options -->
+            </div>
+        </div>
+        <!-- END Side Header (normal Sidebar mode) -->
+
+        <!-- Sidebar Scrolling -->
+        <div class="js-sidebar-scroll">
+            <!-- Side Actions -->
+            <div class="content-side content-side-full text-center " style="background-color: #0a0c15; color: #8492b1;">
+                <div class="smini-hide">
+                    <img class="img-avatar" src="{{ asset(auth()->user()->avatar ) }}" alt="">
+                    <div class="mt-3 fw-semibold">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</div>
+                    <a class="link-fx text-muted" href="javascript:void(0)">$ @convert(auth()->user()->account->balance)</a>
+                </div>
+            </div>
+            <!-- END Side Actions -->
+
+            <!-- Side Navigation -->
+            <div class="content-side" style="color: #8492b1">
+                <ul class="nav-main">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="{{ route('user.dashboard') }}">
+                            <i class="nav-main-link-icon fa fa-rocket"></i>
+                            <span class="nav-main-link-name">Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-heading">Manage</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-piggy-bank"></i>
+                            <span class="nav-main-link-name">Accounts</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill"></i>
+                            <span class="nav-main-link-name">Transfer</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-file-alt"></i>
+                            <span class="nav-main-link-name">Bank Statement</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-money-check"></i>
+                            <span class="nav-main-link-name">Cards</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Approved</span>
+                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Pending</span>
+                                    <span class="nav-main-link-badge badge rounded-pill bg-warning">1</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Manage</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <i class="nav-main-link-icon fa fa-plus-circle"></i>
+                                    <span class="nav-main-link-name">New Card</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
+                            <span class="nav-main-link-name">Services</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Transfers</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Loans</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Credit</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Bonds</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Stocks</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-heading">Personal</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="">
+                            <i class="nav-main-link-icon fa fa-user-circle"></i>
+                            <span class="nav-main-link-name">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="">
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Messages</span>
+                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="">
+                            <i class="nav-main-link-icon fa fa-cog"></i>
+                            <span class="nav-main-link-name">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="">
+                            <i class="nav-main-link-icon fa fa-lock"></i>
+                            <span class="nav-main-link-name">Security</span>
+                            <span class="nav-main-link-badge badge rounded-pill bg-danger">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-heading">Dashboards</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_pages_dashboard_all.html">
+                            <i class="nav-main-link-icon fa fa-arrow-left"></i>
+                            <span class="nav-main-link-name">Go Back</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Side Navigation -->
+        </div>
+        <!-- END Sidebar Scrolling -->
+    </nav>
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+    <header id="page-header" style="background-color: #0a0c15;">
+        <!-- Header Content -->
+        <div class="content-header">
+            <!-- Left Section -->
+            <div>
+                <!-- Toggle Sidebar -->
+                <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                    <i class="fa fa-fw fa-stream fa-flip-horizontal"></i>
+                </button>
+                <!-- END Toggle Sidebar -->
+
+
+            </div>
+            <!-- END Left Section -->
+
+            <!-- Right Section -->
+            <div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-fw fa-user-circle"></i>
+                        <i class="fa fa-fw fa-angle-down d-none opacity-50 d-sm-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
+                        <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
+                            <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
+                            <div class="pt-2">
+                                <a class="text-white fw-semibold" href="be_pages_generic_profile.html">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</a>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <a class="dropdown-item" href="javascript:void(0)">
+                                <i class="fa fa-fw fa-cog me-1"></i> Settings
                             </a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="op_auth_signin.html">
+                                <i class="fa fa-fw fa-arrow-alt-circle-left me-1"></i> Log Out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END User Dropdown -->
+            </div>
+            <!-- END Right Section -->
+        </div>
+        <!-- END Header Content -->
 
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
-                </div><!-- dropdown-menu -->
-            </div><!-- dropdown -->
-        </nav>
 
-    </div><!-- br-header-right -->
-</div><!-- br-header -->
-<!-- ########## END: HEAD PANEL ########## -->
+        <!-- Header Loader -->
+        <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-primary-dark">
+            <div class="content-header">
+                <div class="w-100 text-center">
+                    <i class="fa fa-fw fa-2x fa-sun fa-spin text-white"></i>
+                </div>
+            </div>
+        </div>
+        <!-- END Header Loader -->
+    </header>
+    <!-- END Header -->
 
-<!-- ########## START: RIGHT PANEL ########## -->
-<div class="br-sideright">
-    <ul class="nav nav-tabs sidebar-tabs" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" role="tab" href="#contacts"><i class="icon ion-ios-contact-outline tx-24"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" role="tab" href="#attachments"><i class="icon ion-ios-folder-outline tx-22"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" role="tab" href="#calendar"><i class="icon ion-ios-calendar-outline tx-24"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" role="tab" href="#settings"><i class="icon ion-ios-gear-outline tx-24"></i></a>
-        </li>
-    </ul><!-- sidebar-tabs -->
+    <!-- Main Container -->
+    @yield('content')
+    <!-- END Main Container -->
 
-    <!-- Tab panes -->
+    <!-- Footer -->
+    <footer id="page-footer" class="bg-body">
+        <div class="content py-0">
+            <div class="row fs-sm">
+                <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
+                    Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                </div>
+                <div class="col-sm-6 order-sm-1 text-center text-sm-start">
+                    <a class="fw-semibold" href="https://1.envato.market/r6y" target="_blank">Dashmix 5.1</a> &copy; <span data-toggle="year-copy"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->
 
-</div><!-- br-sideright -->
-<!-- ########## END: RIGHT PANEL ########## --->
+<!--
+  Dashmix JS
 
-<!-- ########## START: MAIN PANEL ########## -->
-@yield('content')
-<!-- br-mainpanel -->
-<!-- ########## END: MAIN PANEL ########## -->
-
-<script src="{{ asset('../lib/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('../lib/jquery-ui/ui/widgets/datepicker.js') }}"></script>
-<script src="{{ asset('../lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('../lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('../lib/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('../lib/peity/jquery.peity.min.js') }}"></script>
-<script src="{{ asset('../lib/rickshaw/vendor/d3.min.js') }}"></script>
-<script src="{{ asset('../lib/rickshaw/vendor/d3.layout.min.js') }}"></script>
-<script src="{{ asset('../lib/rickshaw/rickshaw.min.js') }}"></script>
-<script src="{{ asset('../lib/jquery.flot/jquery.flot.js') }}"></script>
-<script src="{{ asset('../lib/jquery.flot/jquery.flot.resize.js') }}"></script>
-<script src="{{ asset('../lib/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
-<script src="{{ asset('../lib/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-<script src="{{ asset('../lib/echarts/echarts.min.js') }}"></script>
-<script src="{{ asset('../lib/select2/js/select2.full.min.js') }}"></script>
-{{--<script src="http://maps.google.com/maps/api/js?key=AIzaSyAq8o5-8Y5pudbJMJtDFzb8aHiWJufa5fg"></script>--}}
-
-<script src="{{ asset('../js/bracket.js') }}"></script>
-<script src="{{ asset('../js/map.shiftworker.js') }}"></script>
-<script src="{{ asset('../js/ResizeSensor.js') }}"></script>
-<script src="{{ asset('../js/dashboard.js') }}"></script>
-
-<script src="{{ asset('../lib/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('../lib/datatables.net-dt/js/dataTables.dataTables.min.js') }}"></script>
-<script src="{{ asset('../lib/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js') }}"></script>
-<script>
-    $(function(){
-        'use strict'
-
-        // FOR DEMO ONLY
-        // menu collapsed by default during first page load or refresh with screen
-        // having a size between 992px and 1299px. This is intended on this page only
-        // for better viewing of widgets demo.
-        $(window).resize(function(){
-            minimizeMenu();
-        });
-
-        minimizeMenu();
-
-        function minimizeMenu() {
-            if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
-                // show only the icons and hide left menu label by default
-                $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
-                $('body').addClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideUp();
-            } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
-                $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
-                $('body').removeClass('collapsed-menu');
-                $('.show-sub + .br-menu-sub').slideDown();
-            }
-        }
-    });
-</script>
-
-<script>
-    $(function(){
-        'use strict';
-
-        $('#datatable1').DataTable({
-            responsive: true,
-            language: {
-                searchPlaceholder: 'Search...',
-                sSearch: '',
-                lengthMenu: '_MENU_ items/page',
-            }
-        });
-
-        $('#datatable2').DataTable({
-            bLengthChange: false,
-            searching: false,
-            responsive: true
-        });
-
-        // Select2
-        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
-
-    });
-</script>
+  Core libraries and functionality
+  webpack is putting everything together at assets/_js/main/app.js
+-->
+<script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
 </body>
 </html>

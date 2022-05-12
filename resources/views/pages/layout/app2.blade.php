@@ -141,9 +141,6 @@
                             <h3><a href="Credit-Cards">Credit Cards</a></h3>
                             <hr />
                             <h3><a href="Mortgages">Mortgages</a></h3>
-                            <ul>
-                                <li><a href="https://prosperitybankhomeloans.com/calculators/">Loan Payment Calculator</a></li>
-                            </ul>
                             <hr />
                             <h3><a href="Personal-Loans">Personal Loans</a></h3>
 
@@ -166,8 +163,8 @@
                             <ul>
                                 <li><a href="Compare-Business-Checking-Accounts">Compare Accounts</a></li>
                                 <li><a href="Small-Business-Checking">Small Business Checking</a></li>
+                                <li><a href="Business-Analysis-Checking">Small Business Checking</a></li>
                                 <li><a href="Small-Business-Checking-with-Interest">Small Business Checking with Interest</a></li>
-                                <li><a href="Business-Analysis-Checking">Business Analysis Checking</a></li>
                                 <li><a href="Business-Analysis-Checking-with-Interest">Business Analysis Checking with Interest</a></li>
                             </ul>
                             <ul>
@@ -183,55 +180,9 @@
                                 <li><a href="Prosperity-Business-Savings">Prosperity Business Savings</a></li>
                                 <li><a href="Compare-Business-Savings-Accounts">Compare Business Savings Accounts</a></li>
                             </ul>
-                            <h3><a href="Business-Investing">Investing</a></h3>
-                            <ul>
-                                <li><a href="Business-CDs">CDs</a></li>
-                                <li><a href="Business-IRAs">IRAs</a></li>
-                            </ul>
-
-                            <hr />
-                            <h3><a href="ISO-Sponsorship">ISO Sponsorship</a></h3>
-
-                        </div>
-                        <div>
-                            <h3><a href="Business-Credit-Card">Business Credit Card</a></h3>
-                            <hr />
-                            <h3><a href="Business-Loans">Business Loans</a></h3>
-                            <ul>
-                                <li><a href="Commercial-Loans">Commercial Loans</a></li>
-                                <li><a href="SBA-Loans">SBA Loans</a></li>
-                                <li><a href="Business-Lines-of-Credit">Business Lines of Credit</a></li>
-                                <li><a href="Real-Estate-Loans">Real Estate Loans</a></li>
-                                <li><a href="Construction-Loans">Construction Loans</a></li>
-                                <li><a href="Aircraft-and-Boat-Loans">Aircraft and Boat Loans</a></li>
-
-
-                            </ul>
-                            <hr />
-                            <h3><a href="Mortgage-Warehouse-Lending">Mortgage Warehouse Lending</a></h3>
-
                         </div>
 
-                        <div>
-                            <h3><a href="Treasury-Management">Treasury Management</a></h3>
-                            <ul>
-                                <li><a href="Public-Fund-Services">Public Fund Services</a></li>
-                                <li><a href="Merchant-Services">Merchant Services</a></li>
-                            </ul>
-                            <hr />
-                            <h3><a href="Medical-Professionals">Medical Professionals</a></h3>
-                            <ul>
-                                <li><a href="Physician-Banking">Physician Banking</a></li>
-                                <li><a href="Medical-Practice-Loans-and-Lines">Medical Practice Loans & Lines</a></li>
-                                <li><a href="Medical-Investment-Loans">Medical Investment Loans</a></li>
-                                <li><a href="Medical-Office-Building-Loans">Medical Office Building Loans</a></li>
-                                <li><a href="Medical-Lockbox">Lockbox</a></li>
-                            </ul>
-                        </div>
-                        <div class="promo"><h3><a href="https://www.prosperitybankusa.com/Zelle">Zelle<sup>&reg;</sup>&nbsp;Now Available</a></h3>
-                            <p><a href="https://www.prosperitybankusa.com/Zelle"><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169600" alt="Zelle_Small Promo Img_Skaters" border="0" /></a></p>
-                            <p>&nbsp;</p>
-                        </div>
+                        
                     </div>
                 </li>
                 <li tabindex="0">
@@ -269,7 +220,6 @@
                     <div>
                         <div>
                             <ul>
-                                <li><a href="Debit-Card">Mastercard Debit Cards</a></li>
                                 <li><a href="Mobile-Deposits">Mobile Deposit</a></li>
                             </ul>
                             <ul>
@@ -285,19 +235,7 @@
                                 <li><a href="Online-Check-Order">Online Check Order</a></li>
                                 <li><a href="Overdraft-Protection">Overdraft Protection</a></li>
                                 <li><a href="eStatements">eStatements</a></li>
-                                <li><a href="Fastline-Telephone-Banking">FastLine Telephone Banking</a></li>
                             </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><a href="Travel-Message">Travel Message</a></li>
-                                <li><a href="Lock-Box-Services">Lock Box Services</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="Travel-Club">Travel Club</a></li>
-                                <li><a href="LIBOR-Transition">LIBOR Transition</a></li>
-                            </ul>
-
                         </div>
                         <div>
                             <h3><a href="Wealth-Management-and-Trust-Services">Wealth Management &amp; Trust Services</a></h3>
@@ -306,10 +244,7 @@
                             <hr />
 
                         </div>
-                        <div class="promo"><h3><a href="https://www.prosperitybankusa.com/Zelle">Zelle<sup>&reg;</sup>&nbsp;Now Available</a></h3>
-                            <p><a href="https://www.prosperitybankusa.com/Zelle"><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169600" alt="Zelle_Small Promo Img_Skaters" border="0" /></a></p>
-                            <p>&nbsp;</p>
-                        </div>
+
                     </div>
                 </li>
                 <li>

@@ -7,7 +7,8 @@
         <!-- cms content here --><table class="Table-Slide">
             <tbody><tr>
                 <td valign="top"><p><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169595" alt="Zelle_Girl with dog 2" width="932" height="244" border="0"></p>
-                    <h2>Zelle<sup><span style="font-size: 12pt;">®</span></sup> Now Available</h2><p><a href="https://www.prosperitybankusa.com/Zelle" class="Button1" target="_blank">LEARN MORE</a><span style="font-size: 16.2457px;"></span>  </p></td>
+                    <h2>Zelle<sup><span style="font-size: 12pt;">®</span></sup> Now Available</h2><p>
+                        <span style="font-size: 16.2457px;"></span>  </p></td>
             </tr></tbody>
         </table><table class="Table-Slide">
             <tbody><tr>

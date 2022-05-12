@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
         "nexmo/client": "^2.4",
+        "smsfactor/smsfactor-laravel": "^1.1",
         "spatie/laravel-medialibrary": "^7.0.0"
     },
     "require-dev": {
