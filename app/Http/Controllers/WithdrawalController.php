@@ -15,7 +15,7 @@ class WithdrawalController extends Controller
     //
     public function withdraw()
     {
-        return view('dashboard.withdraw');
+        return view('dashboard.transfer');
     }
 
     public function withdrawHistory()
