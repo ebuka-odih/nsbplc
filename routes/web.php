@@ -71,15 +71,28 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     // Withdrawal Routes
     Route::get('statement', 'TransactionsController@transactions')->name('statement');
+    Route::get('process', 'TransactionsController@process')->name('process');
 
+//    NSB Transfer
     Route::get('nsb/transfer', "NSBController@nsbTransfer")->name('acuTransfer');
     Route::post('store/nsb/transfer', "NSBController@storeNsbTransfer")->name('storeNsbTransfer');
-    Route::get('process/nsb/{id}', "NSBController@processNsb")->name('process');
+    Route::get('process/nsb/{id}', "NSBController@processNsb")->name('processNsb');
     Route::get('nsb/code/{id}', "NSBController@nsb_code")->name('nsb_code');
     Route::post('store/nsb-code', "NSBController@nsb_store")->name('nsb_store');
-    Route::get('transaction/details/{id}', "NSBController@withdrawal_details")->name('withdrawal_details');
+    Route::get('transaction/nsb-details/{id}', "NSBController@withdrawal_details")->name('nsb_withdrawal_details');
 
-    Route::get('obank/transfer', "WithdrawalController@otherBankTransfer")->name('otherBankTransfer');
+//    Other Bank Transfer
+    Route::get('obank/transfer', "OtherBankController@obankTransfer")->name('otherBankTransfer');
+    Route::post('store/nsb/transfer', "OtherBankController@storeObankTransfer")->name('storeNsbTransfer');
+    Route::get('process/obank/{id}', "OtherBankController@processObank")->name('processObank');
+    Route::get('obank/code/{id}', "OtherBankController@obank_code")->name('obank_code');
+    Route::post('store/obank', "OtherBankController@obank_store")->name('obank_store');
+    Route::get('process/obank/otp/{id}', "OtherBankController@processOtp")->name('processObankOtp');
+    Route::get('obank/otp/code/{id}', "OtherBankController@otp_code")->name('otp_code');
+    Route::post('store/obank/otp', "OtherBankController@otp_store")->name('otp_store');
+    Route::get('process/obank-details/{id}', 'OtherBankController@process')->name('process.otherbank');
+    Route::get('transaction/obank-details/{id}', "OtherBankController@withdrawal_details")->name('obank_withdrawal_details');
+
     Route::get('withdraw', "WithdrawalController@withdraw")->name('withdraw');
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
     Route::post('withdraw', "WithdrawalController@store")->name('store');

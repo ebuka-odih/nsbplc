@@ -13,19 +13,19 @@
                 <div class="row text-center">
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-dark mb-1">
-                            $49.680
+                            $@convert(auth()->user()->account->balance)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Balance</a>
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-success mb-1">
-                            +$780
+                            +$@convert($credit)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Income Today</a>
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-danger mb-1">
-                            -$49
+                            -$@convert($debit)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Expenses Today</a>
                     </div>
@@ -137,9 +137,10 @@
         </h2>
 
         @forelse($transactions as $item)
+            @if($item->nsb_transfer == 1)
             @if($item->status == 1)
                 @if($item->from == optional(auth()->user()->account)->account_number)
-                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="javascript:void(0)">
+                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.nsb_withdrawal_details', $item->id) }}">
                         <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                             <div>
@@ -162,7 +163,7 @@
                         </div>
                     </a>
                 @else
-                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="javascript:void(0)">
+                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.nsb_withdrawal_details', $item->id) }}">
                         <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                         <div>
@@ -187,7 +188,7 @@
                 @endif
             @else
                 @if($item->from == optional(auth()->user()->account)->account_number)
-                    <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="javascript:void(0)">
+                    <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="{{ route('user.nsb_withdrawal_details', $item->id) }}">
                         <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                         <div>
@@ -209,8 +210,9 @@
                             <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-warning">Pending</strong></span>
                         </div>
                     </a>
+
                 @else
-                    <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.withdrawal_details', $item->id) }}">
+                    <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.nsb_withdrawal_details', $item->id) }}">
                         <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                             <div>
                                 <p class="fs-lg fw-semibold mb-0">
@@ -233,6 +235,108 @@
                     </a>
                 @endif
 
+            @endif
+            @elseif($item->obank_transfer == 1)
+                @if($item->status == 1)
+                    @if($item->from == optional(auth()->user()->account)->account_number)
+                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                                <div>
+                                    <p class="fs-lg fw-semibold mb-0">
+                                        -$@convert($item->amount)
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                    </p>
+                                </div>
+                                <div class="ms-3">
+                                    <i class="fa fa-arrow-right text-success"></i>
+                                </div>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="fs-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong> {{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-success">Successful</strong></span>
+                            </div>
+                        </a>
+                    @else
+                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                                <div>
+                                    <p class="fs-lg fw-semibold mb-0">
+                                        +$@convert($item->amount)
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                    </p>
+                                </div>
+                                <div class="ml-3">
+                                    <i class="fa fa-arrow-left text-success"></i>
+                                </div>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-success">Successful</strong></span>
+                            </div>
+                        </a>
+                    @endif
+                @else
+                    @if($item->from == optional(auth()->user()->account)->account_number)
+                        <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                                <div>
+                                    <p class="fs-lg fw-semibold mb-0">
+                                        -$@convert($item->amount)
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                    </p>
+                                </div>
+                                <div class="ml-3">
+                                    <i class="fa fa-arrow-right text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-warning">Pending</strong></span>
+                            </div>
+                        </a>
+
+                    @else
+                        <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.withdrawal_details', $item->id) }}">
+                            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                                <div>
+                                    <p class="fs-lg fw-semibold mb-0">
+                                        +$@convert($item->amount)
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                    </p>
+                                </div>
+                                <div class="ml-3">
+                                    <i class="fa fa-arrow-left text-success"></i>
+                                </div>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                            </div>
+                            <div class="block-content block-content-full block-content-sm bg-body-light">
+                                <span class="font-size-sm text-muted">Status <strong class="badge badge-danger">Pending</strong></span>
+                            </div>
+                        </a>
+                    @endif
+
+                @endif
+            @elseif($item->fcurrency_transfer == 1)
+            @elseif($item->wire_transfer == 1)
             @endif
 
             <!-- END Latest Transactions -->

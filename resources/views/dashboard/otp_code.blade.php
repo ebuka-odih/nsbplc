@@ -13,7 +13,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('user.acuTransfer') }}">Transfer</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Transfer NSB Code</li>
+                            <li class="breadcrumb-item active" aria-current="page">Transfer OTP Code</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,7 +28,7 @@
             <!-- Layouts -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">NSB Code</h3>
+                    <h3 class="block-title">OTP Code</h3>
                 </div>
                 <div class="block-content">
 
@@ -55,13 +55,13 @@
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.nsb_store') }}" method="POST">
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.otp_store') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="withdrawal_id" value="{{ $with_dt->id }}">
 
                                 <div class="col-lg-12">
-                                    <label for="example-ltf-text">NSB Code <span class="text-danger">*</span></label>
-                                    <input required="" type="text" class="form-control form-control-lg" id="example-if-password" name="nsb_code" placeholder="000111">
+                                    <label for="example-ltf-text">OTP Code <span class="text-danger">*</span></label>
+                                    <input required="" type="text" class="form-control form-control-lg" id="example-if-password" name="otp" placeholder="000111">
                                 </div>
                                 <div class="col-lg-12">
                                     <p>Request for an NSB Code <a target="_blank" href="mailto:support@nsbplc.com">support@nsbplc.com</a></p>

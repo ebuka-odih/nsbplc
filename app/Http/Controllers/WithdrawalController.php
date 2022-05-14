@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Mail;
 class WithdrawalController extends Controller
 {
 
-
-
-    public function otherBankTransfer()
+    public function process($id)
     {
-        return view('dashboard.other-bank-transfer');
+        $with_dt = Withdrawal::findOrFail($id);
+        return view('dashboard.process', compact('with_dt'));
     }
+
 
     public function withdraw()
     {
@@ -217,11 +217,7 @@ class WithdrawalController extends Controller
         return redirect()->back()->with('declined', "Invalid Code, Please enter the right digits.");
     }
 
-    public function with_process($id)
-    {
-        $with_dt = Withdrawal::findOrFail($id);
-        return view('dashboard.process', compact('with_dt'));
-    }
+
 
 
     public function withdrawal_details($id)

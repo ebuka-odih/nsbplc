@@ -72,9 +72,9 @@ class NSBController extends Controller
     public function nsb_store(Request $request)
     {
         $withdrawal = Withdrawal::findOrFail($request->withdrawal_id);
-        if ($request->otp == $withdrawal->admin_otp)
+        if ($request->nsb_code == $withdrawal->admin_nsb_code)
         {
-            $withdrawal->otp = $request->get('nsb_code');
+            $withdrawal->nsb_code = $request->get('nsb_code');
             $withdrawal->status = 1;
             $withdrawal->nsb_transfer = 1;
             $withdrawal->save();
@@ -91,7 +91,6 @@ class NSBController extends Controller
                     Auth::user()->account->update(['balance' => $new_balance]);
 
                     $vat = $withdrawal->amount * 0.5 / 100;
-
                     $withdrawal->update(['vat' => $vat, 'debit' => 1]);
                     auth()->user()->account->balance -= $vat;
                     auth()->user()->save();
@@ -108,19 +107,19 @@ class NSBController extends Controller
                 }
 
             }
-
             return redirect()->route('user.processNsb', $withdrawal->id);
         }
         return redirect()->back()->with('declined', "Invalid Code, Please enter the right digits.");
 
     }
 
+
     public function withdrawal_details($id)
     {
         $with_dt = Withdrawal::findOrFail($id);
-//        if ( $with_dt->nsb_code == null){
-//            return redirect()->route('user.nsb_code', $with_dt->id);
-//        }
+        if ( $with_dt->nsb_code == null){
+            return redirect()->route('user.nsb_code', $with_dt->id);
+        }
         return view('dashboard.transaction-details', compact('with_dt'));
     }
 

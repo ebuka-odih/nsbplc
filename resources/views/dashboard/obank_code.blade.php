@@ -35,28 +35,31 @@
                     <div class="row">
 
                         <div class="col-lg-10 offset-lg-1">
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            @if(session()->has('declined'))
-                                <div class="alert alert-danger">
-                                    {{ session()->get('declined') }}
-                                </div>
-                            @endif
 
                         </div>
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.nsb_store') }}" method="POST">
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.obank_store') }}" method="POST">
                                 @csrf
+                                <div class="col-lg-10 offset-lg-1">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+                                    @if(session()->has('declined'))
+                                        <div class="alert alert-danger">
+                                            {{ session()->get('declined') }}
+                                        </div>
+                                    @endif
+
+                                </div>
                                 <input type="hidden" name="withdrawal_id" value="{{ $with_dt->id }}">
 
                                 <div class="col-lg-12">

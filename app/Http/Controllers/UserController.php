@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Rules\MatchOldPassword;
 use App\User;
 use App\Withdrawal;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,8 +16,8 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        $credit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('acct_number', '=', Auth::user()->account->account_number)->where('status', '=', 1)->sum('amount');
-        $debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('from', '=', Auth::user()->account->account_number)->where('status', '=', 1)->sum('amount');
+        $credit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('acct_number', '=', Auth::user()->account->account_number)->where('status', '=', 1)->whereDate('created_at', Carbon::today())->sum('amount');
+        $debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('from', '=', Auth::user()->account->account_number)->where('status', '=', 1)->whereDate('created_at', Carbon::today())->sum('amount');
 
         $pending_debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('debit', '=', 1)->where('status', '=', 0)->sum('amount');
 
