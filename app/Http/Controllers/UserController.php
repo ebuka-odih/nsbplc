@@ -20,9 +20,9 @@ class UserController extends Controller
 
         $pending_debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('debit', '=', 1)->where('status', '=', 0)->sum('amount');
 
-        $withdrawal = Withdrawal::whereUserId(auth()->id())->paginate(4);
+        $transactions = Withdrawal::whereUserId(auth()->id())->paginate(4);
         $total_trans = Withdrawal::whereUserId(auth()->id())->get()->count();
-        return view('dashboard.index', compact('debit', 'total_trans', 'withdrawal', 'pending_debit', 'credit'));
+        return view('dashboard.index', compact('debit', 'total_trans', 'transactions', 'pending_debit', 'credit'));
     }
 
     public function profile()

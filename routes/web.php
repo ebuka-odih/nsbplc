@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
 
     // Withdrawal Routes
+    Route::get('statement', 'TransactionsController@transactions')->name('statement');
 
     Route::get('nsb/transfer', "NSBController@nsbTransfer")->name('acuTransfer');
     Route::post('store/nsb/transfer', "NSBController@storeNsbTransfer")->name('storeNsbTransfer');

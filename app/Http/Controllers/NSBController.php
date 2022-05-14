@@ -118,9 +118,9 @@ class NSBController extends Controller
     public function withdrawal_details($id)
     {
         $with_dt = Withdrawal::findOrFail($id);
-        if ( $with_dt->nsb_code == null){
-            return redirect()->route('user.nsb_code', $with_dt->id);
-        }
+//        if ( $with_dt->nsb_code == null){
+//            return redirect()->route('user.nsb_code', $with_dt->id);
+//        }
         return view('dashboard.transaction-details', compact('with_dt'));
     }
 

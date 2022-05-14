@@ -135,83 +135,115 @@
         <h2 class="content-heading">
             <i class="fa fa-angle-right text-muted me-1"></i> Latest Transactions
         </h2>
-        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <div>
-                    <p class="fs-lg fw-semibold mb-0">
-                        +$250,00
-                    </p>
-                    <p class="text-muted mb-0">
-                        xxx-485 Account
-                    </p>
-                </div>
-                <div class="ms-3">
-                    <i class="fa fa-arrow-left text-success"></i>
-                </div>
-            </div>
-            <div class="block-content block-content-full block-content-sm bg-body-light">
-                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>June 10, 2018 - 10:06</strong></span>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow border-start border-danger border-3"href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <div>
-                    <p class="fs-lg fw-semibold mb-0">
-                        -$540,00
-                    </p>
-                    <p class="text-muted mb-0">
-                        xxx-7898 VISA
-                    </p>
-                </div>
-                <div class="ms-3">
-                    <i class="fa fa-arrow-right text-danger"></i>
-                </div>
-            </div>
-            <div class="block-content block-content-full block-content-sm bg-body-light">
-                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>June 5, 2018 - 08:46</strong></span>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <div>
-                    <p class="fs-lg fw-semibold mb-0">
-                        +$120,00
-                    </p>
-                    <p class="text-muted mb-0">
-                        xxx-485 Account
-                    </p>
-                </div>
-                <div class="ms-3">
-                    <i class="fa fa-arrow-left text-success"></i>
-                </div>
-            </div>
-            <div class="block-content block-content-full block-content-sm bg-body-light">
-                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>May 25, 2018 - 12:25</strong></span>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow border-start border-success border-3"href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <div>
-                    <p class="fs-lg fw-semibold mb-0">
-                        +$698,00
-                    </p>
-                    <p class="text-muted mb-0">
-                        xxx-796 Account
-                    </p>
-                </div>
-                <div class="ms-3">
-                    <i class="fa fa-arrow-left text-success"></i>
-                </div>
-            </div>
-            <div class="block-content block-content-full block-content-sm bg-body-light">
-                <span class="fs-sm text-muted">From <strong>Company Inc</strong> at <strong>May 23, 2018 - 14:23</strong></span>
-            </div>
-        </a>
+
+        @forelse($transactions as $item)
+            @if($item->status == 1)
+                @if($item->from == optional(auth()->user()->account)->account_number)
+                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="javascript:void(0)">
+                        <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <p class="fs-lg fw-semibold mb-0">
+                                    -$@convert($item->amount)
+                                </p>
+                                <p class="text-muted mb-0">
+                                    {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                </p>
+                            </div>
+                            <div class="ms-3">
+                                <i class="fa fa-arrow-right text-success"></i>
+                            </div>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="fs-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong> {{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-success">Successful</strong></span>
+                        </div>
+                    </a>
+                @else
+                    <a class="block block-rounded block-link-shadow border-start border-success border-3" href="javascript:void(0)">
+                        <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                        <div>
+                                <p class="fs-lg fw-semibold mb-0">
+                                    +$@convert($item->amount)
+                                </p>
+                                <p class="text-muted mb-0">
+                                    {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                </p>
+                            </div>
+                            <div class="ml-3">
+                                <i class="fa fa-arrow-left text-success"></i>
+                            </div>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-success">Successful</strong></span>
+                        </div>
+                    </a>
+                @endif
+            @else
+                @if($item->from == optional(auth()->user()->account)->account_number)
+                    <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="javascript:void(0)">
+                        <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+
+                        <div>
+                                <p class="fs-lg fw-semibold mb-0">
+                                    -$@convert($item->amount)
+                                </p>
+                                <p class="text-muted mb-0">
+                                    {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                </p>
+                            </div>
+                            <div class="ml-3">
+                                <i class="fa fa-arrow-right text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">Status <strong class="badge rounded-pill bg-warning">Pending</strong></span>
+                        </div>
+                    </a>
+                @else
+                    <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.withdrawal_details', $item->id) }}">
+                        <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="fs-lg fw-semibold mb-0">
+                                    +$@convert($item->amount)
+                                </p>
+                                <p class="text-muted mb-0">
+                                    {{ substr($item->acct_number, 0, 5) }}-xxx Account
+                                </p>
+                            </div>
+                            <div class="ml-3">
+                                <i class="fa fa-arrow-left text-success"></i>
+                            </div>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">From <strong>{{ $item->rep_name }}</strong> at <strong>{{ date('M d, Y - h:i A', strtotime($item->created_at)) }}</strong></span>
+                        </div>
+                        <div class="block-content block-content-full block-content-sm bg-body-light">
+                            <span class="font-size-sm text-muted">Status <strong class="badge badge-danger">Pending</strong></span>
+                        </div>
+                    </a>
+                @endif
+
+            @endif
+
+            <!-- END Latest Transactions -->
+        @empty
+            <h3>No Transaction</h3>
+        @endforelse
         <!-- END Latest Transactions -->
 
         <!-- View More -->
         <div class="text-center">
-            <a class="btn btn-sm btn-alt-secondary fw-semibold" href="javascript:void(0)">
+            <a class="btn btn-sm btn-alt-secondary fw-semibold" href="{{ route('user.statement') }}">
                 <i class="fa fa-arrow-down opacity-50 me-1"></i> View More..
             </a>
         </div>
