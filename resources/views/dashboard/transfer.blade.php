@@ -23,12 +23,12 @@
         <!-- Page Content -->
         <div class="content">
             <div class="row">
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     <!-- Card #1 -->
                     <a class="block block-rounded block-link-shadow" href="javascript:void(0)" style="background-color: #0a0c15; color: #8492b1;">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-university fa-4x text-gray"></i>
+                                <i class="fa fa-university fa-3x text-gray"></i>
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
                                     ACU Transfer
                                 </h4>
@@ -37,36 +37,55 @@
                     </a>
                     <!-- END Card #1 -->
                 </div>
-                <div class="col-xl-4">
-                    <!-- Card #2 -->
+
+                <div class="col-xl-3">
+                    <!-- Card #1 -->
                     <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-credit-card fa-4x text-gray"></i>
-                                <p class="fs-lg text-dark mt-3 mb-0">
-                                    Example LTD
-                                </p>
+                                <i class="fa fa-exchange-alt fa-3x text-gray"></i>
+{{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
+                                <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
+                                    Other Bank Transfer
+                                </h4>
                             </div>
                         </div>
-
                     </a>
-                    <!-- END Card #2 -->
+                    <!-- END Card #1 -->
                 </div>
-                <div class="col-xl-4">
-                    <!-- Card #3 -->
+
+                <div class="col-xl-3">
+                    <!-- Card #1 -->
                     <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-credit-card fa-4x text-gray"></i>
-                                <p class="fs-lg text-dark mt-3 mb-0">
-                                    Henry Harrison
-                                </p>
+                                <i class="fa fa-money-check-alt fa-3x text-gray"></i>
+                                {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
+                                <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
+                                    Foreign Currency
+                                </h4>
                             </div>
                         </div>
-
                     </a>
-                    <!-- END Card #3 -->
+                    <!-- END Card #1 -->
                 </div>
+
+                <div class="col-xl-3">
+                    <!-- Card #1 -->
+                    <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                        <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
+                            <div class="py-3 text-center">
+                                <i class="fa fa-wifi fa-3x text-gray"></i>
+                                {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
+                                <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
+                                    Wire Transfer
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- END Card #1 -->
+                </div>
+
             </div>
 
             <!-- Layouts -->

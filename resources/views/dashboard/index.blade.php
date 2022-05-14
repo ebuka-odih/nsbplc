@@ -32,33 +32,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Bank Account #2 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fs-lg fw-semibold mb-0">
+                                {{ auth()->user()->account->account_number }}
+                            </p>
+                            <p class="text-muted mb-0">
+                                Account Number
+                            </p>
+                        </div>
+                        <div class="ms-3">
+                            <i class="fa fa-wallet fa-2x text-gray"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- END Bank Account #2 -->
+            </div>
+            <div class="col-lg-6">
+                <!-- Bank Account #1 -->
+                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fs-lg fw-semibold mb-0">
+                                {{ auth()->user()->account_type }}
+                            </p>
+                            <p class="text-muted mb-0">
+                               Account Type
+                            </p>
+                        </div>
+                        <div class="ms-3">
+                            <i class="fa fa-piggy-bank fa-2x text-gray"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- END Bank Account #1 -->
+            </div>
+
+        </div>
         <!-- END Quick Overview -->
 
         <!-- Cards -->
         <h2 class="content-heading">
-            <i class="fa fa-angle-right text-muted me-1"></i> Cards (3)
+            <i class="fa fa-angle-right text-muted me-1"></i> Transactions Overview
         </h2>
         <div class="row">
             <div class="col-xl-4">
                 <!-- Card #1 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">$2.000,00</div>
+                        <div class="ribbon-box">1</div>
                         <div class="py-3 text-center">
-                            <i class="fa fa-credit-card fa-4x text-gray"></i>
-                            <p class="fs-lg text-dark mt-3 mb-0">
-                                Henry Harrison
-                            </p>
-                            <p class="text-muted mb-3">
-                                4309-xxxx-xxxx-7898
-                            </p>
+                            <i class="fa fa-arrow-alt-circle-down fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
-                                VISA
+                                Deposits
                             </p>
                         </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
-                        <span class="fs-sm text-muted">Active through May 2025</span>
                     </div>
                 </a>
                 <!-- END Card #1 -->
@@ -67,46 +100,29 @@
                 <!-- Card #2 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">$3.500,00</div>
+                        <div class="ribbon-box">2</div>
                         <div class="py-3 text-center">
-                            <i class="fa fa-credit-card fa-4x text-gray"></i>
-                            <p class="fs-lg text-dark mt-3 mb-0">
-                                Example LTD
-                            </p>
-                            <p class="text-muted mb-3">
-                                9852-xxxx-xxxx-9852
-                            </p>
+                            <i class="fa fa-exchange-alt fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
-                                AMERICAN EXPRESS
+                                Transfers
                             </p>
                         </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
-                        <span class="fs-sm text-muted">Active through October 2028</span>
                     </div>
                 </a>
                 <!-- END Card #2 -->
             </div>
+
             <div class="col-xl-4">
                 <!-- Card #3 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">$5.000,00</div>
+                        <div class="ribbon-box">3</div>
                         <div class="py-3 text-center">
-                            <i class="fa fa-credit-card fa-4x text-gray"></i>
-                            <p class="fs-lg text-dark mt-3 mb-0">
-                                Henry Harrison
-                            </p>
-                            <p class="text-muted mb-3">
-                                1020-xxxx-xxxx-6981
-                            </p>
+                            <i class="fa fa-money-check-alt fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
-                                MasterClub
+                                Loan
                             </p>
                         </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
-                        <span class="fs-sm text-muted">Active through July 2027</span>
                     </div>
                 </a>
                 <!-- END Card #3 -->
@@ -114,57 +130,6 @@
         </div>
         <!-- END Cards -->
 
-        <!-- Bank Accounts -->
-        <h2 class="content-heading">
-            <i class="fa fa-angle-right text-muted me-1"></i> Bank Accounts (2)
-        </h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <!-- Bank Account #1 -->
-                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div>
-                            <p class="fs-lg fw-semibold mb-0">
-                                US 632-9854-<span class="text-default">485</span>
-                            </p>
-                            <p class="text-muted mb-0">
-                                $8.982,00
-                            </p>
-                        </div>
-                        <div class="ms-3">
-                            <i class="fa fa-piggy-bank fa-2x text-gray"></i>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
-                        <span class="fs-sm text-muted">$1.200,00 in monthly charges</span>
-                    </div>
-                </a>
-                <!-- END Bank Account #1 -->
-            </div>
-            <div class="col-lg-6">
-                <!-- Bank Account #2 -->
-                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div>
-                            <p class="fs-lg fw-semibold mb-0">
-                                US 632-5525-<span class="text-default">796</span>
-                            </p>
-                            <p class="text-muted mb-0">
-                                $40.698,00
-                            </p>
-                        </div>
-                        <div class="ms-3">
-                            <i class="fa fa-piggy-bank fa-2x text-gray"></i>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm text-center bg-body-light">
-                        <span class="fs-sm text-muted">$2.350,00 in monthly charges</span>
-                    </div>
-                </a>
-                <!-- END Bank Account #2 -->
-            </div>
-        </div>
-        <!-- END Bank Accounts -->
 
         <!-- Latest Transactions -->
         <h2 class="content-heading">
