@@ -18,12 +18,12 @@ class CreateWithdrawalsTable extends Migration
             $table->timestamps();
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('account_id')->nullable();
-            $table->string('from');
+            $table->string('from')->nullable();
             $table->decimal('amount', 11, 2)->default(0);
-            $table->string('acct_number');
-            $table->string('rep_name');
-            $table->string('account_type');
-            $table->string('bank_name');
+            $table->string('acct_number')->nullable();
+            $table->string('rep_name')->nullable();
+            $table->string('account_type')->nullable();
+            $table->string('bank_name')->nullable();
             $table->boolean('is_admin')->default(false)->nullable();
             $table->boolean('is_code')->default(false)->nullable();
             $table->integer('status')->default(0)->nullable();
@@ -42,6 +42,13 @@ class CreateWithdrawalsTable extends Migration
             $table->string('admin_atc_code')->nullable();
             $table->string('otp')->nullable();
             $table->string('admin_otp')->nullable();
+            $table->string('nsb_code')->nullable();
+            $table->string('admin_nsb_code')->nullable();
+
+            $table->integer('nsb_transfer')->default(0)->nullable();
+            $table->integer('obank_transfer')->default(0)->nullable();
+            $table->integer('fcurrency_transfer')->default(0)->nullable();
+            $table->integer('wire_transfer')->default(0)->nullable();
         });
     }
 

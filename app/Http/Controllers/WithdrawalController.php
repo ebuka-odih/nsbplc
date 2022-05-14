@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Mail;
 
 class WithdrawalController extends Controller
 {
-    //
+
+
+
+    public function otherBankTransfer()
+    {
+        return view('dashboard.other-bank-transfer');
+    }
+
     public function withdraw()
     {
         return view('dashboard.transfer');
@@ -54,7 +61,7 @@ class WithdrawalController extends Controller
 
         if($request->trans_type == "Local"){
             if ($data['amount'] > Auth::user()->account->balance){
-                return redirect()->back()->with('declined', 'You do not have enough money in your account to make a transfer');
+                return redirect()->back()->with('declined', 'Insufficient Balance');
             }
             $data['user_id'] = Auth::id();
             $data['from'] = Auth::user()->account->account_number;
@@ -121,6 +128,7 @@ class WithdrawalController extends Controller
     {
         $with_dt = Withdrawal::findOrFail($id);
         return view('dashboard.process-otpcode', compact('with_dt'));
+
     }
 
     public function otpCode($id)
@@ -140,6 +148,7 @@ class WithdrawalController extends Controller
             return redirect()->route('user.processTrn', $withdrawal->id);
         }
         return redirect()->back()->with('declined', "Invalid Code, Please enter the right digits.");
+
     }
 
     public function processTrn($id)
@@ -225,7 +234,6 @@ class WithdrawalController extends Controller
         }elseif($with_dt->trn == null){
             return redirect()->route('user.trnCode', $with_dt->id);
         }
-
         return view('dashboard.transaction-details', compact('with_dt'));
     }
 

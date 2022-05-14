@@ -70,6 +70,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
 
     // Withdrawal Routes
+
+    Route::get('nsb/transfer', "NSBController@nsbTransfer")->name('acuTransfer');
+    Route::post('store/nsb/transfer', "NSBController@storeNsbTransfer")->name('storeNsbTransfer');
+    Route::get('process/nsb/{id}', "NSBController@processNsb")->name('process');
+    Route::get('nsb/code/{id}', "NSBController@nsb_code")->name('nsb_code');
+    Route::post('store/nsb-code', "NSBController@nsb_store")->name('nsb_store');
+    Route::get('transaction/details/{id}', "NSBController@withdrawal_details")->name('withdrawal_details');
+
+    Route::get('obank/transfer', "WithdrawalController@otherBankTransfer")->name('otherBankTransfer');
     Route::get('withdraw', "WithdrawalController@withdraw")->name('withdraw');
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
     Route::post('withdraw', "WithdrawalController@store")->name('store');

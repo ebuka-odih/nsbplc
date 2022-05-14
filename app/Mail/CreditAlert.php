@@ -37,7 +37,7 @@ class CreditAlert extends Mailable
 
         return $this->from('noreply@nsbplc.com', "NationsStar Bank Plc")
             ->subject('NationsStar Bank Plc')
-            ->markdown('emails.credit_alert')
+            ->markdown('emails.credit-alert')
             ->with(['credit_data' => $credit_data, 'first_name' => $first_name,
                 'last_name' => $last_name, 'acct_number' => $acct_number, 'rep_name' => $rep_name,
                 'bank_name' => $bank_name, 'amount' => $amount, 'transaction_id' => $transaction_id, 'account_number' => $account_number]);
