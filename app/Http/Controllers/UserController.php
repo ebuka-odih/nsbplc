@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Deposit;
+use App\Loan;
 use App\Rules\MatchOldPassword;
 use App\User;
 use App\Withdrawal;
@@ -22,8 +24,10 @@ class UserController extends Controller
         $pending_debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('debit', '=', 1)->where('status', '=', 0)->sum('amount');
 
         $transactions = Withdrawal::whereUserId(auth()->id())->paginate(4);
-        $total_trans = Withdrawal::whereUserId(auth()->id())->get()->count();
-        return view('dashboard.index', compact('debit', 'total_trans', 'transactions', 'pending_debit', 'credit'));
+        $total_with = Withdrawal::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        $total_dep = Deposit::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        $total_loan = Loan::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        return view('dashboard.index', compact('debit', 'total_with', 'total_dep', 'total_loan', 'transactions', 'pending_debit', 'credit'));
     }
 
     public function profile()

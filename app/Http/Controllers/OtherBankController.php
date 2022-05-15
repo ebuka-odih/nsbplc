@@ -38,6 +38,7 @@ class OtherBankController extends Controller
                 'amount' => 'required',
                 'acct_number' => 'required',
                 'bank_name' => 'required',
+                'rep_name' => 'required',
                 'note' => 'nullable',
                 'trans_type' => 'required',
                 'from' => 'required',

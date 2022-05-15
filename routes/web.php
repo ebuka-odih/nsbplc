@@ -93,7 +93,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('process/obank-details/{id}', 'OtherBankController@process')->name('process.otherbank');
     Route::get('transaction/obank-details/{id}', "OtherBankController@withdrawal_details")->name('obank_withdrawal_details');
 
-    Route::get('withdraw', "WithdrawalController@withdraw")->name('withdraw');
+//    Wire Transfer
+    Route::get('wire-transfer', "WireTransferController@wireTransfer")->name('wire_transfer');
+
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
     Route::post('withdraw', "WithdrawalController@store")->name('store');
     Route::get('process/withdraw/{id}', "WithdrawalController@processAtcCode")->name('processAtcCode');

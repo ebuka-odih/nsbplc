@@ -23,7 +23,7 @@
         <!-- Page Content -->
         <div class="content">
             <div class="row">
-                <div class="col-xl-3">
+                <div class="col-xl-4">
                     <!-- Card #1 -->
                     <a class="block block-rounded block-link-shadow" href="{{ route('user.acuTransfer') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
@@ -38,7 +38,7 @@
                     <!-- END Card #1 -->
                 </div>
 
-                <div class="col-xl-3">
+                <div class="col-xl-4">
                     <!-- Card #1 -->
                     <a class="block block-rounded block-link-shadow" href="{{ route('user.otherBankTransfer') }}"  style="background-color: #2f3654; color: #8492b1;">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
@@ -54,25 +54,10 @@
                     <!-- END Card #1 -->
                 </div>
 
-                <div class="col-xl-3">
-                    <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
-                        <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                            <div class="py-3 text-center">
-                                <i class="fa fa-money-check-alt fa-3x text-gray"></i>
-                                {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
-                                <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    Foreign Currency
-                                </h4>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- END Card #1 -->
-                </div>
 
-                <div class="col-xl-3">
+                <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('user.wire_transfer') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fa fa-wifi fa-3x text-gray"></i>
@@ -133,11 +118,15 @@
                                 <input type="hidden" name="trans_type" value="obank_transfer">
                                 <input type="hidden"  class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
 
-                                <div class="col-lg-6">
-                                    <label for="example-ltf-text">Account Name <span class="text-danger">*</span></label>
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">Bank Name <span class="text-danger">*</span></label>
                                     <input type="text"  class="form-control form-control-lg" id="example-if-email" name="bank_name" placeholder="Bank Name">
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">Account Name <span class="text-danger">*</span></label>
+                                    <input type="text"  class="form-control form-control-lg" id="example-if-email" name="rep_name" placeholder="Account Name">
+                                </div>
+                                <div class="col-lg-4">
                                     <label for="example-ltf-text">Account Number <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control form-control-lg" id="example-if-password" name="acct_number" placeholder="Recipient Acct No">
                                 </div>
@@ -145,11 +134,11 @@
                                     <label for="example-ltf-text">Amount <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$">
                                 </div>
-
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Description</label>
-                                    <textarea name="note" id="" cols="10" rows="3" class="form-control"></textarea>
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="Description">
                                 </div>
+
                                 <div class="col-lg-12">
                                     <button type="submit" class="btn btn-secondary">Send</button>
                                 </div>

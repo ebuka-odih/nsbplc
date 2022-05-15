@@ -24,10 +24,17 @@ class CreateWithdrawalsTable extends Migration
             $table->string('rep_name')->nullable();
             $table->string('account_type')->nullable();
             $table->string('bank_name')->nullable();
+            $table->string('note')->nullable();
+
+            $table->string('ben_name')->nullable();
+            $table->string('ben_country')->nullable();
+            $table->string('ben_city')->nullable();
+            $table->string('ben_address')->nullable();
+            $table->string('country')->nullable();
+
             $table->boolean('is_admin')->default(false)->nullable();
             $table->boolean('is_code')->default(false)->nullable();
             $table->integer('status')->default(0)->nullable();
-            $table->text('note')->nullable();
             $table->integer('credit')->nullable()->default(0);
             $table->integer('debit')->nullable()->default(0);
             $table->string('trans_type')->nullable();

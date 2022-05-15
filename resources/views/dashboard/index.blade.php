@@ -85,7 +85,7 @@
                 <!-- Card #1 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">1</div>
+                        <div class="ribbon-box">{{ $total_dep }}</div>
                         <div class="py-3 text-center">
                             <i class="fa fa-arrow-alt-circle-down fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
@@ -100,7 +100,7 @@
                 <!-- Card #2 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">2</div>
+                        <div class="ribbon-box">{{ $total_with }}</div>
                         <div class="py-3 text-center">
                             <i class="fa fa-exchange-alt fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
@@ -116,7 +116,7 @@
                 <!-- Card #3 -->
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
-                        <div class="ribbon-box">3</div>
+                        <div class="ribbon-box">{{ $total_loan }}</div>
                         <div class="py-3 text-center">
                             <i class="fa fa-money-check-alt fa-4x text-gray"></i>
                             <p class="fs-sm fw-bold text-muted mb-0">
