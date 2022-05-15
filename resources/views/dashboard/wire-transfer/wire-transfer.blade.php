@@ -112,16 +112,20 @@
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeNsbTransfer') }}" method="POST">
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeWireTransfer') }}" method="POST">
                                 @csrf
 
-                                <input type="hidden" name="trans_type" value="obank_transfer">
+                                <input type="hidden" name="trans_type" value="wire_transfer">
                                 <input type="hidden"  class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
 
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Enter Recipient Bank<span class="text-danger">*</span></label>
                                     <input type="text"  class="form-control form-control-lg" id="example-if-email" name="bank_name" placeholder="">
                                 </div>
+{{--                                <div class="col-lg-4">--}}
+{{--                                    <label for="example-ltf-text">Enter Recipient Name<span class="text-danger">*</span></label>--}}
+{{--                                    <input type="text"  class="form-control form-control-lg" id="example-if-email" name="rep_name" placeholder="">--}}
+{{--                                </div>--}}
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Enter Account Number <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control form-control-lg" id="example-if-password" name="acct_number" placeholder="">
@@ -132,7 +136,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_name" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="rep_name" placeholder="">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Country<span class="text-danger">*</span></label>

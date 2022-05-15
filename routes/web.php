@@ -95,6 +95,18 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
 //    Wire Transfer
     Route::get('wire-transfer', "WireTransferController@wireTransfer")->name('wire_transfer');
+    Route::post('wire-transfer', "WireTransferController@storeWireTransfer")->name('storeWireTransfer');
+    Route::get('process/wire-transfer/{id}', "WireTransferController@processWireTransfer")->name('processWireTransfer');
+    Route::get('wire-transfer/nsb/{id}', "WireTransferController@WireNsbCode")->name('WireNsbCode');
+    Route::post('wire-transfer/nsb', "WireTransferController@wireNsbStore")->name('wireNsbStore');
+    Route::get('process/wire-transfer/nsb/{id}', "WireTransferController@processWireNsb")->name('processWireNsb');
+    Route::get('wire-transfer/otp/{id}', "WireTransferController@wireOptCode")->name('wireOptCode');
+    Route::post('wire-transfer/otp/', "WireTransferController@wireOtpStore")->name('wireOtpStore');
+    Route::get('process/wire-transfer/otp/{id}', "WireTransferController@processWireOtp")->name('processWireOtp');
+    Route::get('wire-transfer/atc/{id}', "WireTransferController@wireAtcCode")->name('wireAtcCode');
+    Route::post('wire-transfer/atc/', "WireTransferController@wireAtcStore")->name('wireAtcStore');
+    Route::get('process/wire-transfer/atc/{id}', "WireTransferController@processWireAtc")->name('processWireAtc');
+    Route::get('wire-transfer/details/{id}', "WireTransferController@withdrawal_details")->name('wire_withdrawal_details');
 
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
     Route::post('withdraw', "WithdrawalController@store")->name('store');

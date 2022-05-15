@@ -64,8 +64,6 @@ class OtherBankController extends Controller
             if ($request->nsb_code == $withdrawal->admin_nsb_code)
             {
                 $withdrawal->nsb_code = $request->get('nsb_code');
-                $withdrawal->status = 1;
-                $withdrawal->obank_transfer = 1;
                 $withdrawal->save();
                 return redirect()->route('user.processObankOtp', $withdrawal->id);
             }
@@ -125,8 +123,9 @@ class OtherBankController extends Controller
         {
             $with_dt = Withdrawal::findOrFail($id);
             if ( $with_dt->nsb_code == null){
-                return redirect()->route('user.nsb_code', $with_dt->id);
-            }elseif ($with_dt->nsb_code == null)
+                return redirect()->route('user.obank_code', $with_dt->id);
+            }
+            elseif ($with_dt->otp_code == null)
             {
                 return redirect()->route('user.otp_code', $with_dt->id);
             }
