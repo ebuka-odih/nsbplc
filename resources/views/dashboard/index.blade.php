@@ -239,7 +239,7 @@
             @elseif($item->obank_transfer == 1)
                 @if($item->status == 1)
                     @if($item->from == optional(auth()->user()->account)->account_number)
-                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.obank_withdrawal_details', $item->id) }}">
                             <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                                 <div>
@@ -262,7 +262,7 @@
                             </div>
                         </a>
                     @else
-                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                        <a class="block block-rounded block-link-shadow border-start border-success border-3" href="{{ route('user.obank_withdrawal_details', $item->id) }}">
                             <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                                 <div>
@@ -287,7 +287,7 @@
                     @endif
                 @else
                     @if($item->from == optional(auth()->user()->account)->account_number)
-                        <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="{{ route('user.withdrawal_details', $item->id) }}">
+                        <a class="block block-rounded block-link-shadow border-start border-warning border-3" href="{{ route('user.obank_withdrawal_details', $item->id) }}">
                             <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 
                                 <div>
@@ -311,7 +311,7 @@
                         </a>
 
                     @else
-                        <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.withdrawal_details', $item->id) }}">
+                        <a class="block block-rounded block-link-shadow invisible border-left border-success border-3x" data-toggle="appear" href="{{ route('user.obank_withdrawal_details', $item->id) }}">
                             <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                                 <div>
                                     <p class="fs-lg fw-semibold mb-0">

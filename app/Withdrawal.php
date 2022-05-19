@@ -19,7 +19,7 @@ class Withdrawal extends Model
         {
             return "<span class='badge light badge-warning'>Pending</span>";
         }
-        return "<span class='badge light badge-success'>Successful</span>";
+        return "<span class='badge rounded-pill bg-success'>Successful</span>";
     }
 
     public function user()
@@ -30,6 +30,25 @@ class Withdrawal extends Model
     public function getWithdrawIdAttribute()
     {
         return "NSB0".$this->id.'XCP10';
+    }
+
+    public function transactionType()
+    {
+        if ($this->trans_type == "nsb_transfer")
+        {
+            return "NSB Transfer";
+        }elseif($this->trans_type == "obank_transfer")
+        {
+            return "Other Bank Transfer";
+        }elseif($this->trans_type = "wire_transfer")
+        {
+            return "Wire Transfer";
+        }
+    }
+
+    public function vat()
+    {
+       return $vat = $this->vat * $this->amount / 100;
     }
 
 

@@ -1,6 +1,15 @@
 @extends('dashboard.layout.app')
 @section('content')
-
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
 
     <main id="main-container">
 
@@ -8,11 +17,12 @@
         <div class="bg-body-light">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Transfer</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Deposit</h1>
                     <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Transfer</li>
+                            <li class="breadcrumb-item"><a href="{{ route('user.deposit') }}">Deposit</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Internal Deposit</li>
                         </ol>
                     </nav>
                 </div>
@@ -25,12 +35,12 @@
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('user.acuTransfer')}}" style="background-color: #2f3654; color: #8492b1;">
+                    <a class="block block-rounded block-link-shadow" href="javascript:void(0)" style="background-color: #2f3654; color: #8492b1;">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-university fa-3x text-gray"></i>
+                                <i class="fa fa-dollar-sign fa-3x text-gray"></i>
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    NSB Transfer
+                                    Bank Deposit
                                 </h4>
                             </div>
                         </div>
@@ -40,13 +50,13 @@
 
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('user.otherBankTransfer') }}">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('user.bitcoin') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-exchange-alt fa-3x text-gray"></i>
+                                <i class="fab fa-bitcoin fa-3x text-gray"></i>
                                 {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    Other Bank Transfer
+                                    Bitcoin Deposit
                                 </h4>
                             </div>
                         </div>
@@ -61,10 +71,10 @@
                     <a class="block block-rounded block-link-shadow" href="{{ route('user.wire_transfer') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
-                                <i class="fa fa-wifi fa-3x text-gray"></i>
+                                <i class="fab fa-monero fa-3x text-gray"></i>
                                 {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    Wire Transfer
+                                    MoneyGram
                                 </h4>
                             </div>
                         </div>
@@ -77,7 +87,7 @@
             <!-- Layouts -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Make A Transfer</h3>
+                    <h3 class="block-title">Make A Deposit</h3>
                 </div>
                 <div class="block-content">
 
@@ -112,37 +122,42 @@
                         </div>
 
                         <div class="col-lg-12 space-y-2">
-                            <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeNsbTransfer') }}" method="POST" >
-                               @csrf
-
-                                <input type="hidden" name="trans_type" value="nsb_transfer">
-                                <div class="col-lg-6">
-                                    <label for="example-ltf-text">From <span class="text-danger">*</span></label>
-                                    <input type="text" readonly class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label for="example-ltf-text">Amount <span class="text-danger">*</span></label>
-                                    <input required type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$">
-                                </div>
-
-
-                                <div class="col-lg-6">
-                                    <label for="example-ltf-text">Account Number <span class="text-danger">*</span></label>
-                                    <input required type="number" class="form-control form-control-lg" id="example-if-password" name="acct_number" placeholder="Recipient Acct No">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label for="example-ltf-text">Description</label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="Description">
-                                </div>
-
-                                <div class="col-lg-6">
-                                   <button type="submit" class="btn btn-secondary">Send</button>
-                                </div>
-
-
-                            </form>
-                            <!-- END Form Inline - Default Style -->
+                          <div class="table">
+                              <table class="table" style="width:100%">
+                                  <tr>
+                                      <th>Bank Name:</th>
+                                      <td>Bill Gates</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Account Name:</th>
+                                      <td>---</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Account Number:</th>
+                                      <td>---</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Swift Code:</th>
+                                      <td>555 77 855</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Routine Number:</th>
+                                      <td>555 77 855</td>
+                                  </tr>
+                                  <tr>
+                                      <th>First Amount:</th>
+                                      <td>$3000</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Second Amount:</th>
+                                      <td>$5000</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Third Amount:</th>
+                                      <td>$6000</td>
+                                  </tr>
+                              </table>
+                          </div>
 
                         </div>
                     </div>

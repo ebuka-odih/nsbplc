@@ -14,7 +14,12 @@ class DepositController extends Controller
     //
     public function deposit()
     {
-        return view('dashboard.deposit');
+        return view('dashboard.deposit.internal');
+    }
+
+    public function bitcoin()
+    {
+        return view('dashboard.deposit.bitcoin');
     }
 
     public function depositHistory()

@@ -124,9 +124,9 @@ class WireTransferController extends Controller
                 $vat = $withdrawal->amount * 0.5 / 100;
 
                 $withdrawal->update(['vat' => $vat, 'debit' => 1]);
+                $withdrawal->save();
                 auth()->user()->account->balance -= $vat;
                 auth()->user()->save();
-                $withdrawal->save();
 
                 $user = Auth::user();
                 $mail_data = ['user' => $user, 'transaction' => $withdrawal];

@@ -83,7 +83,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
 //    Other Bank Transfer
     Route::get('obank/transfer', "OtherBankController@obankTransfer")->name('otherBankTransfer');
-    Route::post('store/nsb/transfer', "OtherBankController@storeObankTransfer")->name('storeNsbTransfer');
+    Route::post('store/obank/transfer', "OtherBankController@storeObankTransfer")->name('storeObankTransfer');
     Route::get('process/obank/{id}', "OtherBankController@processObank")->name('processObank');
     Route::get('obank/code/{id}', "OtherBankController@obank_code")->name('obank_code');
     Route::post('store/obank', "OtherBankController@obank_store")->name('obank_store');
@@ -109,27 +109,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('wire-transfer/details/{id}', "WireTransferController@withdrawal_details")->name('wire_withdrawal_details');
 
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
-    Route::post('withdraw', "WithdrawalController@store")->name('store');
-    Route::get('process/withdraw/{id}', "WithdrawalController@processAtcCode")->name('processAtcCode');
-    Route::get('atc-code/{id}', "WithdrawalController@atcCode")->name('atcCode');
-    Route::post('store/atc-code', "WithdrawalController@atcStore")->name('atcStore');
-
-    Route::get('process/otp/{id}', "WithdrawalController@processOtp")->name('processOtp');
-    Route::get('otp-code/{id}', "WithdrawalController@otpCode")->name('otpCode');
-    Route::post('store/otp-code/', "WithdrawalController@otpStore")->name('otpStore');
-
-    Route::get('process/trn-code/{id}', "WithdrawalController@processTrn")->name('processTrn');
-    Route::get('trn-code/{id}', "WithdrawalController@trnCode")->name('trnCode');
-    Route::post('store/trn-code/', "WithdrawalController@trn_code_store")->name('trn_code_store');
-
-    Route::get('process/transaction/{id}', "WithdrawalController@with_process")->name('with_process');
-    Route::get('transaction/details/{id}', "WithdrawalController@withdrawal_details")->name('withdrawal_details');
 
     // Deposits Route
-    Route::get('deposit', "DepositController@deposit")->name('deposit');
+    Route::get('internal/deposit', "DepositController@deposit")->name('deposit');
     Route::get('deposit/history', "DepositController@depositHistory")->name('depositHistory');
     Route::post('store/deposit', "DepositController@storeDeposit")->name('storeDeposit');
     Route::get('deposit/payment/{id}', "DepositController@payment")->name('payment');
+    Route::get('bitcoin/deposit', "DepositController@bitcoin")->name('bitcoin');
 
     // Card Route
     Route::get('card', "RequestCardController@card")->name('card');
