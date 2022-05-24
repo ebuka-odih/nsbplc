@@ -1,222 +1,362 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- Mirrored from designreset.com/cork/ltr/demo5/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Feb 2020 09:22:18 GMT -->
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>{{ env('APP_NAME') }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('admin_assets/img/favicon.ico') }}"/>
-    <link href="{{ asset('admin/css/loader.css') }}" rel="stylesheet" type="text/css" />
-    <script src="{{ asset('admin/js/loader.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{ asset('admin/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('admin/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
+    <title>Nations Star Bank PLC</title>
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{ asset('admin/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('admin/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <meta name="description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta property="og:site_name" content="Nations Star Bank PLC">
+    <meta property="og:description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/table/datatable/datatables.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/table/datatable/custom_dt_html5.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/table/datatable/dt-global_style.css') }}">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/table/datatable/datatables-dark.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/table/datatable/dt-global_style-dark.css') }}">
+    <!-- Stylesheets -->
+    <!-- Fonts and Dashmix framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" id="css-main" href="{{ asset('dashboard/assets/css/dashmix.min.css') }}">
 
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
+    <link rel="stylesheet" id="css-theme" href="{{ asset('dashboard/assets/css/themes/xdream.min.css') }}">
+    <!-- END Stylesheets -->
+    <style>
+        .nav-main-link {
+            color: #8492b1;
+        }
+    </style>
 </head>
 <body>
-<!-- BEGIN LOADER -->
-<div id="load_screen"> <div class="loader"> <div class="loader-content"> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 792 723" style="enable-background:new 0 0 792 723;" xml:space="preserve"> <g> <g> <path class="st0" d="M213.9,584.4c-47.4-25.5-84.7-60.8-111.8-106.1C75,433.1,61.4,382,61.4,324.9c0-57,13.6-108.1,40.7-153.3 S166.5,91,213.9,65.5s100.7-38.2,159.9-38.2c49.9,0,95,8.8,135.3,26.3s74.1,42.8,101.5,75.7l-85.5,78.9 c-38.9-44.9-87.2-67.4-144.7-67.4c-35.6,0-67.4,7.8-95.4,23.4s-49.7,37.4-65.4,65.4c-15.6,28-23.4,59.8-23.4,95.4 s7.8,67.4,23.4,95.4s37.4,49.7,65.4,65.4c28,15.6,59.7,23.4,95.4,23.4c57.6,0,105.8-22.7,144.7-68.2l85.5,78.9 c-27.4,33.4-61.4,58.9-102,76.5c-40.6,17.5-85.8,26.3-135.7,26.3C314.3,622.7,261.3,809.9,213.9,584.4z"/> </g> <circle class="st1" cx="375.4" cy="322.9" r="100"/> </g> <g> <circle class="st2" cx="275.4" cy="910" r="65"></circle> <circle class="st4" cx="475.4" cy="910" r="65"></circle> </g> </svg> </div></div></div>
-<!--  END LOADER -->
-
-<!--  BEGIN NAVBAR  -->
-<div class="header-container fixed-top">
-    <header class="header navbar navbar-expand-sm">
-        <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
-
-        <ul class="navbar-item flex-row">
-            <li class="nav-item align-self-center page-heading">
-                <div class="page-header">
-                    <div class="page-title">
-                        <h3>{{ env('APP_NAME') }}</h3>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="navbar-item flex-row search-ul">
-            <li class="nav-item align-self-center search-animated">
-
-            </li>
-        </ul>
-        <ul class="navbar-item flex-row navbar-dropdown">
+<!-- Page Container -->
+<div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
 
 
-            <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
-                <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <!-- Sidebar -->
+
+    <nav id="sidebar" aria-label="Main Navigation">
+        <!-- Side Header -->
+        <div class="bg-header-dark">
+            <div class="content-header bg-white-5">
+                <!-- Logo -->
+                <a class="fw-semibold text-white tracking-wide" href="/">
+              <span class="smini-visible">
+                NSB<span class="opacity-75">PLC</span>
+              </span>
+                    <span class="smini-hidden">
+                NSB<span class="opacity-75">PLC</span>
+              </span>
                 </a>
-                <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
-                    <div class="">
-                        <div class="dropdown-item">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
-                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                                </svg> Sign Out
+                <!-- END Logo -->
 
+                <!-- Options -->
+                <div>
+                    <!-- Toggle Sidebar Style -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <!-- Class Toggle, functionality initialized in Helpers.dmToggleClass() -->
+                    <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#sidebar-style-toggler" data-class="fa-toggle-off fa-toggle-on" onclick="Dashmix.layout('sidebar_style_toggle');Dashmix.layout('header_style_toggle');">
+                        <i class="fa fa-toggle-off" id="sidebar-style-toggler"></i>
+                    </button>
+                    <!-- END Toggle Sidebar Style -->
+
+                    <!-- Dark Mode -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#dark-mode-toggler" data-class="far fa" onclick="Dashmix.layout('dark_mode_toggle');">
+                        <i class="far fa-moon" id="dark-mode-toggler"></i>
+                    </button>
+                    <!-- END Dark Mode -->
+
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                    <!-- END Close Sidebar -->
+                </div>
+                <!-- END Options -->
+            </div>
+        </div>
+        <!-- END Side Header -->
+
+        <!-- Sidebar Scrolling -->
+        <div class="js-sidebar-scroll">
+            <!-- Side Navigation -->
+            <div class="content-side">
+                <ul class="nav-main">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                            <i class="nav-main-link-icon fa fa-location-arrow"></i>
+                            <span class="nav-main-link-name">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-main-heading">Transactions</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-arrow-up"></i>
+                            <span class="nav-main-link-name">Transfers</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_blocks_styles.html">
+                                    <span class="nav-main-link-name">NSB Transfers</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_blocks_options.html">
+                                    <span class="nav-main-link-name">Other Bank</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_blocks_api.html">
+                                    <span class="nav-main-link-name">Wire Transfer</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-arrow-circle-down"></i>
+                            <span class="nav-main-link-name">Deposits</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_widgets_tiles.html">
+                                    <span class="nav-main-link-name">Bank Deposit</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_widgets_stats.html">
+                                    <span class="nav-main-link-name">Bitcoin</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_widgets_media.html">
+                                    <span class="nav-main-link-name">Money Gram</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-money-check-alt"></i>
+                            <span class="nav-main-link-name">Loans</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link " href="#">
+                                    <span class="nav-main-link-name">Active Loans</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link " href="#">
+                                    <span class="nav-main-link-name">Pending Loans</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-credit-card"></i>
+                            <span class="nav-main-link-name">Debit Cards</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link " href="#">
+                                    <span class="nav-main-link-name">Active Cards</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link " href="#">
+                                    <span class="nav-main-link-name">Pending Cards</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-main-heading">User</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-user-friends"></i>
+                            <span class="nav-main-link-name">Users</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="be_pages_auth_all.html">
+                                    <span class="nav-main-link-name">All</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="op_auth_signin.html">
+                                    <span class="nav-main-link-name">Active</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="op_auth_signin_box.html">
+                                    <span class="nav-main-link-name">InActive</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="op_auth_signin_box_alt.html">
+                                    <span class="nav-main-link-name">Admin</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link " href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill"></i>
+                            <span class="nav-main-link-name">Payment Methods</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-main-heading">Settings</li>
+
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-ghost"></i>
+                            <span class="nav-main-link-name">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-shield-alt"></i>
+                            <span class="nav-main-link-name">Security</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END Side Navigation -->
+        </div>
+        <!-- END Sidebar Scrolling -->
+    </nav>
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+    <header id="page-header">
+        <!-- Header Content -->
+        <div class="content-header">
+            <!-- Left Section -->
+            <div class="space-x-1">
+                <!-- Toggle Sidebar -->
+                <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                <button type="button" class="btn btn-alt-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+            </div>
+            <!-- END Left Section -->
+
+            <!-- Right Section -->
+            <div class="space-x-1">
+                <!-- User Dropdown -->
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-user d-sm-none"></i>
+                        <span class="d-none d-sm-inline-block">Admin</span>
+                        <i class="fa fa-fw fa-angle-down opacity-50 ms-1 d-none d-sm-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
+                        <div class="p-2">
+                            <a class="dropdown-item" href="be_pages_generic_profile.html">
+                                <i class="far fa-fw fa-user me-1"></i> Profile
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                            <!-- Toggle Side Overlay -->
+                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                            <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
+                                <i class="far fa-fw fa-building me-1"></i> Settings
+                            </a>
+                            <!-- END Side Overlay -->
+
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="op_auth_signin.html">
+                                <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
+                            </a>
                         </div>
                     </div>
                 </div>
-            </li>
-        </ul>
+                <!-- END User Dropdown -->
+
+            </div>
+            <!-- END Right Section -->
+        </div>
+        <!-- END Header Content -->
+
+        <!-- Header Search -->
+        <div id="page-header-search" class="overlay-header bg-header-dark">
+            <div class="bg-white-10">
+                <div class="content-header">
+                    <form class="w-100" action="be_pages_generic_search.html" method="POST">
+                        <div class="input-group">
+                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                            <button type="button" class="btn btn-alt-primary" data-toggle="layout" data-action="header_search_off">
+                                <i class="fa fa-fw fa-times-circle"></i>
+                            </button>
+                            <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END Header Search -->
+
+        <!-- Header Loader -->
+        <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-header-dark">
+            <div class="bg-white-10">
+                <div class="content-header">
+                    <div class="w-100 text-center">
+                        <i class="fa fa-fw fa-sun fa-spin text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Header Loader -->
     </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+   @yield('content')
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="bg-body-light">
+        <div class="content py-0">
+            <div class="row fs-sm">
+                <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
+                    Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                </div>
+                <div class="col-sm-6 order-sm-1 text-center text-sm-start">
+                    <a class="fw-semibold" href="https://1.envato.market/r6y" target="_blank">Dashmix 5.1</a> &copy; <span data-toggle="year-copy"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END Footer -->
 </div>
-<!--  END NAVBAR  -->
+<!-- END Page Container -->
 
-<!--  BEGIN MAIN CONTAINER  -->
-<div class="main-container" id="container">
+<!--
+      Dashmix JS
 
-    <div class="overlay"></div>
-    <div class="search-overlay"></div>
-
-    <!--  BEGIN SIDEBAR  -->
-    <div id="sidebar-menu">
-
-        <ul class="metismenu" id="side-menu">
-
-            <li class="menu-title">Navigation</li>
-
-            <li>
-                <a href="{{ route('admin.dashboard') }}" class="waves-effect waves-light">
-                    <i class="mdi mdi-view-dashboard"></i>
-                    <span>  Dashboard  </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('admin.create') }}" class="waves-effect waves-light">
-                    <i class="mdi mdi-file-link"></i>
-                    <span> Create Account </span>
-                </a>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);" class="waves-effect waves-light">
-                    <i class="mdi mdi-cash-usd-outline"></i>
-                    <span> Transactions </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <ul class="nav-second-level" aria-expanded="false">
-
-                    {{--                            <li><a href="{{ route('admin.all_deposits') }}">Deposits</a></li>--}}
-                    <li><a href="@">Withdrawals</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="{{ route('admin.all_users') }}" class="waves-effect waves-light">
-                    <i class="mdi mdi-account-supervisor"></i>
-                    <span> Users </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('admin.settings') }}" class="waves-effect waves-light">
-                    <i class="mdi mdi-settings-transfer"></i>
-                    <span> Settings </span>
-                </a>
-            </li>
-
-
-        </ul>
-
-    </div>
-    <!--  END SIDEBAR  -->
-
-    <!--  BEGIN CONTENT AREA  -->
-    @yield('content')
-    <!--  END CONTENT AREA  -->
-    @include('admin.layouts.footer')
-
-
-</div>
-<!-- END MAIN CONTAINER -->
-
-<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="{{ asset('admin_assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('admin_assets/js/app.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        App.init();
-    });
-</script>
-<script src="{{ asset('admin_assets/js/custom.js') }}"></script>
-<!-- END GLOBAL MANDATORY SCRIPTS -->
-
-<!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-<script src="{{ asset('plugins/apex/apexcharts.min.js') }}"></script>
-<script src="{{ asset('admin_assets/js/dashboard/dash_1.js') }}"></script>
-<!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-<script src="{{ asset('plugins/highlight/highlight.pack.js') }}"></script>
-<script src="{{ asset('admin_assets/js/custom.js') }}"></script>
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
-<script>
-    $('#zero-config').DataTable({
-        "oLanguage": {
-            "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
-            "sInfo": "Showing page _PAGE_ of _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-            "sSearchPlaceholder": "Search...",
-            "sLengthMenu": "Results :  _MENU_",
-        },
-        "stripeClasses": [],
-        "lengthMenu": [7, 10, 20, 50],
-        "pageLength": 7
-    });
-</script>
-
-<script src="{{ asset('plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('plugins/table/datatable/button-ext/jszip.min.js') }}"></script>
-<script src="{{ asset('plugins/table/datatable/button-ext/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
-<script>
-    $('#html5-extension').DataTable( {
-        dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
-        buttons: {
-            buttons: [
-                { extend: 'copy', className: 'btn' },
-                { extend: 'csv', className: 'btn' },
-                { extend: 'print', className: 'btn' }
-            ]
-        },
-        "oLanguage": {
-            "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
-            "sInfo": "Showing page _PAGE_ of _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-            "sSearchPlaceholder": "Search...",
-            "sLengthMenu": "Results :  _MENU_",
-        },
-        "stripeClasses": [],
-        "lengthMenu": [7, 10, 20, 50],
-        "pageLength": 10
-    } );
-</script>
+      Core libraries and functionality
+      webpack is putting everything together at assets/_js/main/app.js
+    -->
+<script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
 </body>
-
-<!-- Mirrored from designreset.com/cork/ltr/demo5/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Feb 2020 09:24:43 GMT -->
 </html>
