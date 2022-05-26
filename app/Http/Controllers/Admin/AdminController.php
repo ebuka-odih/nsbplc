@@ -27,8 +27,14 @@ class AdminController extends Controller
 
     public function all_users()
     {
-        $users = User::where('user_role', 0)->get();
-        return view('admin.users', compact('users'));
+        $users = User::where('admin', 0)->get();
+        return view('admin.user.list', compact('users'));
+    }
+
+    public function user_details($id)
+    {
+        $user_details = User::findOrFail($id);
+        return view('admin.user.personal', compact('user_details'));
     }
 
     public function create()
@@ -98,11 +104,7 @@ class AdminController extends Controller
         return view('admin.user-details', compact('user_details', 'user_deposit'));
     }
 
-    public function personal_details($id)
-    {
-        $user_details = User::findOrFail($id);
-        return view('admin.personal', compact('user_details'));
-    }
+
 
 
     public function fund_account(Request $request, $id)

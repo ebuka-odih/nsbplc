@@ -95,9 +95,9 @@ class User extends Authenticatable implements HasMedia
     public function status()
     {
         if ($this->status == 1){
-            return "<p class='fs-12 mb-0 text text-success'>Verified</p>";
+            return "<span class='badge bg-success'>Active</span>";
         }else{
-            return "<p class='fs-12 mb-0 text text-danger'>Unverified</p>";
+            return "<span class='badge bg-danger'>InActive</span>";
         }
     }
 

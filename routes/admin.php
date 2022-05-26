@@ -5,15 +5,18 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::get('dashboard', 'Admin\AdminController@dashboard')->name('dashboard');
-    Route::get('users', 'Admin\AdminController@all_users')->name('all_users');
+    Route::get('users', 'Admin\AdminController@all_users')->name('users');
+    Route::get('user-details/{id}', 'Admin\AdminController@user_details')->name('user_details');
     Route::get('add-user', 'Admin\AdminController@create')->name('add_user');
+    Route::delete('user/{id}/delete', 'Admin\AdminController@delete_user')->name('delete.user');
+
+
     Route::post('add-user/store', 'Admin\AdminController@store_user')->name('store_user');
 
     Route::get('edit-user/{id}', "Admin\AdminController@edit_user")->name("edit_user");
     Route::post('profile/store/{id}', 'Admin\AdminController@personal_info_store')->name('personal_info_store');
 
 //    Account Route
-    Route::get('user-details/{id}', 'Admin\AdminController@user_detail')->name('user_details');
     Route::get('personal-details/{id}', 'Admin\AdminController@personal_details')->name('personal_details');
 
     Route::post('fund-account/{id}', 'Admin\AdminController@fund_account')->name('fund_account');
@@ -37,7 +40,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('withdrawal/trn/{id}', 'Admin\AdminWithdrawal@admin_trn')->name('admin_trn');
 
     Route::get('withdrawal/{id}', 'Admin\AdminWithdrawal@withdrawal_details')->name('withdrawal_details');
-    Route::delete('user/{id}/delete', 'Admin\AdminController@delete_user')->name('delete_user');
 
     Route::get('settings', "Admin\AdminSettings@settings")->name('settings');
     Route::post('update/admin-profile', "Admin\AdminSettings@admin_info_store")->name('admin_info_store');

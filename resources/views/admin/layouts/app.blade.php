@@ -18,22 +18,20 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
-    <!-- Icons -->
-    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
-    <!-- END Icons -->
-
     <!-- Stylesheets -->
     <!-- Fonts and Dashmix framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" id="css-main" href="{{ asset('dashboard/assets/css/dashmix.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/datatables-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/js/plugins/datatables-buttons-bs5/css/buttons.bootstrap5.min.css') }}">
+
+
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
     <link rel="stylesheet" id="css-theme" href="{{ asset('dashboard/assets/css/themes/xdream.min.css') }}">
     <!-- END Stylesheets -->
+
     <style>
         .nav-main-link {
             color: #8492b1;
@@ -195,7 +193,7 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_pages_auth_all.html">
+                                <a class="nav-main-link" href="{{ route('admin.users') }}">
                                     <span class="nav-main-link-name">All</span>
                                 </a>
                             </li>
@@ -221,6 +219,12 @@
                         <a class="nav-main-link " href="#">
                             <i class="nav-main-link-icon fa fa-money-bill"></i>
                             <span class="nav-main-link-name">Payment Methods</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link " href="#">
+                            <i class="nav-main-link-icon fa fa-user-plus"></i>
+                            <span class="nav-main-link-name">Add Account</span>
                         </a>
                     </li>
 
@@ -358,5 +362,21 @@
       webpack is putting everything together at assets/_js/main/app.js
     -->
 <script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
+
+<!-- jQuery (required for DataTables plugin) -->
+<script src="{{ asset('dashboard/assets/js/lib/jquery.min.js') }}"></script>
+
+<!-- Page JS Plugins -->
+<script src="{{ asset('dashboard/assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons-jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons-pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons-pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons/buttons.print.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/plugins/datatables-buttons/buttons.html5.min.js') }}"></script>
+
+<script src="{{ asset('dashboard/assets/js/pages/be_tables_datatables.min.js') }}"></script>
 </body>
 </html>
