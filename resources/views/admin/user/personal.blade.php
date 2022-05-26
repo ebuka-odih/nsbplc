@@ -12,193 +12,168 @@
                     <h2 class="h4 fw-bold text-white-75">
                         {{ $user_details->email }}
                     </h2>
-                    <button type="button" class="btn btn-primary m-1"> <i class="fa fa-fw fa-user-plus opacity-50 me-1"></i> Transfers </button>
-                    <button type="button" class="btn btn-secondary m-1"> <i class="fa fa-fw fa-envelope opacity-50 me-1"></i> Deposits </button>
+                    <button type="button" class="btn btn-primary m-1"> <i class="fa fa-fw fa-arrow-circle-up opacity-50 me-1"></i> Transfers </button>
+                    <button type="button" class="btn btn-info m-1"> <i class="fa fa-fw fa-arrow-circle-down opacity-50 me-1"></i> Deposits </button>
+                    <button type="button" class="btn btn-danger m-1"> <i class="fa fa-fw fa-money-bill opacity-50 me-1"></i> Loans </button>
+                    <button type="button" class="btn btn-secondary m-1"> <i class="fa fa-fw fa-envelope opacity-50 me-1"></i> Send Mail </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- END Hero -->
-    <!-- Page Content -->
-    <div class="content content-full content-boxed">
-        <!-- Latest Friends -->
-        <h2 class="content-heading">
-            <i class="si si-users me-1"></i> Latest Friends
-        </h2>
-        <div class="row">
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-image" style="background-image: url('assets/media/photos/photo15.jpg');"> <img class="img-avatar img-avatar-thumb" src="assets/media/avatars/avatar3.jpg" alt=""> </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Carol Ray</div>
-                        <div class="fs-sm text-muted">Product Designer</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-plus text-muted me-1"></i> Add </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-user-circle text-muted me-1"></i> Profile </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-image" style="background-image: url('assets/media/photos/photo4.jpg');"> <img class="img-avatar img-avatar-thumb" src="assets/media/avatars/avatar11.jpg" alt=""> </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Brian Stevens</div>
-                        <div class="fs-sm text-muted">Senior Developer</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-plus text-muted me-1"></i> Add </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-user-circle text-muted me-1"></i> Profile </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-image" style="background-image: url('assets/media/photos/photo1.jpg');"> <img class="img-avatar img-avatar-thumb" src="assets/media/avatars/avatar13.jpg" alt=""> </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Carl Wells</div>
-                        <div class="fs-sm text-muted">Junior Designer</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-plus text-muted me-1"></i> Add </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-user-circle text-muted me-1"></i> Profile </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-image" style="background-image: url('assets/media/photos/photo3.jpg');"> <img class="img-avatar img-avatar-thumb" src="assets/media/avatars/avatar7.jpg" alt=""> </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Susan Day</div>
-                        <div class="fs-sm text-muted">Marketing</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-plus text-muted me-1"></i> Add </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-user-circle text-muted me-1"></i> Profile </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-end">
-            <button type="button" class="btn btn-alt-primary"> Check out more <i class="fa fa-arrow-right ms-1"></i> </button>
-        </div>
-        <!-- END Latest Friends -->
-        <!-- Latest Projects -->
-        <h2 class="content-heading">
-            <i class="si si-briefcase me-1"></i> Latest Projects
-        </h2>
-        <div class="row">
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-info">
-                        <div class="my-3"> <i class="fab fa-2x fa-windows text-white-75"></i> </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Windows App</div>
-                        <div class="fs-sm text-muted">Accounting Dashboard</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-briefcase text-muted me-1"></i> View Project </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-warning">
-                        <div class="my-3"> <i class="fa fa-2x fa-mobile text-white-75"></i> </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">iOS App</div>
-                        <div class="fs-sm text-muted">Accounting Dashboard</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-briefcase text-muted me-1"></i> View Project </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-danger">
-                        <div class="my-3"> <i class="fa fa-2x fa-globe text-white-75"></i> </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Website Design</div>
-                        <div class="fs-sm text-muted">https://example.com</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-briefcase text-muted me-1"></i> View Project </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="block block-rounded text-center">
-                    <div class="block-content block-content-full bg-success">
-                        <div class="my-3"> <i class="fa fa-2x fa-birthday-cake text-white-75"></i> </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light">
-                        <div class="fw-semibold">Special Icon Set</div>
-                        <div class="fs-sm text-muted">3000 icons</div>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)"> <i class="fa fa-briefcase text-muted me-1"></i> View Project </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-end">
-            <button type="button" class="btn btn-alt-primary"> Check out more <i class="fa fa-arrow-right ms-1"></i> </button>
-        </div>
-        <!-- END Latest Projects -->
-        <!-- Latest Posts -->
-        <h2 class="content-heading">
-            <i class="si si-note me-1"></i> Latest Posts
-        </h2>
-        <a class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <h4 class="fs-base text-primary mb-0">
-                    <i class="fa fa-newspaper text-muted me-1"></i> 5 things I've learned working from home
-                </h4>
-                <p class="fs-sm text-muted mb-0 ms-2 text-end"> 3 hours ago </p>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <h4 class="fs-base text-primary mb-0">
-                    <i class="fa fa-newspaper text-muted me-1"></i> Vue.js or React? Let’s dive in!
-                </h4>
-                <p class="fs-sm text-muted mb-0 ms-2 text-end"> 2 days ago </p>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <h4 class="fs-base text-primary mb-0">
-                    <i class="fa fa-newspaper text-muted me-1"></i> 10 important things I wish I knew
-                </h4>
-                <p class="fs-sm text-muted mb-0 ms-2 text-end"> 1 week ago </p>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <h4 class="fs-base text-primary mb-0">
-                    <i class="fa fa-newspaper text-muted me-1"></i> Bringing your productivity back
-                </h4>
-                <p class="fs-sm text-muted mb-0 ms-2 text-end"> 2 weeks ago </p>
-            </div>
-        </a>
-        <a class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
-            <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                <h4 class="fs-base text-primary mb-0">
-                    <i class="fa fa-newspaper text-muted me-1"></i> Creating a super smooth CSS animation
-                </h4>
-                <p class="fs-sm text-muted mb-0 ms-2 text-end"> 1 month ago </p>
-            </div>
-        </a>
-        <div class="text-end">
-            <button type="button" class="btn btn-alt-primary"> Check out more <i class="fa fa-arrow-right ms-1"></i> </button>
-        </div>
-        <!-- END Latest Posts -->
-    </div>
-    <!-- END Page Content -->
+
+   <div class="card">
+       <!-- Page Content -->
+       <br>
+       <div class="content content-full content-boxed">
+           <a href="{{ route('admin.edit_details', $user_details->id) }}" class="btn btn-secondary">Edit info</a>
+           <div class="row">
+               <h2 class="content-heading">
+                   <i class="fa fa-id-card me-1"></i>Account Details
+               </h2>
+               <table class="table table-striped" style="width:100%">
+                   <tr>
+                       <th>Account Type:</th>
+                       <td>{{ $user_details->account_type }}</td>
+                   </tr>
+                   <tr>
+                       <th>Account No:</th>
+                       <td>{{ $user_details->account->account_number }}</td>
+                   </tr>
+                   <tr>
+                       <th>Base Currency:</th>
+                       <td>{{ $user_details->preferred_currency }}</td>
+                   </tr>
+                   <tr>
+                       <th>Account Balance:</th>
+                       <td>$ @convert($user_details->balance)</td>
+                   </tr>
+               </table>
+           </div>
+
+           <!-- Latest Projects -->
+           <h2 class="content-heading">
+               <i class="fa fa-user me-1"></i>Personal Details
+           </h2>
+           <div class="row">
+               <table class="table table-striped" style="width:100%">
+                   <tr>
+                       <th>Registered:</th>
+                       <td>{{ date('y-M-d', strtotime($user_details->created_at)) }}</td>
+                   </tr>
+                   <tr>
+                       <th>Title:</th>
+                       <td>{{ $user_details->title }}</td>
+                   </tr>
+                   <tr>
+                       <th>Name:</th>
+                       <td>{{ $user_details->first_name." ".$user_details->last_name }}</td>
+                   </tr>
+                   <tr>
+                       <th>Email:</th>
+                       <td>{{ $user_details->email }}</td>
+                   </tr>
+                   <tr>
+                       <th>Country Code:</th>
+                       <td>+{{ $user_details->country_code }}</td>
+                   </tr>
+                   <tr>
+                       <th>Telephone:</th>
+                       <td>+{{ $user_details->country_code }} {{ $user_details->phone }}</td>
+                   </tr>
+                   <tr>
+                       <th>Gender:</th>
+                       <td>{{ $user_details->gender }}</td>
+                   </tr>
+                   <tr>
+                       <th>Marital Status:</th>
+                       <td>{{ $user_details->m_status }}</td>
+                   </tr>
+                   <tr>
+                       <th>Date of Birth:</th>
+                       <td>{{ $user_details->date_of_birth }}</td>
+                   </tr>
+                   <tr>
+                       <th>Country:</th>
+                       <td>{{ $user_details->country }}</td>
+                   </tr>
+                   <tr>
+                       <th>State:</th>
+                       <td>{{ $user_details->state }}</td>
+                   </tr>
+                   <tr>
+                       <th>City:</th>
+                       <td>{{ $user_details->city }}</td>
+                   </tr>
+                   <tr>
+                       <th>Address:</th>
+                       <td>{{ $user_details->address }}</td>
+                   </tr>
+                   <tr>
+                       <th>Address 2:</th>
+                       <td>{{ $user_details->address_2 }}</td>
+                   </tr>
+               </table>
+           </div>
+           <!-- END Latest Projects -->
+
+           <h2 class="content-heading">
+               <i class="si si-briefcase me-1"></i>Employment Details
+           </h2>
+           <table class="table table-striped" style="width:100%">
+               <tr>
+                   <th>Occupation:</th>
+                   <td>{{ $user_details->occupation }}</td>
+               </tr>
+               <tr>
+                   <th>Position:</th>
+                   <td>{{ $user_details->position }}</td>
+               </tr>
+               <tr>
+                   <th>Employer Name:</th>
+                   <td>{{ $user_details->employer_name }}</td>
+               </tr>
+               <tr>
+                   <th>Office Address:</th>
+                   <td>{{ $user_details->office_address }}</td>
+               </tr>
+               <tr>
+                   <th>Office Name:</th>
+                   <td>{{ $user_details->office_name }}</td>
+               </tr>
+               <tr>
+                   <th>Annual Salary:</th>
+                   <td>{{ $user_details->annual_salary }}</td>
+               </tr>
+           </table>
+
+           <h2 class="content-heading">
+               <i class="fa fa-id-card me-1"></i>Identity Details
+           </h2>
+           <table class="table table-striped" style="width:100%">
+               <tr>
+                   <th>Identification Type:</th>
+                   <td>{{ $user_details->cus_identification }}</td>
+               </tr>
+               <tr>
+                   <th>Identification Number:</th>
+                   <td>{{ $user_details->cus_idnumber }}</td>
+               </tr>
+               <tr>
+                   <th>Identification Expiring Date:</th>
+                   <td>{{ $user_details->cus_expiry }}</td>
+               </tr>
+               <tr>
+                   <th>Identification Image:</th>
+                   <td><img height="300" width="300" src="{{ asset('identity/'.$user_details->cus_image) }}" alt=""></td>
+               </tr>
+           </table>
+
+
+
+       </div>
+       <!-- END Page Content -->
+   </div>
 </main>
 
 @endsection

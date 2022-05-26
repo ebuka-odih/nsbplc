@@ -25,77 +25,7 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('deposits','withdrawal', 'users'));
     }
 
-    public function all_users()
-    {
-        $users = User::where('admin', 0)->get();
-        return view('admin.user.list', compact('users'));
-    }
 
-    public function user_details($id)
-    {
-        $user_details = User::findOrFail($id);
-        return view('admin.user.personal', compact('user_details'));
-    }
-
-    public function create()
-    {
-        return view('admin.add-user');
-    }
-
-    public function store_user(Request $request)
-    {
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|string|min:5|confirmed',
-            'country' => 'nullable',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'state' => 'nullable',
-            'city' => 'nullable',
-            'address' => 'nullable',
-            'pass' => 'nullable',
-
-            'gender' => 'nullable',
-            'm_status' => 'nullable',
-            'phone' => 'nullable',
-            'dob' => 'nullable',
-            'occupation' => 'nullable',
-            'preferred_currency' => 'nullable',
-
-        ]);
-
-        if ($image = $request->file('avatar')){
-
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('storage/profile_images/');
-            $image->move($destinationPath, $input['imagename']);
-            $user = new User();
-            $user->first_name = $request->get('first_name');
-            $user->last_name = $request->get('last_name');
-            $user->email = $request->get('email');
-            $user->country = $request->get('country');
-            $user->state = $request->get('state');
-            $user->city = $request->get('city');
-            $user->address = $request->get('address');
-
-            $user->password = Hash::make($request['password']);
-            $user->pass = $request->password;
-            $user->avatar = $input['imagename'];
-            $user->save();
-            $this->autoCreate($user->id, $request['account_type']);
-
-        }else{
-            $data = $this->getData($request);
-            $data['password'] = Hash::make($request['password']);
-            $data['pass'] = $request->password;
-            $user = User::create($data);
-            $this->autoCreate($user->id, $request['account_type']);
-
-        }
-        return redirect()->route('admin.all_users');
-
-    }
 
     public function user_detail($id)
     {
@@ -103,8 +33,6 @@ class AdminController extends Controller
         $user_deposit = User::with('transactions')->findOrFail($id);
         return view('admin.user-details', compact('user_details', 'user_deposit'));
     }
-
-
 
 
     public function fund_account(Request $request, $id)
@@ -134,31 +62,6 @@ class AdminController extends Controller
 
     }
 
-    protected function getData(Request $request)
-    {
-        $rules = [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|string|min:5|confirmed',
-            'country' => 'nullable',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'state' => 'nullable',
-            'city' => 'nullable',
-            'address' => 'nullable',
-            'pass' => 'nullable',
-
-            'gender' => 'nullable',
-            'm_status' => 'nullable',
-            'phone' => 'nullable',
-            'dob' => 'nullable',
-            'occupation' => 'nullable',
-            'preferred_currency' => 'nullable',
-        ];
-
-        return $request->validate($rules);
-    }
-
 
 
     public function approve_user($id)
@@ -182,39 +85,6 @@ class AdminController extends Controller
         return view('admin.edit-user', compact('user_details'));
     }
 
-    public function personal_info_store(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
-        $data = $this->getUpdateData($request);
-        $user->update($data);
-        return redirect()->back()->with('success', 'Profile Updated Successful');
-    }
-
-
-
-    protected function getUpdateData(Request $request)
-    {
-        $rules = [
-            'first_name' => 'required',
-            'last_name' => 'required',
-//            'email' => 'nullable|email|unique:users',
-            'country' => 'nullable',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'state' => 'nullable',
-            'city' => 'nullable',
-            'address' => 'nullable',
-            'pass' => 'nullable',
-
-            'gender' => 'nullable',
-            'm_status' => 'nullable',
-            'phone' => 'nullable',
-            'dob' => 'nullable',
-            'occupation' => 'nullable',
-            'preferred_currency' => 'nullable',
-        ];
-
-        return $request->validate($rules);
-    }
 
 
 

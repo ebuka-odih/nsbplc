@@ -24,7 +24,6 @@ class CreateDepositsTable extends Migration
 
             $table->string('bank_name')->nullable();
             $table->string('acct_name')->nullable();
-            $table->string('acct_name')->nullable();
             $table->string('swift_code')->nullable();
             $table->string('routine_number')->nullable();
             $table->string('amount_1')->nullable();

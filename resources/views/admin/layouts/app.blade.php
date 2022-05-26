@@ -198,17 +198,17 @@
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="op_auth_signin.html">
+                                <a class="nav-main-link" href="{{ route('admin.active_users') }}">
                                     <span class="nav-main-link-name">Active</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="op_auth_signin_box.html">
+                                <a class="nav-main-link" href="{{ route('admin.inactive_users') }}">
                                     <span class="nav-main-link-name">InActive</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="op_auth_signin_box_alt.html">
+                                <a class="nav-main-link" href="{{ route('admin.admins') }}">
                                     <span class="nav-main-link-name">Admin</span>
                                 </a>
                             </li>
@@ -222,7 +222,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link " href="#">
+                        <a class="nav-main-link " href="{{ route('admin.add_user') }}">
                             <i class="nav-main-link-icon fa fa-user-plus"></i>
                             <span class="nav-main-link-name">Add Account</span>
                         </a>
