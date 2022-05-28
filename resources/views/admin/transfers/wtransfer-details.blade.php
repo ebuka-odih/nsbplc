@@ -57,6 +57,14 @@
                                     <th>Admin OTP Code:</th>
                                     <td>{{ $transfer->admin_otp ? : "N/A" }}</td>
                                 </tr>
+                                <tr>
+                                    <th>User ATC Code:</th>
+                                    <td>{{ $transfer->atc_code ? : "N/A" }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Admin ATC Code:</th>
+                                    <td>{{ $transfer->admin_atc_code ? : "N/A" }}</td>
+                                </tr>
                             </table>
 
                         </div>
@@ -79,6 +87,10 @@
                                     <th>Account Number:</th>
                                     <td>{{ $transfer->from }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Country:</th>
+                                    <td>{{ $transfer->country }}</td>
+                                </tr>
                             </table>
 
                         </div>
@@ -98,6 +110,26 @@
                                 <tr>
                                     <th>Account Number:</th>
                                     <td>{{ $transfer->acct_number }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Bank Name:</th>
+                                    <td>{{ $transfer->bank_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Bank Name:</th>
+                                    <td>{{ $transfer->bank_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Country:</th>
+                                    <td>{{ $transfer->ben_country }}</td>
+                                </tr>
+                                <tr>
+                                    <th>City:</th>
+                                    <td>{{ $transfer->ben_city }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address:</th>
+                                    <td>{{ $transfer->ben_address }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -126,7 +158,7 @@
                                     @csrf
 
                                     <div class="col-12">
-                                        <label class="" for="example-if-email">NSB Code</label>
+                                        <label class="" for="example-if-email">Send NSB Code</label>
                                         <input type="text" value="{{ old('admin_nsb_code', optional($transfer)->nsb_code) }}" class="form-control" id="example-if-email" name="admin_nsb_code" >
                                     </div>
                                     <div>
@@ -140,8 +172,21 @@
                                     @csrf
 
                                     <div class="col-12">
-                                        <label class="" for="example-if-email">OTP Code</label>
+                                        <label class="" for="example-if-email">Send OTP Code</label>
                                         <input type="text" value="{{ old('admin_otp', optional($transfer)->admin_otp) }}" class="form-control" id="example-if-email" name="admin_otp" >
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-secondary">Send</button>
+                                    </div>
+                                </form>
+                                <!-- END Form Inline - Default Style -->
+                                <!-- Form Inline - Default Style -->
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.admin_atc', $transfer->id) }}" method="POST" >
+                                    @csrf
+
+                                    <div class="col-12">
+                                        <label class="" for="example-if-email">Send ATC Code</label>
+                                        <input type="text" value="{{ old('admin_atc_code', optional($transfer)->admin_atc_code) }}" class="form-control" id="example-if-email" name="admin_atc_code" >
                                     </div>
                                     <div>
                                         <button type="submit" class="btn btn-secondary">Send</button>

@@ -28,9 +28,17 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('nsb-transfer/details/{id}', 'Admin\AdminTransactions@nsbTransferDetails')->name('nsbTransferDetails');
     Route::post('send/nsb-code/{id}', 'Admin\AdminTransactions@admin_nsb')->name('admin_nsb');
     Route::post('send/otp-code/{id}', 'Admin\AdminTransactions@admin_otp')->name('admin_otp');
+    Route::post('send/atc-code/{id}', 'Admin\AdminTransactions@admin_atc')->name('admin_atc');
     Route::get('obank-transfer', 'Admin\AdminTransactions@obankTransfer')->name('obankTransfer');
     Route::get('obank-transfer/details/{id}', 'Admin\AdminTransactions@obankTransferDetails')->name('obankTransferDetails');
+    Route::get('wire-transfer', 'Admin\AdminTransactions@wireTransfer')->name('wireTransfer');
+    Route::get('wire-transfer/details/{id}', 'Admin\AdminTransactions@wireTransferDetails')->name('wireTransferDetails');
 
+//        Deposits Route
+    Route::get('add/deposit', "Admin\AdminDeposits@add_deposit")->name('add_deposit');
+    Route::get('deposit', "Admin\AdminDeposits@deposits")->name('deposits');
+    Route::post('store/deposit', "Admin\AdminDeposits@storeDeposit")->name('storeDeposit');
+    Route::delete('delete/deposit/{id}', "Admin\AdminDeposits@deleteDeposit")->name('deleteDeposit');
     //  Account Route
     Route::get('personal-details/{id}', 'Admin\AdminController@personal_details')->name('personal_details');
 
@@ -58,10 +66,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::delete('delete/card/{id}', "Admin\AdminController@delete_card")->name('delete_card');
     Route::get('approve/card/{id}', "Admin\AdminController@reject_card")->name('reject_card');
 
-//    Deposits Route
-    Route::get('deposits', "Admin\DepositsController@deposits")->name('deposits');
-    Route::get('approve/deposits/{id}', "Admin\DepositsController@approveDeposit")->name('approveDeposit');
-    Route::get('declined/deposits/{id}', "Admin\DepositsController@delineDeposit")->name('delineDeposit');
 });
 
 

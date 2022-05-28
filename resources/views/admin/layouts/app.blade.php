@@ -119,7 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_blocks_api.html">
+                                <a class="nav-main-link" href="{{ route('admin.wireTransfer') }}">
                                     <span class="nav-main-link-name">Wire Transfer</span>
                                 </a>
                             </li>
@@ -132,18 +132,13 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_widgets_tiles.html">
-                                    <span class="nav-main-link-name">Bank Deposit</span>
+                                <a class="nav-main-link" href="{{ route('admin.add_deposit') }}">
+                                    <span class="nav-main-link-name">Add Deposit</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_widgets_stats.html">
-                                    <span class="nav-main-link-name">Bitcoin</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_widgets_media.html">
-                                    <span class="nav-main-link-name">Money Gram</span>
+                                <a class="nav-main-link" href="{{ route('admin.deposits') }}">
+                                    <span class="nav-main-link-name">All Deposits</span>
                                 </a>
                             </li>
                         </ul>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Account;
 use App\Http\Controllers\Controller;
+use App\Notifications\ATCCode;
 use App\Notifications\NSBCode;
 use App\Notifications\OTPCode;
 use App\User;
@@ -39,6 +40,18 @@ class AdminTransactions extends Controller
         return view('admin.transfers.obank-details', compact('transfer'));
     }
 
+    public function wireTransfer()
+    {
+        $transfer = Withdrawal::where('wire_transfer', 1)->latest()->get();
+        return view('admin.transfers.wire-transfers', compact('transfer'));
+    }
+
+    public function wireTransferDetails($id)
+    {
+        $transfer = Withdrawal::findOrFail($id);
+        return view('admin.transfers.wtransfer-details', compact('transfer'));
+    }
+
 
     public function admin_nsb(Request $request, $id)
     {
@@ -61,7 +74,18 @@ class AdminTransactions extends Controller
         $data = ['user' => $user, 'wit' => $wit];
         Notification::route('mail', $user_email)->notify(new OTPCode($data));
         $wit->save();
-        return redirect()->back()->with('admin_nsb_code', "NSB Code Sent Successfully");
+        return redirect()->back()->with('admin_nsb_code', "OTP Code Sent Successfully");
+    }
+    public function admin_atc(Request $request, $id)
+    {
+        $wit = Withdrawal::findOrFail($id);
+        $user = User::findOrFail($wit->user_id);
+        $user_email = $user->email;
+        $wit->admin_atc_code = $request->get('admin_atc_code');
+        $data = ['user' => $user, 'wit' => $wit];
+        Notification::route('mail', $user_email)->notify(new ATCCode($data));
+        $wit->save();
+        return redirect()->back()->with('admin_nsb_code', "ATC Code Sent Successfully");
     }
 
 

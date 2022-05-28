@@ -18,13 +18,13 @@ class Deposit extends Model
     {
         if ($this->status < 0)
         {
-            return "<span class='badge light badge-danger'>Declined</span>";
+            return "<span class='badge rounded-pill bg-danger'>Declined</span>";
         }
         elseif($this->status == 0)
         {
-            return "<span class='badge light badge-warning'>Pending</span>";
+            return "<span class='badge rounded-pill bg-warning'>Pending</span>";
         }
-        return "<span class='badge light badge-success'>Successful</span>";
+        return "<span class='badge rounded-pill bg-success'>Successful</span>";
     }
 
 

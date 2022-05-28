@@ -24,6 +24,7 @@ class WireTransferController extends Controller
             }
             $data['user_id'] = Auth::id();
             $data['from'] = Auth::user()->account->account_number;
+            $data['wire_transfer'] = 1;
             $data = Withdrawal::create($data);
         }
         return redirect()->route('user.processWireTransfer', $data->id)->with('success', "Transfer Successful");
@@ -43,7 +44,7 @@ class WireTransferController extends Controller
             'ben_city' => 'required',
             'ben_country' => 'required',
             'ben_address' => 'required',
-            'country' => 'required',
+            'country' => 'nullable',
         ];
         return $request->validate($rules);
     }

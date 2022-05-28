@@ -99,6 +99,10 @@
                                     <th>Account Number:</th>
                                     <td>{{ $transfer->acct_number }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Bank Name:</th>
+                                    <td>{{ $transfer->bank_name }}</td>
+                                </tr>
                             </table>
                         </div>
                     </div>

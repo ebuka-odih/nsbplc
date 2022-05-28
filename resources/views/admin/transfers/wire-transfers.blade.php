@@ -5,7 +5,7 @@
         <div class="bg-body-light">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Other Bank Transfer</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Wire Transfer</h1>
 
                 </div>
             </div>
@@ -17,7 +17,7 @@
             <!-- Dynamic Table with Export Buttons -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Other Bank Transfer</h3> </div>
+                    <h3 class="block-title">Wire Transfer</h3> </div>
                 <div class="block-content block-content-full">
                     <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
                     <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
@@ -37,7 +37,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($obank_transfer as $item)
+                                    @foreach($transfer as $item)
                                         <tr class="odd">
                                             {{--                                        <td class="text-center sorting_1">1</td>--}}
                                             <td class="fw-semibold"> <a href="{{ route('admin.user_details', $item->user->id) }}">{{ $item->user->first_name." ".$item->user->last_name }}</a> </td>
@@ -47,7 +47,7 @@
                                             <td class="d-none d-sm-table-cell"> {!! $item->status() !!} </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <a href="{{ route('admin.obankTransferDetails', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View User" data-bs-original-title="View">
+                                                    <a href="{{ route('admin.wireTransferDetails', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View User" data-bs-original-title="View">
                                                         <i class="fa fa-eye"></i>
                                                     </a>
                                                     <form method="POST" action="{!! route('admin.delete.user', $item->id) !!}" accept-charset="UTF-8">
