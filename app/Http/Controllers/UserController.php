@@ -23,7 +23,7 @@ class UserController extends Controller
 
         $pending_debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('debit', '=', 1)->where('status', '=', 0)->sum('amount');
 
-        $transactions = Withdrawal::whereUserId(auth()->id())->paginate(4);
+        $transactions = Withdrawal::whereUserId(auth()->id())->latest()->paginate(4);
         $total_with = Withdrawal::whereUserId(auth()->id())->get()->where('status', 1)->count();
         $total_dep = Deposit::whereUserId(auth()->id())->get()->where('status', 1)->count();
         $total_loan = Loan::whereUserId(auth()->id())->get()->where('status', 1)->count();

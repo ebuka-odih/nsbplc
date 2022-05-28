@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\CardRequest;
 use App\Notifications\FundAccount;
 use App\RequestCard;
+use App\Rules\MatchOldPassword;
 use App\User;
 use App\Withdrawal;
 use Illuminate\Http\Request;
@@ -25,6 +26,67 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('deposits','withdrawal', 'users'));
     }
 
+    public function create()
+    {
+        return view('admin.user.add-admin');
+    }
+
+    public function store_admin(Request $request)
+    {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|string|min:5|confirmed',
+            'account_type' => 'required',
+        ]);
+
+        $user = new User();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request['password']);
+        $user->pass = $request->password;
+        $user->status = 1;
+        $user->admin = 1;
+        $user->save();
+        $this->autoCreate($user->id, $request['account_type']);
+        return redirect()->route('admin.admins');
+    }
+
+    public function edit_admin($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.user.edit-admin', compact('user'));
+    }
+
+    public function update_admin(Request $request, $id)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        $user = User::findOrFail($id);
+        $data = $this->getUpdateData($request);
+        $user->update($data);
+        $user->update(['password'=> Hash::make($request->new_password)]);
+
+        return redirect()->route('admin.admins');
+    }
+
+    protected function getUpdateData(Request $request)
+    {
+        $rules = [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|string|min:5|confirmed',
+            'account_type' => 'required',
+        ];
+        return $request->validate($rules);
+    }
 
 
     public function user_detail($id)

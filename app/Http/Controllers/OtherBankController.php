@@ -27,6 +27,7 @@ class OtherBankController extends Controller
                 }
                 $data['user_id'] = Auth::id();
                 $data['from'] = Auth::user()->account->account_number;
+                $data['obank_transfer'] = 1;
                 $data = Withdrawal::create($data);
             }
             return redirect()->route('user.processObank', $data->id)->with('success', "Transfer Successful");
@@ -107,13 +108,13 @@ class OtherBankController extends Controller
                     $mail_data = ['user' => $user, 'transaction' => $withdrawal];
 
                     Mail::to($user->email)->send(new DebitAlert($mail_data));
-                    return redirect()->route('user.process.otherbank', $withdrawal->id);
+                    return redirect()->route('user.processObankDetails', $withdrawal->id);
                 }
             }
             return redirect()->back()->with('declined', "Invalid Code, Please enter the right digits.");
         }
 
-        public function process($id)
+        public function processObankDetails($id)
         {
             $with_dt = Withdrawal::findOrFail($id);
             return view('dashboard.process-obank-details', compact('with_dt'));
@@ -125,7 +126,7 @@ class OtherBankController extends Controller
             if ( $with_dt->nsb_code == null){
                 return redirect()->route('user.obank_code', $with_dt->id);
             }
-            elseif ($with_dt->otp_code == null)
+            elseif ($with_dt->otp == null)
             {
                 return redirect()->route('user.otp_code', $with_dt->id);
             }

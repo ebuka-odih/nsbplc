@@ -95,7 +95,7 @@
             <div class="content-side">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                        <a class="nav-main-link" href="{{ route('admin.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-location-arrow"></i>
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
@@ -109,12 +109,12 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_blocks_styles.html">
+                                <a class="nav-main-link" href="{{ route('admin.nsbTransfer') }}">
                                     <span class="nav-main-link-name">NSB Transfers</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_blocks_options.html">
+                                <a class="nav-main-link" href="{{ route('admin.obankTransfer') }}">
                                     <span class="nav-main-link-name">Other Bank</span>
                                 </a>
                             </li>
@@ -288,9 +288,15 @@
                             <!-- END Side Overlay -->
 
                             <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="op_auth_signin.html">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                 <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>

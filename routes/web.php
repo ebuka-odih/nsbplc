@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     // Withdrawal Routes
     Route::get('statement', 'TransactionsController@transactions')->name('statement');
-    Route::get('process', 'TransactionsController@process')->name('process');
+//    Route::get('process', 'TransactionsController@process')->name('process');
 
 //    NSB Transfer
     Route::get('nsb/transfer', "NSBController@nsbTransfer")->name('acuTransfer');
@@ -79,6 +79,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('process/nsb/{id}', "NSBController@processNsb")->name('processNsb');
     Route::get('nsb/code/{id}', "NSBController@nsb_code")->name('nsb_code');
     Route::post('store/nsb-code', "NSBController@nsb_store")->name('nsb_store');
+    Route::get('process/{id}/nsb/final', 'NSBController@processFinal')->name('processFinal');
     Route::get('transaction/nsb-details/{id}', "NSBController@withdrawal_details")->name('nsb_withdrawal_details');
 
 //    Other Bank Transfer
@@ -90,7 +91,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('process/obank/otp/{id}', "OtherBankController@processOtp")->name('processObankOtp');
     Route::get('obank/otp/code/{id}', "OtherBankController@otp_code")->name('otp_code');
     Route::post('store/obank/otp', "OtherBankController@otp_store")->name('otp_store');
-    Route::get('process/obank-details/{id}', 'OtherBankController@process')->name('process.otherbank');
+    Route::get('process/obank-details/{id}', 'OtherBankController@processObankDetails')->name('processObankDetails');
     Route::get('transaction/obank-details/{id}', "OtherBankController@withdrawal_details")->name('obank_withdrawal_details');
 
 //    Wire Transfer

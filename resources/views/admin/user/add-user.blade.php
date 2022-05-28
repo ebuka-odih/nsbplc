@@ -681,7 +681,7 @@
                                 </div>
 
                                 <div class="col-lg-12">
-                                    <button type="submit" class="btn btn-secondary">Update</button>
+                                    <button type="submit" class="btn btn-secondary">Save</button>
                                 </div>
                             </form>
                             <!-- END Form Inline - Alternative Style -->

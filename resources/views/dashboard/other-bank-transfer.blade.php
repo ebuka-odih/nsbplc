@@ -112,7 +112,7 @@
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeNsbTransfer') }}" method="POST">
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeObankTransfer') }}" method="POST">
                                @csrf
 
                                 <input type="hidden" name="trans_type" value="obank_transfer">

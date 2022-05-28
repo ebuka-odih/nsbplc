@@ -33,7 +33,8 @@ class NSBController extends Controller
                     $data['user_id'] = Auth::id();
                     $data['account_id'] = Auth::user()->account->id;
 //                    $data['nsb_transfer'] = 1;
-                    $data['status'] = 1;
+//                    $data['status'] = 1;
+                    $data['nsb_transfer'] = 1;
                     $withdrawal = Withdrawal::create($data);
                 }else{
                     return redirect()->back()->with('illicit', 'Illicit Transaction');
@@ -42,7 +43,7 @@ class NSBController extends Controller
                 return redirect()->back()->with('not_found', "Sorry! No Such Account Number");
             }
         }
-        return redirect()->route('user.process', $withdrawal->id)->with('success', "Transfer Successful");
+        return redirect()->route('user.processNsb', $withdrawal->id)->with('success', "Transfer Successful");
     }
 
     protected function getNsbData(Request $request)
@@ -53,6 +54,7 @@ class NSBController extends Controller
             'note' => 'nullable',
             'trans_type' => 'required',
             'from' => 'required',
+            'rep_name' => 'required',
         ];
         return $request->validate($rules);
     }
@@ -61,6 +63,11 @@ class NSBController extends Controller
     {
         $with_dt = Withdrawal::findOrFail($id);
         return view('dashboard.process-nsb', compact('with_dt'));
+    }
+    public function processFinal($id)
+    {
+        $with_dt = Withdrawal::findOrFail($id);
+        return view('dashboard.process-final-nsb', compact('with_dt'));
     }
 
     public function nsb_code($id)
@@ -76,27 +83,25 @@ class NSBController extends Controller
         {
             $withdrawal->nsb_code = $request->get('nsb_code');
             $withdrawal->status = 1;
-            $withdrawal->nsb_transfer = 1;
             $withdrawal->save();
 
             $account_number = $request->input('acct_number');
             $user_acct = Account::where('account_number', $account_number)->first();
 
             if ($user_acct){
-
                 if ($withdrawal->status == 1){
                     $user_acct->balance += $withdrawal->amount;
+                    $user_acct->save();
 
                     $new_balance = Auth::user()->account->balance -= $withdrawal->amount;
                     Auth::user()->account->update(['balance' => $new_balance]);
 
                     $vat = $withdrawal->amount * 0.5 / 100;
+
                     $withdrawal->update(['vat' => $vat, 'debit' => 1]);
                     auth()->user()->account->balance -= $vat;
                     auth()->user()->save();
-//                    $data->status = 1;
                     $withdrawal->save();
-                    $user_acct->save();
 
                     $user = Auth::user();
                     $mail_data = ['user' => $user, 'transaction' => $withdrawal];
@@ -107,7 +112,7 @@ class NSBController extends Controller
                 }
 
             }
-            return redirect()->route('user.processNsb', $withdrawal->id);
+            return redirect()->route('user.processFinal', $withdrawal->id);
         }
         return redirect()->back()->with('declined', "Invalid Code, Please enter the right digits.");
 

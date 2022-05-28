@@ -117,11 +117,15 @@
                                @csrf
 
                                 <input type="hidden" name="trans_type" value="nsb_transfer">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <label for="example-ltf-text">From <span class="text-danger">*</span></label>
                                     <input type="text" readonly class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">Account Name <span class="text-danger">*</span></label>
+                                    <input required type="text" class="form-control form-control-lg" id="example-if-password" name="rep_name">
+                                </div>
+                                <div class="col-lg-4">
                                     <label for="example-ltf-text">Amount <span class="text-danger">*</span></label>
                                     <input required type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$">
                                 </div>

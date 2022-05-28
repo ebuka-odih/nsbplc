@@ -12,14 +12,15 @@ class Withdrawal extends Model
 
     public function status()
     {
-        if ($this->status < 0)
+        if ($this->status == 1)
         {
-            return "<span class='badge light badge-danger'>Canceled</span>";
+            return "<span class='badge rounded-pill bg-success'>Successful</span>";
         }elseif($this->status == 0)
         {
-            return "<span class='badge light badge-warning'>Pending</span>";
+            return "<span class='badge rounded-pill bg-warning'>Pending</span>";
         }
-        return "<span class='badge rounded-pill bg-success'>Successful</span>";
+        return "<span class='badge rounded-pill bg-danger'>Canceled</span>";
+
     }
 
     public function user()

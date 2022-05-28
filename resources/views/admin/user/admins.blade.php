@@ -19,7 +19,7 @@
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Admins</h3> </div>
                 <div class="block-content block-content-full">
-                    <a href="" class="btn btn-secondary m-3">Add Admin</a>
+                    <a href="{{ route('admin.add_admin') }}" class="btn btn-secondary m-3">Add Admin</a>
                     <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
                     <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
 
@@ -31,7 +31,6 @@
                                         {{--                                        <th class="text-center sorting sorting_asc" style="width: 80px;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>--}}
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Name</th>
                                         <th class="d-none d-sm-table-cell sorting" style="width: 30%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
-                                        <th class="d-none d-sm-table-cell sorting"  tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" >Acct No</th>
                                         <th class="d-none d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">Active</th>
                                         <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Registered</th>
                                         <th class="text-center" style="width: 100px;">Actions</th>
@@ -43,12 +42,12 @@
                                             {{--                                        <td class="text-center sorting_1">1</td>--}}
                                             <td class="fw-semibold"> <a href="{{ route('admin.user_details', $item->id) }}">{{ $item->first_name." ".$item->last_name }}</a> </td>
                                             <td class="d-none d-sm-table-cell"> {{ $item->email }} </td>
-                                            <td class="d-none d-sm-table-cell"> {{ $item->account->account_number }} </td>
+{{--                                            <td class="d-none d-sm-table-cell"> {{ $item->account->account_number }} </td>--}}
                                             <td class="d-none d-sm-table-cell"> {!! $item->status() !!} </td>
                                             <td> <em class="text-muted">{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</em> </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <a href="{{ route('admin.user_details', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Edit User" data-bs-original-title="Edit">
+                                                    <a href="{{ route('admin.edit_admin', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Edit User" data-bs-original-title="Edit">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
 
