@@ -16,9 +16,10 @@ class DepositAlert extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public $deposit;
+    public function __construct($deposit)
     {
-        //
+        $this->deposit = $deposit;
     }
 
     /**
@@ -41,9 +42,7 @@ class DepositAlert extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->line('A deposit of $'.$this->deposit->amount." has been made into your NSBPLC account");
     }
 
     /**

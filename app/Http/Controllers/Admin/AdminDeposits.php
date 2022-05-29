@@ -40,8 +40,9 @@ class AdminDeposits extends Controller
         $deposit->save();
         $user = User::findOrFail($request->user_id);
         $user->account->balance += $request->amount;
+        $user->account->save();
         Notification::route('mail', $user->email)->notify(new DepositAlert($deposit));
-        return redirect()->route('admin.deposit');
+        return redirect()->route('admin.deposits');
 
     }
 

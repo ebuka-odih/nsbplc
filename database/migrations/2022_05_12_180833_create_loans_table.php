@@ -19,6 +19,7 @@ class CreateLoansTable extends Migration
             $table->decimal('amount', 11, 2);
             $table->string('loan_type');
             $table->string('currency');
+            $table->integer('status')->default(0);
             $table->text('desc');
             $table->bigInteger('user_id');
         });

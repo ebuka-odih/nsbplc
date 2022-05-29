@@ -34,11 +34,22 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('wire-transfer', 'Admin\AdminTransactions@wireTransfer')->name('wireTransfer');
     Route::get('wire-transfer/details/{id}', 'Admin\AdminTransactions@wireTransferDetails')->name('wireTransferDetails');
 
-//        Deposits Route
+    //  Deposits Route
     Route::get('add/deposit', "Admin\AdminDeposits@add_deposit")->name('add_deposit');
     Route::get('deposit', "Admin\AdminDeposits@deposits")->name('deposits');
     Route::post('store/deposit', "Admin\AdminDeposits@storeDeposit")->name('storeDeposit');
     Route::delete('delete/deposit/{id}', "Admin\AdminDeposits@deleteDeposit")->name('deleteDeposit');
+
+    // Loan Routes
+    Route::get('active/loans', "Admin\AdminLoans@activeLoans")->name('activeLoans');
+    Route::get('pending/loans', "Admin\AdminLoans@pendingLoan")->name('pendingLoan');
+    Route::get('approve/loan/{id}', "Admin\AdminLoans@approveLoan")->name('approveLoan');
+    Route::get('eligable/user/loans', "Admin\AdminLoans@eligable")->name('eligable');
+    Route::get('activate/user/loans/{id}', "Admin\AdminLoans@activateEligable")->name('activateEligable');
+    Route::get('decline/user/loans', "Admin\AdminLoans@decline")->name('decline');
+    Route::delete('delete/loans', "Admin\AdminLoans@deleteLoan")->name('deleteLoan');
+
+
     //  Account Route
     Route::get('personal-details/{id}', 'Admin\AdminController@personal_details')->name('personal_details');
 

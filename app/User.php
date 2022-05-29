@@ -61,6 +61,11 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(RequestCard::class, 'user_id');
     }
 
+    public function loans()
+    {
+        return $this->hasMany(Loan::class, 'user_id');
+    }
+
     public function getAvatarAttribute($value) {
         if(!$this->attributes['avatar']) {
             $colors = ['E91E63', '9C27B0', '673AB7', '3F51B5', '0D47A1', '01579B', '00BCD4', '009688', '33691E', '1B5E20', '33691E', '827717', 'E65100',  'E65100', '3E2723', 'F44336', '212121'];
@@ -98,6 +103,18 @@ class User extends Authenticatable implements HasMedia
             return "<span class='badge bg-success'>Active</span>";
         }else{
             return "<span class='badge bg-danger'>InActive</span>";
+        }
+    }
+
+    public function eligable()
+    {
+        if ($this->eligable == 1)
+        {
+            return "<span class='badge rounded-pill bg-success'>Eligible</span>";
+        }
+        else
+        {
+            return "<span class='badge rounded-pill bg-danger'>Not Eligible</span>";
         }
     }
 

@@ -16,6 +16,8 @@
 
         <!-- Dynamic Table with Export Buttons -->
         <div class="block block-rounded">
+            <a href="{{ route('admin.add_deposit') }}" class="btn btn-secondary m-3">Add Deposit</a>
+
             <div class="block-header block-header-default">
                 <h3 class="block-title">All Deposits</h3> </div>
             <div class="block-content block-content-full">

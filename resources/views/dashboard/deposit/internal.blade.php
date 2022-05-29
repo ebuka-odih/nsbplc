@@ -21,7 +21,7 @@
                     <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('user.deposit') }}">Deposit</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('user.deposits') }}">Deposit</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Internal Deposit</li>
                         </ol>
                     </nav>

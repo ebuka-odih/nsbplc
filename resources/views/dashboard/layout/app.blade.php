@@ -118,11 +118,16 @@
 
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="{{ route('user.deposit') }}">
+                        <a class="nav-main-link "  href="{{ route('user.deposits') }}">
                             <i class="nav-main-link-icon fa fa-arrow-down"></i>
-                            <span class="nav-main-link-name"> Deposit</span>
+                            <span class="nav-main-link-name"> Deposits</span>
                         </a>
-
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="{{ route('user.payment_method') }}">
+                            <i class="nav-main-link-icon fa fa-money-check-alt"></i>
+                            <span class="nav-main-link-name">Deposits Methods</span>
+                        </a>
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="#">
@@ -130,6 +135,28 @@
                             <span class="nav-main-link-name">Bank Statement</span>
                         </a>
 
+                    </li>
+
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
+                            <span class="nav-main-link-name">Loan</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <i class="nav-main-link-icon fa fa-plus-circle"></i>
+                                    <span class="nav-main-link-name">New Loan</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="">
+                                    <span class="nav-main-link-name">Loans</span>
+                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
@@ -151,23 +178,11 @@
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Manage</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
                                     <span class="nav-main-link-name">New Card</span>
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-                    <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" href="#">
-                            <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
-                            <span class="nav-main-link-name">Loan</span>
-                        </a>
                     </li>
 
                     <li class="nav-main-heading">Personal</li>

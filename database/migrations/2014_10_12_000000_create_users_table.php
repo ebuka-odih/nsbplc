@@ -54,6 +54,8 @@ class CreateUsersTable extends Migration
 
             $table->integer('status')->default(0)->nullable(); // check is account is active
             $table->integer('admin')->default(0)->nullable();
+            $table->integer('eligable')->default(0);
+            $table->integer('sms')->default(0);
         });
     }
 

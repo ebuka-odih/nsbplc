@@ -150,13 +150,18 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link " href="#">
+                                <a class="nav-main-link " href="{{ route('admin.activeLoans') }}">
                                     <span class="nav-main-link-name">Active Loans</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link " href="#">
+                                <a class="nav-main-link " href="{{ route('admin.pendingLoan') }}">
                                     <span class="nav-main-link-name">Pending Loans</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link " href="{{ route('admin.eligable') }}">
+                                    <span class="nav-main-link-name">Eligable User</span>
                                 </a>
                             </li>
                         </ul>
