@@ -61,7 +61,7 @@
 
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('user.wire_transfer') }}">
+                    <a class="block block-rounded block-link-shadow" href="">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fab fa-monero fa-3x text-gray"></i>

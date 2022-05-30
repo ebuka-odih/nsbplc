@@ -76,7 +76,24 @@
 
                         </div>
                         @elseif($payment_method->payment_type == 2)
+
                             <div class="col-lg-12 space-y-2">
+                                <div class="table">
+                                    <table class="table" style="width:100%">
+                                        <tr>
+                                            <th>First Amount:</th>
+                                            <td>$@convert($payment_method->amount_1)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Second Amount:</th>
+                                            <td>$@convert($payment_method->amount_2)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Third Amount:</th>
+                                            <td>$@convert($payment_method->amount_1)</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <!-- Form Inline - Default Style -->
                                 <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
                                     @csrf
