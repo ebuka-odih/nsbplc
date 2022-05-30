@@ -11,12 +11,14 @@ class PaymentMethodController extends Controller
 
         public function payment_method()
         {
-            return view('dashboard.deposit.internal');
+            $payment_method = PaymentMethod::whereUserId(\auth()->id())->get();
+            return view('dashboard.deposit.list-methods', compact('payment_method'));
         }
 
-        public function bitcoin()
+        public function PaymentMethodDetails($id)
         {
-            return view('dashboard.deposit.bitcoin');
+            $payment_method = PaymentMethod::findOrFail($id);
+            return view('dashboard.deposit.details', compact('payment_method'));
         }
 
         public function storeDeposit(Request $request)

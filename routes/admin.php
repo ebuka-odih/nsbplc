@@ -10,7 +10,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('edit/admin/{id}', "Admin\AdminController@edit_admin")->name('edit_admin');
     Route::patch('edit/admin/{id}', "Admin\AdminController@update_admin")->name('update_admin');
 
-//        User Route
+    // User Route
     Route::get('users', 'Admin\UserController@all_users')->name('users');
     Route::get('active/users', 'Admin\UserController@active_users')->name('active_users');
     Route::get('inactive/users', 'Admin\UserController@inactive_users')->name('inactive_users');
@@ -49,13 +49,13 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('decline/user/loans', "Admin\AdminLoans@decline")->name('decline');
     Route::delete('delete/loans', "Admin\AdminLoans@deleteLoan")->name('deleteLoan');
 
-
-    //  Account Route
-    Route::get('personal-details/{id}', 'Admin\AdminController@personal_details')->name('personal_details');
-
-    Route::post('fund-account/{id}', 'Admin\AdminController@fund_account')->name('fund_account');
-    Route::post('defund-account/{id}', 'Admin\AdminController@defund_account')->name('defund_account');
-    Route::post('update_bank/{id}', 'Admin\AccountController@update_bank')->name('update_bank');
+    // Payment Method Routes
+    Route::get('payment/methods', "Admin\AdminPaymentMethod@payment_method")->name('payment_method');
+    Route::get('add/payment/methods', "Admin\AdminPaymentMethod@addMethod")->name('addMethod');
+    Route::post('add/bank/methods', "Admin\AdminPaymentMethod@storeBankMethod")->name('storeBankMethod');
+    Route::get('add/bitcoin/methods', "Admin\AdminPaymentMethod@bitcoinMethod")->name('bitcoinMethod');
+    Route::post('store/bitcoin/methods', "Admin\AdminPaymentMethod@storeBtcMethod")->name('storeBtcMethod');
+    Route::delete('delete/payment/methods', "Admin\AdminPaymentMethod@deleteMethod")->name('deleteMethod');
 
 //    Message route
     Route::get('user/profile/message/{id}', 'Admin\MessageController@index')->name('user_message')->where('id', '[0-9]+');

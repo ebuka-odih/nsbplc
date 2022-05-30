@@ -65,6 +65,10 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(Loan::class, 'user_id');
     }
+    public function payment_methods()
+    {
+        return $this->hasMany(PaymentMethod::class, 'user_id');
+    }
 
     public function getAvatarAttribute($value) {
         if(!$this->attributes['avatar']) {

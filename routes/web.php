@@ -112,7 +112,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
 
     // Deposits Payment Route
-    Route::get('internal/deposit', "PaymentMethodController@payment_method")->name('payment_method');
+    Route::get('/deposit/methods', "PaymentMethodController@payment_method")->name('payment_method');
+    Route::get('/deposit/method/details/{id}', "PaymentMethodController@PaymentMethodDetails")->name('PaymentMethodDetails');
     Route::post('store/deposit', "PaymentMethodController@storeDeposit")->name('storeDeposit');
     Route::get('deposit/payment/{id}', "PaymentMethodController@payment")->name('payment');
     Route::get('bitcoin/deposit', "PaymentMethodController@bitcoin")->name('bitcoin');
