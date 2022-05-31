@@ -39,28 +39,24 @@
                                 <thead>
                                 <tr class="text-uppercase">
                                     <th>Date</th>
-                                    <th>Loan Type</th>
-                                    <th class="d-none d-xl-table-cell">Currency</th>
-                                    <th class="text-end" >Amount</th>
+                                    <th>Card Type</th>
+                                    <th class="d-none d-xl-table-cell">Nickname</th>
                                     <th class="d-none d-sm-table-cell text-end">Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($loans as $item)
+                                @foreach($cards as $item)
                                     <tr>
                                         <td >
                                             <span class="fw-semibold">{{ date('Y-m-d', strtotime($item->created_at)) }}</span>
                                         </td>
                                         <td >
-                                            <span class="fw-semibold">{{ $item->loan_type }}</span>
+                                            <span class="fw-semibold">{{ $item->card_type }}</span>
                                         </td>
                                         <td class="d-none d-xl-table-cell">
-                                            <span class="fs-sm text-muted" >{{ $item->currency }}</span>
+                                            <span class="fs-sm text-muted" >{{ $item->nickname }}</span>
                                         </td>
 
-                                        <td class="text-end" >
-                                            <span class="fw-semibold"> $@convert($item->amount)</span>
-                                        </td >
                                         <td class="d-none d-sm-table-cell text-end fw-medium">
                                             <span class="fw-semibold text-warning">{!! $item->status() !!}</span>
                                         </td>
@@ -70,7 +66,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center">
-                                {!! $loans->links() !!}
+                                {!! $cards->links() !!}
                             </div>
                         </div>
 

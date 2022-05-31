@@ -151,38 +151,38 @@
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link " href="{{ route('admin.activeLoans') }}">
-                                    <span class="nav-main-link-name">Active Loans</span>
+                                    <span class="nav-main-link-name">All Loans</span>
                                 </a>
                             </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link " href="{{ route('admin.pendingLoan') }}">
-                                    <span class="nav-main-link-name">Pending Loans</span>
-                                </a>
-                            </li>
+{{--                            <li class="nav-main-item">--}}
+{{--                                <a class="nav-main-link " href="{{ route('admin.pendingLoan') }}">--}}
+{{--                                    <span class="nav-main-link-name">Pending Loans</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li class="nav-main-item">
                                 <a class="nav-main-link " href="{{ route('admin.eligable') }}">
-                                    <span class="nav-main-link-name">Eligable User</span>
+                                    <span class="nav-main-link-name">Eligible User</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <a class="nav-main-link" href="{{ route('admin.cards') }}">
                             <i class="nav-main-link-icon fa fa-credit-card"></i>
                             <span class="nav-main-link-name">Debit Cards</span>
                         </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link " href="#">
-                                    <span class="nav-main-link-name">Active Cards</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link " href="#">
-                                    <span class="nav-main-link-name">Pending Cards</span>
-                                </a>
-                            </li>
-                        </ul>
+{{--                        <ul class="nav-main-submenu">--}}
+{{--                            <li class="nav-main-item">--}}
+{{--                                <a class="nav-main-link " href="#">--}}
+{{--                                    <span class="nav-main-link-name">All Cards</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-main-item">--}}
+{{--                                <a class="nav-main-link " href="#">--}}
+{{--                                    <span class="nav-main-link-name">Pending Cards</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </li>
 
                     <li class="nav-main-heading">User</li>
@@ -251,7 +251,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('admin.password') }}">
                             <i class="nav-main-link-icon fa fa-shield-alt"></i>
                             <span class="nav-main-link-name">Security</span>
                         </a>
@@ -289,10 +289,6 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
                         <div class="p-2">
-                            <a class="dropdown-item" href="be_pages_generic_profile.html">
-                                <i class="far fa-fw fa-user me-1"></i> Profile
-                            </a>
-
                             <!-- Toggle Side Overlay -->
                             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                             <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
@@ -320,23 +316,6 @@
         </div>
         <!-- END Header Content -->
 
-        <!-- Header Search -->
-        <div id="page-header-search" class="overlay-header bg-header-dark">
-            <div class="bg-white-10">
-                <div class="content-header">
-                    <form class="w-100" action="be_pages_generic_search.html" method="POST">
-                        <div class="input-group">
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <button type="button" class="btn btn-alt-primary" data-toggle="layout" data-action="header_search_off">
-                                <i class="fa fa-fw fa-times-circle"></i>
-                            </button>
-                            <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- END Header Search -->
 
         <!-- Header Loader -->
         <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
@@ -364,9 +343,7 @@
                 <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
                     Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
                 </div>
-                <div class="col-sm-6 order-sm-1 text-center text-sm-start">
-                    <a class="fw-semibold" href="https://1.envato.market/r6y" target="_blank">Dashmix 5.1</a> &copy; <span data-toggle="year-copy"></span>
-                </div>
+
             </div>
         </div>
     </footer>

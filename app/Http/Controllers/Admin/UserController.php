@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class UserController extends Controller
 {
@@ -84,9 +86,15 @@ class UserController extends Controller
 
         if ($image = $request->file('avatar')){
 
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/profile_images');
-            $image->move($destinationPath, $input['imagename']);
+            $avatar = $request->file('avatar'); // in here
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(200, 200)->save(public_path('avatars/' . $filename));
+
+//            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+//            $destinationPath = public_path('/avatars');
+//            $image->move($destinationPath, $input['imagename']);
+//            Image::make($avatar)->resize(150, 150)->save(public_path('avatars/' . $filename));
+
             $user = new User();
             $user->first_name = $request->get('first_name');
             $user->last_name = $request->get('last_name');
@@ -120,7 +128,7 @@ class UserController extends Controller
 
             $user->password = Hash::make($request['password']);
             $user->pass = $request->password;
-            $user->avatar = $input['imagename'];
+            $user->avatar = $filename;
             $user->save();
             $this->autoCreate($user->id, $request['account_type']);
 
@@ -177,12 +185,12 @@ class UserController extends Controller
     public function update_user(Request $request, $id)
     {
         if ($image = $request->file('avatar')){
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/profile_images');
-            $image->move($destinationPath, $input['imagename']);
+            $avatar = $request->file('avatar'); // in here
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(200, 200)->save(public_path('avatars/' . $filename));
 
             $user = User::findOrFail($id);
-            $user->update(['avatar' => $input['imagename']]);
+            $user->update(['avatar' => $filename]);
             $data = $this->getUpdateData($request);
             $user->update($data);
             return redirect()->back()->with('success', 'Profile Updated Successful');
@@ -231,6 +239,7 @@ class UserController extends Controller
 
         return $request->validate($rules);
     }
+
 
 
 }

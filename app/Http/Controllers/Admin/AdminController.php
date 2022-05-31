@@ -26,9 +26,22 @@ class AdminController extends Controller
         return view('admin.dashboard', compact('deposits','withdrawal', 'users'));
     }
 
-    public function create()
+    public function password()
     {
-        return view('admin.user.add-admin');
+        return view('admin.security');
+    }
+
+    public function storePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+
+        return redirect()->back()->with('success', "Password Updated Successfully");
     }
 
     public function store_admin(Request $request)

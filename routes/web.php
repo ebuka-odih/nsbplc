@@ -60,7 +60,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function () {
+Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
 
     Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
     Route::get('profile', "UserController@profile")->name('profile');
@@ -109,7 +109,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('process/wire-transfer/atc/{id}', "WireTransferController@processWireAtc")->name('processWireAtc');
     Route::get('wire-transfer/details/{id}', "WireTransferController@withdrawal_details")->name('wire_withdrawal_details');
 
-    Route::get('withdraw/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
+    Route::get('transfer/history', "WithdrawalController@withdrawHistory")->name('withdrawHistory');
 
     // Deposits Payment Route
     Route::get('/deposit/methods', "PaymentMethodController@payment_method")->name('payment_method');
@@ -121,12 +121,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     //Deposits Route
     Route::get('deposits', "DepositController@deposits")->name('deposits');
 
+//    Loan Route
+    Route::resource('loan', "LoanController");
+
     // Card Route
-    Route::get('card', "RequestCardController@card")->name('card');
-    Route::get('card/history', "RequestCardController@cardHistory")->name('cardHistory');
-    Route::post('request/card', "RequestCardController@storeCard")->name('storeCard');
+    Route::resource('card', "RequestCardController");
+
 
 });
+Route::get('get-started', "UserController@pending")->name('pending');
 
 include'admin.php';
 

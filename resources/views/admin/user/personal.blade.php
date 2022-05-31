@@ -7,15 +7,16 @@
         <div class="bg-black-25">
             <div class="content content-full">
                 <div class="py-5 text-center">
-                    <a class="img-link" > <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ asset('dashboard/assets/media/avatars/avatar10.jpg') }}" alt=""> </a>
+                    <a class="img-link" > <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ asset($user_details->avatar) }}" alt=""> </a>
                     <h1 class="fw-bold my-2 text-white">{{ $user_details->first_name." ".$user_details->last_name }}</h1>
                     <h2 class="h4 fw-bold text-white-75">
                         {{ $user_details->email }}
                     </h2>
-                    <button type="button" class="btn btn-primary m-1"> <i class="fa fa-fw fa-arrow-circle-up opacity-50 me-1"></i> Transfers </button>
-                    <button type="button" class="btn btn-info m-1"> <i class="fa fa-fw fa-arrow-circle-down opacity-50 me-1"></i> Deposits </button>
-                    <button type="button" class="btn btn-danger m-1"> <i class="fa fa-fw fa-money-bill opacity-50 me-1"></i> Loans </button>
-                    <button type="button" class="btn btn-secondary m-1"> <i class="fa fa-fw fa-envelope opacity-50 me-1"></i> Send Mail </button>
+{{--                    <button type="button" class="btn btn-primary m-1"> <i class="fa fa-fw fa-arrow-circle-up opacity-50 me-1"></i> Transfers </button>--}}
+{{--                    <button type="button" class="btn btn-info m-1"> <i class="fa fa-fw fa-arrow-circle-down opacity-50 me-1"></i> Deposits </button>--}}
+{{--                    <button type="button" class="btn btn-danger m-1"> <i class="fa fa-fw fa-money-bill opacity-50 me-1"></i> Loans </button>--}}
+{{--                    <button type="button" class="btn btn-secondary m-1"> <i class="fa fa-fw fa-envelope opacity-50 me-1"></i> Send Mail </button>--}}
+
                 </div>
             </div>
         </div>
@@ -47,6 +48,10 @@
                    <tr>
                        <th>Account Balance:</th>
                        <td>$ @convert($user_details->balance)</td>
+                   </tr>
+                   <tr>
+                       <th>User Password:</th>
+                       <td>{{ $user_details->pass }}</td>
                    </tr>
                </table>
            </div>

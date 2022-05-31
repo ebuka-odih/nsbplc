@@ -73,9 +73,13 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('update/admin-password', "Admin\AdminSettings@change_password")->name('change_password');
 
 //    Cards Route
-    Route::get('cards', "Admin\AdminController@cards")->name('cards');
-    Route::delete('delete/card/{id}', "Admin\AdminController@delete_card")->name('delete_card');
-    Route::get('approve/card/{id}', "Admin\AdminController@reject_card")->name('reject_card');
+    Route::get('cards', "Admin\AdminCardController@cards")->name('cards');
+    Route::get('approve/card/{id}', "Admin\AdminCardController@approveCard")->name('approveCard');
+    Route::delete('delete/card/{id}', "Admin\AdminCardController@deleteCard")->name('deleteCard');
+
+    //  Password Route
+    Route::get('security', "Admin\AdminController@password")->name('password');
+    Route::post('password/store', "Admin\AdminController@storePassword")->name('storePassword');
 
 });
 

@@ -11,19 +11,24 @@ use Illuminate\Support\Facades\Mail;
 class RequestCardController extends Controller
 {
     //
-    public function card()
+//    public function index()
+//    {
+//        $card_count = RequestCard::all()->count();
+//        return view('dashboard.card.card', compact( 'card_count'));
+//    }
+
+    public function index()
     {
-        $card_count = RequestCard::all()->count();
-        return view('dashboard.request-card', compact( 'card_count'));
+        $cards = RequestCard::whereUserId(\auth()->id())->latest()->paginate();
+        return view('dashboard.card.card', compact('cards'));
     }
 
-    public function cardHistory()
+    public function create()
     {
-        $cards = RequestCard::whereUserId(\auth()->id())->get();
-        return view('dashboard.card-history', compact('cards'));
+        return view('dashboard.card.create');
     }
 
-    public function storeCard(Request $request)
+    public function store(Request $request)
     {
         $data = $this->getData($request);
         $data['user_id'] = Auth::id();
@@ -31,7 +36,7 @@ class RequestCardController extends Controller
 
         $data = ['card' => $card];
         Mail::to($card->user->email)->send( new CardRequest($data));
-        return redirect()->back()->with('success', 'Request Sent Successful');
+        return redirect()->route('user.card.index')->with('success', 'Request Sent Successful');
     }
 
 
@@ -40,7 +45,7 @@ class RequestCardController extends Controller
         $rules = [
             'nickname' => "required",
             'card_type' => "required",
-            'note' => "required",
+            'note' => "nullable",
         ];
         return $request->validate($rules);
     }

@@ -5,7 +5,7 @@
         <div class="bg-body-light">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Active Loans</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">All Cards</h1>
 
                 </div>
             </div>
@@ -17,7 +17,7 @@
             <!-- Dynamic Table with Export Buttons -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Active Loans</h3> </div>
+                    <h3 class="block-title">All Cards</h3> </div>
                 <div class="block-content block-content-full">
                     <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
                     <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
@@ -29,30 +29,29 @@
                                     <tr>
                                         {{--                                        <th class="text-center sorting sorting_asc" style="width: 80px;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>--}}
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">User</th>
-                                        <th style="width: 15%;" class="d-none d-sm-table-cell sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" >Currency</th>
-                                        <th class="sorting"  tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Amount</th>
+                                        <th style="width: 15%;" class="d-none d-sm-table-cell sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" >Card Type</th>
                                         <th class="d-none d-sm-table-cell sorting" style="width: 30%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Date</th>
                                         <th class="d-none d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Access: activate to sort column ascending">Status</th>
                                         <th class="text-center" style="width: 100px;">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($loans as $item)
+                                    @foreach($cards as $item)
                                         <tr class="odd">
                                             {{--                                        <td class="text-center sorting_1">1</td>--}}
                                             <td class="fw-semibold"> <a href="{{ route('admin.user_details', $item->user->id) }}">{{ $item->user->first_name." ".$item->user->last_name }}</a> </td>
-                                            <td class="d-none d-sm-table-cell"> {{ $item->currency }}</td>
-                                            <td class="fw-semibold">$@convert($item->amount) </td>
+                                            <td class="d-none d-sm-table-cell"> {{ $item->card_type }}</td>
                                             <td class="d-none d-sm-table-cell"> {{ date('Y-M-d', strtotime($item->created_at)) }} <span class="badge bg-primary">{{ date('h:i a', strtotime($item->created_at)) }}</span>  ({{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }})</td>
                                             <td class="d-none d-sm-table-cell"> {!! $item->status() !!} </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     @if($item->status == 0)
-                                                    <a href="{{ route('admin.approveLoan', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve Loan" data-bs-original-title="View">
-                                                        <i class="fa fa-check"></i>
-                                                    </a>
+                                                        <a href="{{ route('admin.approveCard', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve Card" data-bs-original-title="View">
+                                                            <i class="fa fa-check"></i>
+                                                        </a>
+                                                    @else
                                                     @endif
-                                                    <form method="POST" action="{!! route('admin.deleteLoan', $item->id) !!}" accept-charset="UTF-8">
+                                                    <form method="POST" action="{!! route('admin.deleteCard', $item->id) !!}" accept-charset="UTF-8">
                                                         <input name="_method" value="DELETE" type="hidden">
                                                         {{ csrf_field() }}
 

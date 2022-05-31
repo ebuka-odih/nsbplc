@@ -51,7 +51,7 @@
             <div class="content-header bg-header-dark">
                 <!-- Logo -->
                 <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
-                    D<span class="opacity-75">x</span>
+                    Nations Star Bank<span class="opacity-75"> PLC</span>
                 </a>
                 <!-- END Logo -->
             </div>
@@ -130,7 +130,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('user.withdrawHistory') }}">
                             <i class="nav-main-link-icon fa fa-file-alt"></i>
                             <span class="nav-main-link-name">Bank Statement</span>
                         </a>
@@ -138,22 +138,22 @@
                     </li>
 
                     <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" href="#">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                             <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
                             <span class="nav-main-link-name">Loan</span>
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
+                                <a class="nav-main-link" href="{{ route('user.loan.create') }}">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
                                     <span class="nav-main-link-name">New Loan</span>
                                 </a>
                             </li>
 
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
+                                <a class="nav-main-link" href="{{ route('user.loan.index') }}">
                                     <span class="nav-main-link-name">Loans</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+{{--                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
                                 </a>
                             </li>
                         </ul>
@@ -165,19 +165,12 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Approved</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+                                <a class="nav-main-link" href="{{ route('user.card.index') }}">
+                                    <span class="nav-main-link-name">All Card</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Pending</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-warning">1</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
+                                <a class="nav-main-link" href="{{ route('user.card.create') }}">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
                                     <span class="nav-main-link-name">New Card</span>
                                 </a>
@@ -187,18 +180,18 @@
 
                     <li class="nav-main-heading">Personal</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
+                        <a class="nav-main-link" href="{{ route('user.profile') }}">
                             <i class="nav-main-link-icon fa fa-user-circle"></i>
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
-                            <i class="nav-main-link-icon fa fa-envelope"></i>
-                            <span class="nav-main-link-name">Messages</span>
-                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
-                        </a>
-                    </li>
+{{--                    <li class="nav-main-item">--}}
+{{--                        <a class="nav-main-link" href="">--}}
+{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
+{{--                            <span class="nav-main-link-name">Messages</span>--}}
+{{--                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="">
                             <i class="nav-main-link-icon fa fa-cog"></i>
@@ -206,15 +199,14 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
+                        <a class="nav-main-link" href="{{ route('user.password') }}">
                             <i class="nav-main-link-icon fa fa-lock"></i>
                             <span class="nav-main-link-name">Security</span>
-                            <span class="nav-main-link-badge badge rounded-pill bg-danger">1</span>
                         </a>
                     </li>
-                    <li class="nav-main-heading">Dashboards</li>
+                    <li class="nav-main-heading">Homepage</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard_all.html">
+                        <a class="nav-main-link" href="/">
                             <i class="nav-main-link-icon fa fa-arrow-left"></i>
                             <span class="nav-main-link-name">Go Back</span>
                         </a>

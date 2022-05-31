@@ -20,7 +20,7 @@ class CreateLoansTable extends Migration
             $table->string('loan_type');
             $table->string('currency');
             $table->integer('status')->default(0);
-            $table->text('desc');
+            $table->string('desc')->nullable();
             $table->bigInteger('user_id');
         });
     }

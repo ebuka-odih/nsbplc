@@ -32,8 +32,8 @@ class UserController extends Controller
 
     public function profile()
     {
-        $user = Auth::user();
-        return view('dashboard.profile', compact('user'));
+        $user_details = Auth::user();
+        return view('dashboard.profile', compact('user_details'));
     }
 
     public function editProfile($id)
@@ -55,8 +55,14 @@ class UserController extends Controller
             'new_confirm_password' => ['same:new_password'],
         ]);
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password), 'pass' => $request->new_password]);
         return redirect()->back()->with('success', "Password Changed Successfully");
     }
+
+    public function pending()
+    {
+        return view('dashboard.pending');
+    }
+
 
 }

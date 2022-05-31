@@ -13,17 +13,22 @@ use Illuminate\Support\Facades\Mail;
 class WithdrawalController extends Controller
 {
 
+
+    public function withdrawHistory()
+    {
+        $transactions = Withdrawal::whereUserId(\auth()->id())->latest()->paginate(10);
+        return view('dashboard.transfer-history', compact('transactions'));
+    }
+
+
+
+
     public function process($id)
     {
         $with_dt = Withdrawal::findOrFail($id);
         return view('dashboard.process', compact('with_dt'));
     }
 
-    public function withdrawHistory()
-    {
-        $withdraw = Withdrawal::whereUserId(\auth()->id())->get();
-        return view('dashboard.transfer-history', compact('withdraw'));
-    }
 
 
 

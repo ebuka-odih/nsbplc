@@ -19,12 +19,12 @@ class RequestCard extends Model
     public function status(){
         if($this->status == 0)
         {
-            return "<span class='badge badge-warning'>Not Active</span>";
+            return "<span class='badge bg-warning'>Not Active</span>";
         }elseif($this->status == 1)
         {
-            return "<span class='badge badge-success'>Active</span>";
+            return "<span class='badge bg-success'>Active</span>";
         }
-        return "<span class='badge badge-danger'>Declined</span>";
+        return "<span class='badge bg-danger'>Declined</span>";
     }
 
     public function getCardIdAttribute()

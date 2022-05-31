@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Loan;
+use App\Notifications\AcceptLoan;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class AdminLoans extends Controller
 {
     public function activeLoans()
     {
-        $loans = Loan::where('status', 1)->get();
+        $loans = Loan::all();
         return view('admin.loan.active-loans', compact('loans'));
     }
 
@@ -23,8 +25,12 @@ class AdminLoans extends Controller
     public function approveLoan($id)
     {
         $loan = Loan::findOrFail($id);
+        $user = User::findOrFail($loan->user_id);
+        $user->account->balance += $loan->amount;
+        $user->account->save();
         $loan->status = 1;
         $loan->save();
+        Notification::send($user, new AcceptLoan($loan));
         return redirect()->back()->with('success', "User is now eligable");
     }
 
