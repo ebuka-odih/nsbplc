@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\ApproveUser;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -42,6 +44,16 @@ class UserController extends Controller
     {
         $user_details = User::findOrFail($id);
         return view('admin.user.edit-info', compact('user_details'));
+    }
+
+    public function approveUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->status = 1;
+        $user->save();
+        Notification::send($user, new ApproveUser($user));
+        return redirect()->back();
+
     }
 
     public function create()
