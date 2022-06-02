@@ -131,6 +131,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/simplesoftwareio/simple-qrcode" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dasprid/enum" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nexmo/laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vonage/client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vonage/client-core" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/nexmo-notification-channel" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

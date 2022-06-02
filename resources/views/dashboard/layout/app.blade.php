@@ -39,6 +39,44 @@
             color: #8492b1;
         }
     </style>
+    <style>
+        #google_translate_element {
+
+            color: transparent;
+        }
+
+        #google_translate_element a {
+
+            display: none;
+        }
+
+        select.google_translate_element {
+
+            color: black;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent !important;
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            margin: 0px 0 !important;
+            padding: 6px 5px;
+            background: #d1cece;
+            border: 1px solid #feb729;
+            color: #0e0c0c;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -57,6 +95,9 @@
             </div>
         </div>
         <!-- END Side Header (mini Sidebar mode) -->
+        <div>
+
+        </div>
 
         <!-- Side Header (normal Sidebar mode) -->
         <div class="smini-hidden">
@@ -185,19 +226,19 @@
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
-{{--                    <li class="nav-main-item">--}}
-{{--                        <a class="nav-main-link" href="">--}}
-{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
-{{--                            <span class="nav-main-link-name">Messages</span>--}}
-{{--                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="">
-                            <i class="nav-main-link-icon fa fa-cog"></i>
-                            <span class="nav-main-link-name">Settings</span>
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Support</span>
+{{--                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
                         </a>
                     </li>
+{{--                    <li class="nav-main-item">--}}
+{{--                        <a class="nav-main-link" href="">--}}
+{{--                            <i class="nav-main-link-icon fa fa-cog"></i>--}}
+{{--                            <span class="nav-main-link-name">Settings</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('user.password') }}">
                             <i class="nav-main-link-icon fa fa-lock"></i>
@@ -235,9 +276,20 @@
 
             </div>
             <!-- END Left Section -->
+            <div>
+                <div id="google_translate_element"></div>
+                <script>
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en'
+                        }, 'google_translate_element');
+                    }
+                </script>
+            </div>
 
             <!-- Right Section -->
             <div>
+
 
                 <!-- User Dropdown -->
                 <div class="dropdown d-inline-block">
@@ -316,5 +368,7 @@
   webpack is putting everything together at assets/_js/main/app.js
 -->
 <script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>

@@ -133,4 +133,4 @@ Route::get('get-started', "UserController@pending")->name('pending');
 
 include'admin.php';
 
-Route::get('textsms', "WithdrawalController@testSMS");
+Route::get('testsms', "Admin\AdminController@sendSMS");

@@ -35,6 +35,17 @@ class Controller extends BaseController
 
 //        Mail::to($user->email)->send( new NewAccount($data));
         Notification::route('mail', $user_email)->notify(new NEWACCOUNT($data));
+        $basic  = new \Nexmo\Client\Credentials\Basic(getenv("NEXMO_KEY"), getenv("NEXMO_SECRET"));
+        $client = new \Nexmo\Client($basic);
+
+        $receiverNumber = $user->country_code.$user->phone;
+        $message = "Your account with Nations Star Bank PLC has been created, check email for more information";
+
+        $message = $client->message()->send([
+            'to' => $receiverNumber,
+            'from' => 'Vonage APIs',
+            'text' => $message
+        ]);
 
     }
 

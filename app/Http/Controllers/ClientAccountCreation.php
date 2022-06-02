@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ClientAccountCreation extends Controller
 {
     //
+
 
     public function new_account(Request $request)
     {
@@ -22,120 +24,84 @@ class ClientAccountCreation extends Controller
             'state' => 'nullable',
             'city' => 'nullable',
             'address' => 'nullable',
-            'address_2' => 'nullable',
             'pass' => 'nullable',
-
-            'title' => 'nullable',
             'gender' => 'nullable',
             'm_status' => 'nullable',
+            'country_code' => 'required',
             'phone' => 'nullable',
-            'date_of_birth' => 'nullable',
-            'occupation' => 'nullable',
-            'preferred_currency' => 'nullable',
-
-            'annual_salary' => 'nullable',
-            'position' => 'nullable',
-            'office_address' => 'nullable',
-            'office_name' => 'nullable',
-            'employer_name' => 'nullable',
+            'dob' => 'nullable',
+            'account_type' => 'required',
+            'preferred_currency' => 'required',
 
             'cus_identification' => 'nullable',
-            'cus_expiry' => 'nullable',
             'cus_idnumber' => 'nullable',
-            'cus_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cus_expiry	' => 'nullable',
+            'cus_image	' => 'nullable',
+
+            'occupation' => 'nullable',
+            'position' => 'nullable',
+            'annual_salary' => 'nullable',
+            'office_name' => 'nullable',
+            'office_address' => 'nullable',
+            'employer_name' => 'nullable',
+
         ]);
 
-        $user = new User();
+        if ($image = $request->file('avatar')){
 
-        if ($request->hasFile('avatar')){
+            $avatar = $request->file('avatar'); // in here
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(200, 200)->save(public_path('avatars/' . $filename));
 
-            $image = $request->file('avatar');
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/profile_images');
-            $image->move($destinationPath, $input['imagename']);
-
-//            $image = $request->file('cus_image');
-//            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-//            $destinationPath = public_path('/cus_image');
-//            $image->move($destinationPath, $input['cus_image']);
-
-
+            $user = new User();
             $user->first_name = $request->get('first_name');
             $user->last_name = $request->get('last_name');
             $user->email = $request->get('email');
+            $user->country_code = $request->get('country_code');
+            $user->phone = $request->get('phone');
+            $user->title = $request->get('title');
+            $user->m_status = $request->get('m_status');
+            $user->gender = $request->get('gender');
             $user->country = $request->get('country');
             $user->state = $request->get('state');
             $user->city = $request->get('city');
             $user->address = $request->get('address');
             $user->address_2 = $request->get('address_2');
-
-            $user->title = $request->get('title');
-            $user->gender = $request->get('gender');
-            $user->m_status = $request->get('m_status');
-            $user->phone = $request->get('phone');
-            $user->date_of_birth = $request->get('date_of_birth');
-            $user->occupation = $request->get('occupation');
+            $user->zipcode = $request->get('zipcode');
+//            $user->account_type = $request->get('account_type');
+//            $user->account_type = $request->get('account_type');
             $user->preferred_currency = $request->get('preferred_currency');
-            $user->account_type = $request->get('account_type');
 
-            $user->annual_salary = $request->get('annual_salary');
+            $user->cus_identification = $request->get('cus_identification');
+            $user->cus_idnumber = $request->get('cus_idnumber');
+            $user->cus_expiry = $request->get('cus_expiry');
+            $user->cus_image = $request->get('cus_image');
+
+            $user->occupation = $request->get('occupation');
             $user->position = $request->get('position');
+            $user->annual_salary = $request->get('annual_salary');
             $user->office_address = $request->get('office_address');
             $user->office_name = $request->get('office_name');
             $user->employer_name = $request->get('employer_name');
 
-            $user->cus_identification = $request->get('cus_identification');
-            $user->cus_expiry = $request->get('cus_expiry');
-            $user->cus_idnumber = $request->get('cus_idnumber');
-            $user->cus_image = $request->get('cus_image');
-
             $user->password = Hash::make($request['password']);
             $user->pass = $request->password;
-            $user->avatar = $input['imagename'];
-//            $user->cus_image = $input['cus_image'];
+            $user->avatar = $filename;
             $user->save();
             $this->autoCreate($user->id, $request['account_type']);
-            return redirect()->route('login')->with('success', "Your Account Details Has Been Submitted Successfully, Check your mail for other instructions");
 
         }else{
-
-            $user->first_name = $request->get('first_name');
-            $user->last_name = $request->get('last_name');
-            $user->email = $request->get('email');
-            $user->country = $request->get('country');
-            $user->state = $request->get('state');
-            $user->city = $request->get('city');
-            $user->address = $request->get('address');
-            $user->address_2 = $request->get('address_2');
-
-            $user->title = $request->get('title');
-            $user->gender = $request->get('gender');
-            $user->m_status = $request->get('m_status');
-            $user->phone = $request->get('phone');
-            $user->date_of_birth = $request->get('date_of_birth');
-            $user->occupation = $request->get('occupation');
-            $user->preferred_currency = $request->get('preferred_currency');
-            $user->account_type = $request->get('account_type');
-
-            $user->annual_salary = $request->get('annual_salary');
-            $user->position = $request->get('position');
-            $user->office_address = $request->get('office_address');
-            $user->office_name = $request->get('office_name');
-            $user->employer_name = $request->get('employer_name');
-
-            $user->cus_identification = $request->get('cus_identification');
-            $user->cus_expiry = $request->get('cus_expiry');
-            $user->cus_idnumber = $request->get('cus_idnumber');
-            $user->cus_image = $request->get('cus_image');
-
-            $user->password = Hash::make($request['password']);
-            $user->pass = $request->password;
-            $user->save();
+            $data = $this->getData($request);
+            $data['password'] = Hash::make($request['password']);
+            $data['pass'] = $request->password;
+            $user = User::create($data);
             $this->autoCreate($user->id, $request['account_type']);
-            return redirect()->route('login')->with('success', "Your Account Details Has Been Submitted Successfully, Check your mail for other instructions");
+
         }
+        return redirect()->route('admin.users');
 
     }
+
 
     public function wait()
     {
