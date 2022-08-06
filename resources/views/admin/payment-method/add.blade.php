@@ -112,11 +112,15 @@
                                    <label for="example-ltf-text">Bank Name <span class="text-danger">*</span></label>
                                    <input type="text" class="form-control form-control-lg" id="example-if-email" name="bank_name">
                                </div>
-                               <div class="col-lg-6">
+                               <div class="col-lg-4">
                                    <label for="example-ltf-text">Account Name <span class="text-danger">*</span></label>
                                    <input required type="text" class="form-control form-control-lg" id="example-if-password" name="acct_name">
                                </div>
-                               <div class="col-lg-6">
+                               <div class="col-lg-4">
+                                   <label for="example-ltf-text">Account Number <span class="text-danger">*</span></label>
+                                   <input required type="text" class="form-control form-control-lg" id="example-if-password" name="acct_number">
+                               </div>
+                               <div class="col-lg-4">
                                    <label for="example-ltf-text">Swift Code <span class="text-danger">*</span></label>
                                    <input  type="text" class="form-control form-control-lg" id="example-if-password" name="swift_code">
                                </div>

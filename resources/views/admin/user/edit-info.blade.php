@@ -295,7 +295,13 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class="" for="example-if-email2">Marital Status</label>
-                                <input value="{{ old('m_status', optional($user_details)->m_status) }}" type="text" name="m_status" class="form-control form-control-alt" id="example-if-email2"  >
+                                <select name="m_status" class="form-control" id="">
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Seperated">Seperated</option>
+                                </select>
+{{--                                <input value="{{ old('m_status', optional($user_details)->m_status) }}" type="text" name="m_status" class="form-control form-control-alt" id="example-if-email2"  >--}}
                             </div>
                             <div class="col-lg-4">
                                 <label class="" for="example-if-email2">Date of Birth</label>
@@ -303,7 +309,11 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class="" for="example-if-email2">Gender</label>
-                                <input value="{{ old('gender', optional($user_details)->gender) }}" type="text" name="gender" class="form-control form-control-alt" id="example-if-email2"  >
+                                <select name="gender" class="form-control" id="">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+{{--                                <input value="{{ old('gender', optional($user_details)->gender) }}" type="text" name="gender" class="form-control form-control-alt" id="example-if-email2"  >--}}
                             </div>
                             <div class="col-lg-4">
                                 <label class="" for="example-if-email2">Country</label>

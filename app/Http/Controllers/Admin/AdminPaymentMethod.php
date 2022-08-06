@@ -23,9 +23,9 @@ class AdminPaymentMethod extends Controller
     public function storeBankMethod(Request $request)
     {
         $request->validate([
-            'bank_name' => 'nullable',
-            'acct_name' => 'nullable',
-            'acct_number' => 'nullable',
+            'bank_name' => 'required',
+            'acct_name' => 'required',
+            'acct_number' => 'required',
             'swift_code' => 'nullable',
             'routine_number' => 'nullable',
             'amount_1' => 'nullable',
@@ -36,6 +36,7 @@ class AdminPaymentMethod extends Controller
 
         $payment_method = new PaymentMethod();
         $payment_method->bank_name = $request->bank_name;
+        $payment_method->acct_number = $request->acct_number;
         $payment_method->acct_name = $request->acct_name;
         $payment_method->swift_code = $request->swift_code;
         $payment_method->routine_number = $request->routine_number;

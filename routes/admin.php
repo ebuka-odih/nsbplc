@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('add/bank/methods', "Admin\AdminPaymentMethod@storeBankMethod")->name('storeBankMethod');
     Route::get('add/bitcoin/methods', "Admin\AdminPaymentMethod@bitcoinMethod")->name('bitcoinMethod');
     Route::post('store/bitcoin/methods', "Admin\AdminPaymentMethod@storeBtcMethod")->name('storeBtcMethod');
-    Route::delete('delete/payment/methods', "Admin\AdminPaymentMethod@deleteMethod")->name('deleteMethod');
+    Route::delete('delete/payment/method/{id}', "Admin\AdminPaymentMethod@deleteMethod")->name('deleteMethod');
 
 //    Message route
     Route::get('user/profile/message/{id}', 'Admin\MessageController@index')->name('user_message')->where('id', '[0-9]+');

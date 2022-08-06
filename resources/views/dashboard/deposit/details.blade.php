@@ -101,14 +101,13 @@
                                     <hr>
                                     <div class="col-lg-10 offset-lg-2">
                                         {!! QrCode::size(200)->generate($payment_method->btc_wallet ? : ''); !!}
-{{--                                        <img height="200" width="200" src="https://2d6qxj3uqdaw38d6lk27l0ao-wpengine.netdna-ssl.com/wp-content/uploads/2015/10/apb-qr-code.png" alt="">--}}
                                     </div>
 
                                     <div class="col-lg-8">
                                         <div class="mb-4">
                                             <label for="example-ltf-text">Wallet Address</label>
                                             <div class="input-group">
-                                                <input  type="text" class="form-control" id="foo" value="{{ $payment_method->btc_wallet }}" >
+                                                <input  type="text" readonly class="form-control" id="foo" value="{{ $payment_method->btc_wallet }}" >
                                                 <span class="input-group-text">
                                               <a class="btn btn-info" data-clipboard-target="#foo">
                                                     <i class="fa fa-clipboard fs-2"></i>

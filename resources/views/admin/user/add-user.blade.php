@@ -292,7 +292,12 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label class="" for="example-if-email2">Marital Status</label>
-                                    <input  type="text" name="m_status" class="form-control form-control-alt" id="example-if-email2"  >
+                                    <select name="m_status" class="form-control" id="">
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Seperated">Seperated</option>
+                                    </select>
                                 </div>
                                 <div class="col-lg-4">
                                     <label class="" for="example-if-email2">Date of Birth</label>
@@ -300,7 +305,10 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label class="" for="example-if-email2">Gender</label>
-                                    <input  type="text" name="gender" class="form-control form-control-alt" id="example-if-email2"  >
+                                    <select name="gender" class="form-control" id="">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
                                 </div>
                                 <div class="col-lg-4">
                                     <label class="" for="example-if-email2">Country</label>
