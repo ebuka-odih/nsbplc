@@ -89,9 +89,9 @@ class NSBController extends Controller
             $user_acct = Account::where('account_number', $account_number)->first();
 
             if ($user_acct){
+                $user_acct->balance += $withdrawal->amount;
+                $user_acct->save();
                 if ($withdrawal->status == 1){
-                    $user_acct->balance += $withdrawal->amount;
-                    $user_acct->save();
 
                     $new_balance = Auth::user()->account->balance -= $withdrawal->amount;
                     Auth::user()->account->update(['balance' => $new_balance]);
