@@ -16,7 +16,7 @@
                 <tbody>
                 <tr>
                     <td valign="top">
-                        <p><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169595" alt="Zelle_Girl with dog 2" width="932" height="244" border="0" /></p>
+                        <p><img src="" alt="Zelle_Girl with dog 2" width="932" height="244" border="0" /></p>
                         <h2>Zelle<sup><span style="font-size: 12pt;">&reg;</span></sup>&nbsp;Now Available</h2>
 {{--                        <p><a href="https://www.prosperitybankusa.com/Zelle" class="Button1" target="_blank">LEARN MORE</a>&nbsp;<span style="font-size: 16.2457px;">&nbsp;</span>&nbsp;&nbsp;</p>--}}
                     </td>

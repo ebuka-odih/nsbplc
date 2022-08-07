@@ -47,6 +47,12 @@ Route::view('Compare-Business-Checking-Accounts', 'pages.business.Compare-Busine
 Route::view('Small-Business-Checking', 'pages.business.Small-Business-Checking');
 Route::view('Small-Business-Checking-with-Interest', 'pages.business.Small-Business-Checking-with-Interest');
 Route::view('Business-Analysis-Checking-with-Interest', 'pages.business.Business-Analysis-Checking-with-Interest');
+Route::view('Business-Online-Banking', 'pages.business.Business-Online-Banking');
+Route::view('Business-Savings', 'pages.business.Business-Savings');
+Route::view('Compare-Business-Savings-Accounts', 'pages.business.Compare-Business-Savings-Accounts');
+Route::view('Prosperity-Business-Savings', 'pages.business.Prosperity-Business-Savings');
+Route::view('Business-Premier-Money-Market', 'pages.business.Business-Premier-Money-Market');
+Route::view('Prosperity-Business-Money-Market', 'pages.business.Prosperity-Business-Money-Market');
 
 
 

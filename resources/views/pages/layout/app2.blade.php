@@ -22,8 +22,7 @@
     <link href="https://www.prosperitybankusa.com/css/style.css?v=2.0.3" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- BEGIN LivePerson Monitor. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <!-- BEGIN LivePerson Monitor. -->
     <!-- END LivePerson Monitor. -->
     <title>Personal Banking, Texas & Oklahoma | NationsStar Bank PLC</title>
     <meta name="description" content="On your journey to prosperity, let us be your guide. Connect with a local financial expert today and find an account that fits you.
@@ -197,15 +196,7 @@
                                 <li><a href="HOPP">HOPP</a></li>
                             </ul>
                         </div>
-                        <div>
-                            <ul>
-                                <li><a href="https://prosperitybankhomeloans.com/calculators/">Loan Payment Calculator</a></li>
-                            </ul>
-                        </div>
-                        <div class="promo"><h3><a href="https://www.prosperitybankusa.com/Zelle">Zelle<sup>&reg;</sup>&nbsp;Now Available</a></h3>
-                            <p><a href="https://www.prosperitybankusa.com/Zelle"><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169600" alt="Zelle_Small Promo Img_Skaters" border="0" /></a></p>
-                            <p>&nbsp;</p>
-                        </div>
+
                     </div>
                 </li>
                 <li tabindex="0">
@@ -243,7 +234,9 @@
                     </div>
                 </li>
                 <li>
-                    <h2 class="icon-chevron loginopen"><span>Sign In to Online Banking</span></h2>
+                    <h2 class=" loginopen"><span>Sign In to Online Banking <svg style="margin-left: 0.5em" height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome  - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></span>
+                    </h2>
+
                 </li>
             </ul>
         </div>
@@ -257,14 +250,7 @@
 
     <div>
         <div>
-            <ul>
-                <li>Follow us:</li>
-                <li><a href="speedbump.aspx?link=https://www.facebook.com/ProsperityBankUSA/" class="fa-facebook-square"><span>Facebook</span></a></li>
 
-                <li><a href="speedbump.aspx?link=https://www.linkedin.com/company/prosperity-bank" class="fa-linkedin"><span>Linkedin</span></a></li>
-                <li><a href="speedbump.aspx?link=https://www.youtube.com/channel/UCL7gpnXkkzDrBqQlyFzZsGg" class="fa-youtube"><span>Youtube</span></a></li>
-
-            </ul>
         </div>
     </div>
     <div>
@@ -328,15 +314,9 @@
                 </ul>
                 <ul>
                     <li>Routing number 113122655</li>
-                    <li>SWIFT Code PROYUS44</li>
+                    <li>SWIFT Code NSBPLC44</li>
                     <li>NationsStar Bank PLC NMLS ID# 466414</li>
                     <li><span class="fi-fdic"><span>Member FDIC</span></span><span class="fi-ehl"><span>Equal Housing Lender</span></span></li>
-                </ul>
-
-                <ul>
-
-                    <li><a href="https://prosperitybankhomeloans.com/calculators#loan-payment">Loan Payment Calculator</a></li>
-                    <li><a href="https://prosperitybankhomeloans.com/calculators#mortgage-payment">Mortgage Payment Calculator</a></li>
                 </ul>
 
             </div>
