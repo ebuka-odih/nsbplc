@@ -28,12 +28,12 @@
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.addMethod') }}">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.addMethod') }}" >
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fa fa-dollar-sign fa-3x text-gray"></i>
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    Bank Deposit
+                                    Instant Transfer
                                 </h4>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
 
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.bitcoinMethod') }}"  style="background-color: #2f3654; color: #8492b1;">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.bitcoinMethod') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fab fa-bitcoin fa-3x text-gray"></i>
@@ -61,7 +61,7 @@
 
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.instantTransfer') }}">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.instantTransfer') }}" style="background-color: #2f3654; color: #8492b1;">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fab fa-monero fa-3x text-gray"></i>
@@ -87,7 +87,7 @@
                     <div class="row">
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.storeBtcMethod') }}" method="POST" >
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.storeInstantTransfer') }}" method="POST" >
                                 @csrf
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -109,10 +109,27 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="example-ltf-text">Bitcoin Wallet Address<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-email" name="btc_wallet">
+                                    <label for="example-ltf-text">Payment Type <span class="text-danger">*</span></label>
+                                    <select name="instant_type" class="form-control" id="">
+                                        <option value="Western Union">Western Union</option>
+                                        <option value="Money Gram">Money Gram</option>
+                                        <option value="Ria">Ria</option>
+                                        <option value="World Remit">World Remit</option>
+                                        <option value="Paypal">Paypal</option>
+                                    </select>
                                 </div>
-
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">Account Name <span class="text-danger">*</span></label>
+                                    <input required type="text" class="form-control form-control-lg" id="example-if-password" name="name">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">Country <span class="text-danger">*</span></label>
+                                    <input required type="text" class="form-control form-control-lg" id="example-if-password" name="country">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="example-ltf-text">State <span class="text-danger">*</span></label>
+                                    <input  type="text" class="form-control form-control-lg" id="example-if-password" name="state">
+                                </div>
 
                                 <div class="col-lg-4">
                                     <label for="example-ltf-text">Amount 1 <span class="text-danger">*</span></label>

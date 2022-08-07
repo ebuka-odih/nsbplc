@@ -28,12 +28,12 @@
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="javascript:void(0)" style="background-color: #2f3654; color: #8492b1;">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.addMethod') }}" style="background-color: #2f3654; color: #8492b1;">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fa fa-dollar-sign fa-3x text-gray"></i>
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    Bank Deposit
+                                    Instant Transfer
                                 </h4>
                             </div>
                         </div>
@@ -61,13 +61,13 @@
 
                 <div class="col-xl-4">
                     <!-- Card #1 -->
-                    <a class="block block-rounded block-link-shadow" href="">
+                    <a class="block block-rounded block-link-shadow" href="{{ route('admin.instantTransfer') }}">
                         <div class="block-content block-content-full ribbon ribbon-dark ribbon-modern ribbon-primary">
                             <div class="py-3 text-center">
                                 <i class="fab fa-monero fa-3x text-gray"></i>
                                 {{--                                <i class="fa fa-envelope-open-dollar"></i>--}}
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    MoneyGram
+                                    Instant Transfer
                                 </h4>
                             </div>
                         </div>

@@ -20,7 +20,7 @@ class PaymentMethod extends Model
         {
             return "Bitcoin Deposit";
         }else{
-            return "MoneyGram Deposit";
+            return "Instant Payment";
         }
     }
 }

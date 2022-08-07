@@ -27,8 +27,8 @@ class PaymentMethodController extends Controller
             $data['user_id'] = Auth::id();
             $deposit = PaymentMethod::create($data);
             $data = ['withdraw' => $deposit];
-    //        Mail::to(\auth()->user()->email)->send(new RequestDeposit($dep));
-    //        Mail::to('admin@nsbplc.com')->send(new RequestDeposit($dep));
+//            Mail::to(\auth()->user()->email)->send(new RequestDeposit($dep));
+//            Mail::to('admin@nsbplc.com')->send(new RequestDeposit($dep));
             return redirect()->route('user.payment', $deposit->id);
         }
 

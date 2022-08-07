@@ -244,12 +244,12 @@
 
                     <li class="nav-main-heading">Settings</li>
 
-                    <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
-                            <i class="nav-main-link-icon fa fa-ghost"></i>
-                            <span class="nav-main-link-name">Settings</span>
-                        </a>
-                    </li>
+{{--                    <li class="nav-main-item">--}}
+{{--                        <a class="nav-main-link "  href="#">--}}
+{{--                            <i class="nav-main-link-icon fa fa-ghost"></i>--}}
+{{--                            <span class="nav-main-link-name">Settings</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="{{ route('admin.password') }}">
                             <i class="nav-main-link-icon fa fa-shield-alt"></i>
@@ -290,11 +290,6 @@
                     <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
                         <div class="p-2">
                             <!-- Toggle Side Overlay -->
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                                <i class="far fa-fw fa-building me-1"></i> Settings
-                            </a>
-                            <!-- END Side Overlay -->
 
                             <div role="separator" class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"

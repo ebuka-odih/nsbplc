@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.index')->name('index');
+Route::view('/Contact-Us', 'pages.Contact-Us')->name('Contact-Us');
 Route::view('/personal', 'pages.Personal')->name('personal');
 Route::view('/debit-card', 'pages.debit-card')->name('debit-card');
 Route::view('/personal-loan', 'pages.personal-loan')->name('personal-loan');

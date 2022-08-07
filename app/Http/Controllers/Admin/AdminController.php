@@ -23,7 +23,10 @@ class AdminController extends Controller
         $deposits = Deposit::all()->count();
         $withdrawal = Withdrawal::all()->count();
         $users = User::all()->where('admin', 0)->count();
-        return view('admin.dashboard', compact('deposits','withdrawal', 'users'));
+        $transfer = Withdrawal::all()->where('status', 1)->count();
+        $money_transferred = Withdrawal::select('amount')->where('status', 1)->sum('amount');
+        $deposits = Deposit::all()->where('status', 1)->count();
+        return view('admin.dashboard', compact('deposits','withdrawal', 'users', 'transfer', 'deposits', 'money_transferred'));
     }
 
     public function password()

@@ -13,19 +13,19 @@
                 <div class="row text-center">
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-dark mb-1">
-                            $@convert(auth()->user()->account->balance)
+                            @convert(auth()->user()->account->balance) <small style="font-size: 12px" class="badge bg-info">USD</small>
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Balance</a>
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-success mb-1">
-                            +$@convert($credit)
+                            +@convert($credit) <small style="font-size: 12px" class="badge bg-info">USD</small>
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Income Today</a>
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-danger mb-1">
-                            -$@convert($debit)
+                            -@convert($debit) <small style="font-size: 12px" class="badge bg-info">USD</small>
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Expenses Today</a>
                     </div>

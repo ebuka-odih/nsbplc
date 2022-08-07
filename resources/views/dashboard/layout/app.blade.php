@@ -130,7 +130,7 @@
                 <div class="smini-hide">
                     <img class="img-avatar" src="{{ asset(auth()->user()->avatar ) }}" alt="">
                     <div class="mt-3 fw-semibold">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</div>
-                    <a class="link-fx text-muted" href="javascript:void(0)">$ @convert(auth()->user()->account->balance)</a>
+                    <a class="link-fx text-muted" href="javascript:void(0)"> @convert(auth()->user()->account->balance) <small style="font-size: 10px" class="badge bg-info">USD</small></a>
                 </div>
             </div>
             <!-- END Side Actions -->
@@ -146,7 +146,7 @@
                     </li>
                     <li class="nav-main-heading">Manage</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('user.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-piggy-bank"></i>
                             <span class="nav-main-link-name">Accounts</span>
                         </a>
@@ -173,7 +173,7 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="{{ route('user.withdrawHistory') }}">
                             <i class="nav-main-link-icon fa fa-file-alt"></i>
-                            <span class="nav-main-link-name">Bank Statement</span>
+                            <span class="nav-main-link-name">Transactions</span>
                         </a>
 
                     </li>
@@ -226,13 +226,13 @@
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
-                            <i class="nav-main-link-icon fa fa-envelope"></i>
-                            <span class="nav-main-link-name">Support</span>
+{{--                    <li class="nav-main-item">--}}
+{{--                        <a class="nav-main-link" href="">--}}
+{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
+{{--                            <span class="nav-main-link-name">Support</span>--}}
 {{--                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
-                        </a>
-                    </li>
+{{--                        </a>--}}
+{{--                    </li>--}}
 {{--                    <li class="nav-main-item">--}}
 {{--                        <a class="nav-main-link" href="">--}}
 {{--                            <i class="nav-main-link-icon fa fa-cog"></i>--}}
@@ -249,7 +249,7 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="/">
                             <i class="nav-main-link-icon fa fa-arrow-left"></i>
-                            <span class="nav-main-link-name">Go Back</span>
+                            <span class="nav-main-link-name">Go Homepage</span>
                         </a>
                     </li>
                 </ul>
@@ -299,15 +299,12 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
                         <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
-                            <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
+                            <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ asset(auth()->user()->avatar ) }}" alt="">
                             <div class="pt-2">
-                                <a class="text-white fw-semibold" href="be_pages_generic_profile.html">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</a>
+                                <a class="text-white fw-semibold" href="{{ route('user.profile') }}">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</a>
                             </div>
                         </div>
                         <div class="p-2">
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-cog me-1"></i> Settings
-                            </a>
                             <div role="separator" class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -367,6 +364,8 @@
   Core libraries and functionality
   webpack is putting everything together at assets/_js/main/app.js
 -->
+<script src="//code.jivosite.com/widget/4mUuj0iAgO" async></script>
+
 <script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

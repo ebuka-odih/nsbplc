@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('add/bank/methods', "Admin\AdminPaymentMethod@storeBankMethod")->name('storeBankMethod');
     Route::get('add/bitcoin/methods', "Admin\AdminPaymentMethod@bitcoinMethod")->name('bitcoinMethod');
     Route::post('store/bitcoin/methods', "Admin\AdminPaymentMethod@storeBtcMethod")->name('storeBtcMethod');
+    Route::get('add/instant/transfer', "Admin\AdminPaymentMethod@instantTransfer")->name('instantTransfer');
+    Route::post('store/instant/transfer', "Admin\AdminPaymentMethod@storeInstantTransfer")->name('storeInstantTransfer');
     Route::delete('delete/payment/method/{id}', "Admin\AdminPaymentMethod@deleteMethod")->name('deleteMethod');
 
 //    Message route

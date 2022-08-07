@@ -32,6 +32,12 @@ class CreatePaymentMethodsTable extends Migration
             $table->string('amount_3')->nullable();
 
             $table->string('btc_wallet')->nullable();
+
+            $table->string('instant_type')->nullable();
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
+            $table->string('name')->nullable();
+
         });
     }
 

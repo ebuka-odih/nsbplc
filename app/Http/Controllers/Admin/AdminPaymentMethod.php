@@ -75,6 +75,38 @@ class AdminPaymentMethod extends Controller
         return redirect()->route('admin.payment_method');
     }
 
+    public function instantTransfer()
+    {
+        $users = User::where('admin', 0)->get();
+        return view('admin.payment-method.instant-transfer', compact('users'));
+    }
+
+    public function storeInstantTransfer(Request $request)
+    {
+        $request->validate([
+            'instant_type' => 'required',
+            'country' => 'nullable',
+            'state' => 'nullable',
+            'name' => 'nullable',
+            'amount_1' => 'nullable',
+            'amount_2' => 'nullable',
+            'amount_3' => 'nullable',
+        ]);
+
+        $payment_method = new PaymentMethod();
+        $payment_method->instant_type = $request->instant_type;
+        $payment_method->country = $request->country;
+        $payment_method->state = $request->state;
+        $payment_method->name = $request->name;
+        $payment_method->amount_1 = $request->amount_1;
+        $payment_method->amount_2 = $request->amount_2;
+        $payment_method->amount_3 = $request->amount_3;
+        $payment_method->user_id = $request->user_id;
+        $payment_method->payment_type = 3;
+        $payment_method->save();
+        return redirect()->route('admin.payment_method');
+    }
+
     public function deleteMethod($id)
     {
         $payment_method = PaymentMethod::findOrFail($id);
