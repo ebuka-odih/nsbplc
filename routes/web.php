@@ -58,6 +58,9 @@ Route::view('Mobile-Deposits', 'pages.banking.Mobile-Deposits');
 Route::view('Card-Control', 'pages.banking.Card-Control');
 Route::view('Safe-Deposits', 'pages.banking.Safe-Deposits');
 Route::view('Wire-Transfers', 'pages.banking.Wire-Transfers');
+Route::view('Online-Check-Order', 'pages.banking.Online-Check-Order');
+Route::view('About-Us', 'pages.banking.About-Us');
+Route::view('Diversity-and-Inclusion', 'pages.banking.Diversity-and-Inclusion');
 
 
 //Route::view('/','pages.index')->name('index');

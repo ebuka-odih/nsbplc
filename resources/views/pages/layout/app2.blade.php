@@ -245,8 +245,6 @@
                                 <li><a href="Safe-Deposits">Safe Deposit Boxes</a></li>
                                 <li><a href="Wire-Transfers">Wire Transfers</a></li>
                                 <li><a href="Online-Check-Order">Online Check Order</a></li>
-                                <li><a href="Overdraft-Protection">Overdraft Protection</a></li>
-                                <li><a href="eStatements">eStatements</a></li>
                             </ul>
                         </div>
 
@@ -300,14 +298,13 @@
                     <li><a href="Business-Online-Banking">Business Online Banking</a></li>
                     <li><a href="Safe-Deposits">Safe Deposit Boxes</a></li>
                     <li><a href="Wire-Transfers">Wire Transfers</a></li>
-                    <li><a href="eStatements">eStatements</a></li>
                 </ul>
             </div>
             <div>
                 <h3><a href="About-Us#top">About NationsStar Bank PLC</a></h3>
                 <ul>
                     <li><a href="About-Us">About Us</a></li>
-                    <li><a href="Investor-Relations">Investor Relations</a></li>
+{{--                    <li><a href="Investor-Relations">Investor Relations</a></li>--}}
                     <li><a href="Diversity-and-Inclusion">Diversity &amp; Inclusion</a></li>
                     <li><a href="Fraud-Prevention">Fraud Prevention</a></li>
                 </ul>
