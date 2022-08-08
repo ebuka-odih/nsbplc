@@ -285,7 +285,7 @@
                 <ul>
                     <li><a href="Business-Checking">Checking Accounts</a></li>
                     <li><a href="Business-Savings">Savings Accounts</a></li>
-                    <li><a href="Business-Loans">Loans</a></li>
+
                 </ul>
 
             </div>
@@ -306,14 +306,14 @@
                     <li><a href="About-Us">About Us</a></li>
 {{--                    <li><a href="Investor-Relations">Investor Relations</a></li>--}}
                     <li><a href="Diversity-and-Inclusion">Diversity &amp; Inclusion</a></li>
-                    <li><a href="Fraud-Prevention">Fraud Prevention</a></li>
+{{--                    <li><a href="Fraud-Prevention">Fraud Prevention</a></li>--}}
                 </ul>
             </div>
             <div>
-                <h3><a href="Support-FAQs">Support</a></h3>
+                <h3><a href="Contact-Us">Support</a></h3>
                 <ul>
                     <li><a href="Contact-Us">Contact Us</a></li>
-                    <li><a href="Support-FAQs" >Frequently Asked Questions</a></li>
+{{--                    <li><a href="Support-FAQs" >Frequently Asked Questions</a></li>--}}
                 </ul>
                 <ul>
                     <li>Routing number 113122655</li>
