@@ -54,7 +54,7 @@ Route::view('Prosperity-Business-Savings', 'pages.business.Prosperity-Business-S
 Route::view('Business-Premier-Money-Market', 'pages.business.Business-Premier-Money-Market');
 Route::view('Prosperity-Business-Money-Market', 'pages.business.Prosperity-Business-Money-Market');
 
-
+Route::view('Mobile-Deposits', 'pages.banking.Mobile-Deposits');
 
 
 //Route::view('/','pages.index')->name('index');

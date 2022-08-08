@@ -140,10 +140,7 @@
 
 
                         </div>
-                        <div class="promo"><h3><a href="https://www.prosperitybankusa.com/Zelle">Zelle<sup>&reg;</sup>&nbsp;Now Available</a></h3>
-                            <p><a href="https://www.prosperitybankusa.com/Zelle"><img src="https://www.prosperitybankusa.com/ContentImageHandler.ashx?ImageId=169600" alt="Zelle_Small Promo Img_Skaters" border="0" /></a></p>
-                            <p>&nbsp;</p>
-                        </div>
+
                     </div>
                 </li>
                 <li tabindex="0">
@@ -179,26 +176,7 @@
 
                     </div>
                 </li>
-                <li tabindex="0">
-                    <h2>
-                        <svg style="margin-left: 0.5em"  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
 
-                        <a href="Mortgages"><span>Mortgages</span></a></h2>
-                    <div>
-                        <div>
-                            <h3><a href="http://prosperitybankhomeloans.com"><span>Mortgages</span></a></h3>
-                        </div>
-                        <div>
-                            <ul>
-                                <li><a href="Real-Estate-Loans">Real Estate Loans</a></li>
-                                <li><a href="Construction-Loans">Construction Loans</a></li>
-                                <li><a href="Home-Equity-Loans">Home Equity Loans</a></li>
-                                <li><a href="HOPP">HOPP</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </li>
                 <li tabindex="0">
                     <h2 >
                         <svg style="margin-left: 0.5em"  height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
@@ -222,13 +200,6 @@
                                 <li><a href="Overdraft-Protection">Overdraft Protection</a></li>
                                 <li><a href="eStatements">eStatements</a></li>
                             </ul>
-                        </div>
-                        <div>
-                            <h3><a href="Wealth-Management-and-Trust-Services">Wealth Management &amp; Trust Services</a></h3>
-                            <hr />
-                            <h3><a href="ProsperityPrivate-Investments">ProsperityPrivate Investment Services</a></h3>
-                            <hr />
-
                         </div>
 
                     </div>
@@ -274,14 +245,7 @@
                     <li><a href="Business-Loans">Loans</a></li>
                     <li><a href="Individual-Retirement-Accounts-IRAs">Individual Retirement Accounts</a></li>
                 </ul>
-                <h3><a href="Mortgages">Mortgages</a></h3>
-                <ul>
-                    <li><a href="Real-Estate-Loans">Real Estate Loans</a></li>
-                    <li><a href="Construction-Loans">Construction Loans</a></li>
-                    <li><a href="Aircraft-and-Boat-Loans">Aircraft and Boat Loans</a></li>
-                    <li><a href="Stock-Loans">Stock Loans</a></li>
-                    <li><a href="Home-Equity-Loans">Home Equity Loans</a></li>
-                </ul>
+
             </div>
             <div>
                 <h3><a href="Banking-Services">Banking Services</a></h3>
