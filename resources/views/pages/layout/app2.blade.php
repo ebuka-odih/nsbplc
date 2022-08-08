@@ -282,16 +282,12 @@
                     <li><a href="Savings-Accounts">Savings Accounts</a></li>
                     <li><a href="Credit-Cards">Credit Cards</a></li>
                     <li><a href="Personal-Loans">Personal Loans</a></li>
-                    <li><a href="Individual-Retirement-Accounts-IRAs">Individual Retirement Accounts</a></li>
                 </ul>
                 <h3><a href="Business">Business products</a></h3>
                 <ul>
                     <li><a href="Business-Checking">Checking Accounts</a></li>
                     <li><a href="Business-Savings">Savings Accounts</a></li>
-                    <li><a href="Business-Lines-of-Credit">Business Lines of Credit</a></li>
-                    <li><a href="Business-Credit-Card">Credit Cards</a></li>
                     <li><a href="Business-Loans">Loans</a></li>
-                    <li><a href="Individual-Retirement-Accounts-IRAs">Individual Retirement Accounts</a></li>
                 </ul>
 
             </div>
@@ -304,8 +300,6 @@
                     <li><a href="Business-Online-Banking">Business Online Banking</a></li>
                     <li><a href="Safe-Deposits">Safe Deposit Boxes</a></li>
                     <li><a href="Wire-Transfers">Wire Transfers</a></li>
-                    <li><a href="Online-Check-order">Online Check Order</a></li>
-                    <li><a href="Overdraft-Protection">Overdraft Protection</a></li>
                     <li><a href="eStatements">eStatements</a></li>
                 </ul>
             </div>
@@ -328,7 +322,7 @@
                     <li>Routing number 113122655</li>
                     <li>SWIFT Code NSBPLC44</li>
                     <li>NationsStar Bank PLC NMLS ID# 466414</li>
-                    <li><span class="fi-fdic"><span>Member FDIC</span></span><span class="fi-ehl"><span>Equal Housing Lender</span></span></li>
+                    <li><span class=""><span>Member FDIC</span></span><span ><span>Equal Housing Lender</span></span></li>
                 </ul>
 
             </div>

@@ -56,6 +56,8 @@ Route::view('Prosperity-Business-Money-Market', 'pages.business.Prosperity-Busin
 
 Route::view('Mobile-Deposits', 'pages.banking.Mobile-Deposits');
 Route::view('Card-Control', 'pages.banking.Card-Control');
+Route::view('Safe-Deposits', 'pages.banking.Safe-Deposits');
+Route::view('Wire-Transfers', 'pages.banking.Wire-Transfers');
 
 
 //Route::view('/','pages.index')->name('index');
