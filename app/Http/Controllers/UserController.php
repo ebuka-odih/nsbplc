@@ -30,6 +30,20 @@ class UserController extends Controller
         return view('dashboard.index', compact('debit', 'total_with', 'total_dep', 'total_loan', 'transactions', 'pending_debit', 'credit'));
     }
 
+    public function support()
+    {
+        $credit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('acct_number', '=', Auth::user()->account->account_number)->where('status', '=', 1)->whereDate('created_at', Carbon::today())->sum('amount');
+        $debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('from', '=', Auth::user()->account->account_number)->where('status', '=', 1)->whereDate('created_at', Carbon::today())->sum('amount');
+
+        $pending_debit = Withdrawal::whereUserId(\auth()->id())->select('amount')->where('debit', '=', 1)->where('status', '=', 0)->sum('amount');
+
+        $transactions = Withdrawal::whereUserId(auth()->id())->latest()->paginate(4);
+        $total_with = Withdrawal::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        $total_dep = Deposit::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        $total_loan = Loan::whereUserId(auth()->id())->get()->where('status', 1)->count();
+        return view('dashboard.support', compact('debit', 'total_with', 'total_dep', 'total_loan', 'transactions', 'pending_debit', 'credit'));
+    }
+
     public function profile()
     {
         $user_details = Auth::user();

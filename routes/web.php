@@ -55,6 +55,7 @@ Route::view('Business-Premier-Money-Market', 'pages.business.Business-Premier-Mo
 Route::view('Prosperity-Business-Money-Market', 'pages.business.Prosperity-Business-Money-Market');
 
 Route::view('Mobile-Deposits', 'pages.banking.Mobile-Deposits');
+Route::view('Card-Control', 'pages.banking.Card-Control');
 
 
 //Route::view('/','pages.index')->name('index');
@@ -70,6 +71,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
 
     Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
+    Route::get('support', 'UserController@support')->name('support');
     Route::get('profile', "UserController@profile")->name('profile');
     Route::get('edit/profile/{id}', "UserController@editProfile")->name('editProfile');
     Route::get('password', "UserController@password")->name('password');

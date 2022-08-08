@@ -226,13 +226,12 @@
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
-{{--                    <li class="nav-main-item">--}}
-{{--                        <a class="nav-main-link" href="">--}}
-{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
-{{--                            <span class="nav-main-link-name">Support</span>--}}
-{{--                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('user.support') }}">
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Support</span>
+                        </a>
+                    </li>
 {{--                    <li class="nav-main-item">--}}
 {{--                        <a class="nav-main-link" href="">--}}
 {{--                            <i class="nav-main-link-icon fa fa-cog"></i>--}}
@@ -364,7 +363,6 @@
   Core libraries and functionality
   webpack is putting everything together at assets/_js/main/app.js
 -->
-<script src="//code.jivosite.com/widget/4mUuj0iAgO" async></script>
 
 <script src="{{ asset('dashboard/assets/js/dashmix.app.min.js') }}"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

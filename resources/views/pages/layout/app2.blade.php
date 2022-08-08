@@ -30,6 +30,45 @@
     <meta name="keywords" content="Personal Banking Texas
 " />
     <meta name="description" content="">
+
+    <style>
+        #google_translate_element {
+
+            color: transparent;
+        }
+
+        #google_translate_element a {
+
+            display: none;
+        }
+
+        select.google_translate_element {
+
+            color: black;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent !important;
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            margin: 0px 0 !important;
+            padding: 6px 5px;
+            background: #d1cece;
+            border: 1px solid #feb729;
+            color: #0e0c0c;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
 </head>
 <body class="home" id="top">
 <div id="notice" class="notice" data-nosnippet>
@@ -66,7 +105,14 @@
             </label>
             <ul class="personal">
                 <li><a href="{{ route('reg_new_account') }}" target="_blank">Enroll</a></li>
-                <li><a href="https://consumer.prosperity.bank/ForgotPassword.aspx" target="_blank">Forgot Password</a></li>
+                <li>
+                    @if (Route::has('password.request'))
+                        <a  href="{{ route('password.request') }}">
+                            {{ __('Forgot Password?') }}
+                        </a>
+                    @endif
+{{--                    <a href="" target="_blank">Forgot Password</a>--}}
+                </li>
             </ul>
             <button type="submit" class="Button1"><span>Sign In</span></button>
         </form>
@@ -80,11 +126,21 @@
                 <a href="{{ route('index') }}">
                     <h1 style="font-weight: bolder;">
 {{--                        NationsStar Bank PLC--}}
-                        <img style="height: 120px; width: 120px" src="logo/logo.png" alt="NationsStar Bank PLC">
+                        <img style="height: 120px; width: 120px" src="{{ asset('logo/logo.png') }}" alt="NationsStar Bank PLC">
                     </h1>
                 </a>
             </li>
-            <li><a href="Contact-Us">
+            <div id="google_translate_element"></div>
+            <script>
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en'
+                    }, 'google_translate_element');
+                }
+            </script>
+
+            <li>
+                <a href="Contact-Us">
                     <svg style="background-color: white; margin-right: 0.5em" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
                     <span>Contact Us</span></a></li>
             {{--                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>--}}
@@ -185,14 +241,6 @@
                         <div>
                             <ul>
                                 <li><a href="Mobile-Deposits">Mobile Deposit</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="Online-Banking">Consumer Online Banking</a></li>
-                                <li><a href="Business-Online-Banking">Business Online Banking</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
                                 <li><a href="Card-Control">Card Control - Debit Cards</a></li>
                                 <li><a href="Safe-Deposits">Safe Deposit Boxes</a></li>
                                 <li><a href="Wire-Transfers">Wire Transfers</a></li>
@@ -322,10 +370,10 @@
 <script type="text/javascript" src="https://www.prosperitybankusa.com/js/fiserv.js"></script>
 <script type="text/javascript" src="https://www.prosperitybankusa.com/js/script-generated.js?v=1"></script>
 
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script src="https://assets.sitescdn.net/answers-search-bar/v1.0/answerstemplates.compiled.min.js"></script>
 
-<script src="//code.jivosite.com/widget/4mUuj0iAgO" async></script>
 
 </body>
 </html>
