@@ -68,6 +68,22 @@
             cursor: pointer;
             outline: none;
         }
+
+        iframe:not(#atmlocator):not(#bcmAdFrame) {
+            display: block;
+            /* width: 100%; */
+            border: none;
+            height: 4vw;
+        }
+
+        @media only screen and (max-width: 600px) {
+            iframe:not(#atmlocator):not(#bcmAdFrame) {
+                display: block;
+                /* width: 100%; */
+                border: none;
+                height: 10vw;
+            }
+        }
     </style>
 </head>
 <body class="home" id="top">
