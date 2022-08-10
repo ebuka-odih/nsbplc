@@ -95,7 +95,7 @@
 </div>
 
 <header>
-    <div id="login" class="personal loading">
+    <div id="login" class=" loading">
         <fieldset data-error="Please Select an Account Type">
             <legend>Select Account Type</legend>
             <label>
@@ -109,7 +109,7 @@
         </fieldset>
         <h2><a id="Online-Banking"></a>Sign In</h2>
 
-        <form class="personal" target="_blank" action="{{ route('login') }}" method="POST" name="pbi-form" id="pbi-form" autocomplete="off">
+        <form class="personal" target="_blank" action="{{ route('login') }}" method="POST" autocomplete="off">
             @csrf
             <label data-error="Please Enter Your Username">
                 <span>Enter Email</span>
@@ -127,7 +127,6 @@
                             {{ __('Forgot Password?') }}
                         </a>
                     @endif
-{{--                    <a href="" target="_blank">Forgot Password</a>--}}
                 </li>
             </ul>
             <button type="submit" class="Button1"><span>Sign In</span></button>
@@ -267,7 +266,7 @@
                     </div>
                 </li>
                 <li>
-                    <h2 class=" loginopen"><span>Sign In to Online Banking <svg style="margin-left: 0.5em" height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome  - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></span>
+                    <h2 class=" loginopen"><span><a style="color: white" target="_blank" href="{{ route('login') }}">Sign In to Online Banking</a> <svg style="margin-left: 0.5em" height="15" width="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome  - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></span>
                     </h2>
 
                 </li>

@@ -49,7 +49,7 @@
           </form>
 
 
-        <div class="mg-t-40 tx-center">Not yet a member? <a href="{{ route('reg_new_account') }}" class="tx-info">Sign Up</a></div>
+        <div class="mg-t-40 tx-center">Request for an account <a href="{{ route('reg_new_account') }}" class="tx-info">Enroll</a></div>
       </div><!-- login-wrapper -->
     </div><!-- d-flex -->
 
