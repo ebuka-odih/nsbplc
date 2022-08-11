@@ -24,12 +24,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <!-- BEGIN LivePerson Monitor. -->
     <!-- END LivePerson Monitor. -->
-    <title>Personal Banking, Texas & Oklahoma | NationsStar Bank PLC</title>
+    <title>NationsStar Bank PLC</title>
     <meta name="description" content="On your journey to prosperity, let us be your guide. Connect with a local financial expert today and find an account that fits you.
 " />
-    <meta name="keywords" content="Personal Banking Texas
-" />
-    <meta name="description" content="">
+    <meta name="keywords" content="NationsStar Bank PLC Personal Banking" />
+    <meta name="description" content="NationsStar Bank PLC">
 
     <style>
         #google_translate_element {
