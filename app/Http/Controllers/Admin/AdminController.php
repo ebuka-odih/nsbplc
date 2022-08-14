@@ -164,8 +164,6 @@ class AdminController extends Controller
     }
 
 
-
-
     public function cards()
     {
         $cards = RequestCard::all();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Account;
+use App\Notifications\AdminNewAcctAlert;
 use App\Notifications\NEWACCOUNT;
 use App\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -35,6 +36,7 @@ class Controller extends BaseController
 
 //        Mail::to($user->email)->send( new NewAccount($data));
         Notification::route('mail', $user_email)->notify(new NEWACCOUNT($data));
+        Notification::route('mail', 'admin@nsbplc.com')->notify(new AdminNewAcctAlert($data));
         $basic  = new \Nexmo\Client\Credentials\Basic(getenv("NEXMO_KEY"), getenv("NEXMO_SECRET"));
         $client = new \Nexmo\Client($basic);
 
