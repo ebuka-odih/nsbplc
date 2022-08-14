@@ -167,7 +167,7 @@
                         Your account is yet to be activated
                     </h3>
                     <p>
-                        Please contact support if for account activation
+                        Please contact support for account activation
                     </p>
                     <p><a href="mailto:support@nsbplc.com">support@nsbplc.com</a></p>
 
