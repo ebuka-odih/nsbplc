@@ -42,7 +42,7 @@ class NSBCode extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)->subject('Nations Star Bank PLC')->from('noreply@nsbplc.com')
-            ->line('Your requested NSB Code is ' . $this->data['wit']->admin_atc_code . " .")
+            ->line('Your requested NSB Code is ' . $this->data['wit']->admin_nsb_code . " .")
             ->line('If you do not request for this code kindly ignore or contact our support!');
     }
 
