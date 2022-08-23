@@ -95,6 +95,7 @@
                 </a>
                 <!-- END Logo -->
             </div>
+
             <!-- END Left Section -->
 
             <!-- Right Section -->
@@ -112,7 +113,9 @@
             </div>
             <!-- END Right Section -->
 
+
         </div>
+
         <!-- END Header Content -->
 
 
@@ -140,13 +143,19 @@
                 <div id="main-navigation" class="d-none d-lg-block push">
                     <ul class="nav-main nav-main-horizontal nav-main-hover nav-main-dark">
                         <li class="nav-main-item">
-{{--                            <a class="nav-main-link active" href="/">--}}
-{{--                                <i class="nav-main-link-icon fa fa-rocket"></i>--}}
-{{--                                <span class="nav-main-link-name">Homepage</span>--}}
-{{--                            </a>--}}
+
                         </li>
 
                     </ul>
+                    <a style="color: white" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
                 <!-- END Main Navigation -->
             </div>
