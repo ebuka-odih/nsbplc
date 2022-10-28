@@ -149,6 +149,13 @@ class AdminController extends Controller
         $user->save();
         return redirect()->back()->with('success', "User Has Been Verified");
     }
+//    public function suspend_user($id)
+//    {
+//        $user = User::findOrFail($id);
+//        $user->status = 0;
+//        $user->save();
+//        return redirect()->back()->with('success', "User Has Been suspended");
+//    }
 
     public function delete_user($id)
     {
