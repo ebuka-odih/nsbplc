@@ -48,12 +48,12 @@
                                         <td class="text-center">
                                             <div class="btn-group">
                                                 @if($item->status == 0)
-                                                <a href="{{ route('admin.approveUser', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Verify">
+                                                <a href="{{ route('admin.approveUser', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
                                                     <i class="fa fa-check"></i>
                                                 </a>
                                                 @else
-                                                    <a href="{{ route('admin.suspendUser', $item->id) }}" class="btn btn-sm btn-alt-danger js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Suspend">
-                                                        <i class="fa fa-shield"></i>
+                                                    <a href="{{ route('admin.suspendUser', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
+                                                        <i class="fa fa-user-alt-slash"></i>
                                                     </a>
                                                 @endif
                                                 <a href="{{ route('admin.user_details', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View User" data-bs-original-title="Edit">

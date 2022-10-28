@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('store/user', 'Admin\UserController@store_user')->name('store_user');
     Route::delete('user/{id}/delete', 'Admin\UserController@delete_user')->name('delete.user');
     Route::get('approve/user/{id}', "Admin\UserController@approveUser")->name('approveUser');
-    Route::get('suspend/user/{id}', "Admin\UserController@suspendUser")->name('suspendUser');
+    Route::get('suspend/user/{id}', "Admin\UserController@suspend_user")->name('suspendUser');
     //  End of User Route
 
     //  Transfer Route
